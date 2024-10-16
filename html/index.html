@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Clickcraft</title>
+    <link rel="stylesheet" href="../css/homePage.css" />
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="../js/model.js"></script>
+    <script src="../js/homePageController.js"></script>
+    <script src="../js/homePageView.js"></script>
+    <script src="../js/loginController.js"></script>
+    <script src="../js/loginView.js"></script>
+    <script src="../js/registerController.js"></script>
+    <script src="../js/registerView.js"></script>
+</body>
+
+<script>
+    updateView();
+
+    function updateView() {
+        currentPage = model.app.currentPage;
+
+        if (currentPage == 'homePage') homePageView();
+        else if (currentPage == 'loginPage') loginView();
+        else if (currentPage == 'registerPage') registerView();
+    }
+
+</script>
+
+</html>

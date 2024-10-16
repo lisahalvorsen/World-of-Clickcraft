@@ -20,7 +20,7 @@ const model = {
         createNewCharacterPage: {
             characterName: '',
             gender: '',
-            characterId: null,
+            classId: null,
         },
     },
 

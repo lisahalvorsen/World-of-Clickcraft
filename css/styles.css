@@ -1,0 +1,9 @@
+/* homepage */
+.homePage {
+    width: 30%;
+    background-color: antiquewhite;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

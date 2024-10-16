@@ -25,7 +25,7 @@
 
 // raids:
 // [
-//     { id: 1, boss: 'Raids Boss', BossName: 'Main Boss', bossSted: 0, hasKey: false },
+//     { id: 1, boss: 'Raids Boss', BossName: 'Main Boss', bossStep: 0, hasKey: false },
 // ],
 
 // items:
