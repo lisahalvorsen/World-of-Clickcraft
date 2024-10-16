@@ -1,10 +1,9 @@
-/* homepage */
-.homePage {
+/* loginPage */
+.loginPage {
     width: 30%;
     background-color: antiquewhite;
     text-align: center;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
 }

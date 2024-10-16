@@ -1,10 +1,10 @@
 function registerView() {
+    model.app.currentPage = "registerPage";
 
-    model.app.currentPage = 'registerPage'
-
-    document.getElementById('app').innerHTML = /*HTML*/ `
-    <h1> Register new user </h1>
-    <label for= "Username" > Username: </label >
+    document.getElementById("app").innerHTML = /*HTML*/ `
+    <div class="homePage">
+        <h1> Register new user </h1>
+         <label for= "Username" > Username: </label >
             <input type="text" id="first" placeholder="Enter Username" required />
 
             <label for= "E-mail"> E-mail: </label >
@@ -17,5 +17,6 @@ function registerView() {
             <div class="wrap">
                 <button type="submit">Submit</button>
             </div>
+    </div>
     `;
 }
