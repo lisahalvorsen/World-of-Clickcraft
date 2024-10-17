@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World of Clickcraft</title>
     <link rel="stylesheet" href="../css/allPages.css" />
-    <link rel="stylesheet" href="../css/homePage.css" />
+    <link rel="stylesheet" href="../css/homepage.css" />
     <link rel="stylesheet" href="../css/loginPage.css" />
     <link rel="stylesheet" href="../css/registerPage.css" />
 </head>
@@ -15,12 +15,15 @@
     <div id="app"></div>
 
     <script src="../js/model.js"></script>
-    <script src="../js/homePageController.js"></script>
-    <script src="../js/homePageView.js"></script>
+    <script src="../js/homepageController.js"></script>
+    <script src="../js/homepageView.js"></script>
     <script src="../js/loginController.js"></script>
     <script src="../js/loginView.js"></script>
     <script src="../js/registerController.js"></script>
     <script src="../js/registerView.js"></script>
+    <script src="../js/characterSelectionController.js"></script>
+    <script src="../js/characterSelectionView.js"></script>
+
 </body>
 
 <script>
@@ -29,9 +32,10 @@
     function updateView() {
         currentPage = model.app.currentPage;
 
-        if (currentPage == 'homePage') homePageView();
-        else if (currentPage == 'loginPage') loginView();
-        else if (currentPage == 'registerPage') registerView();
+        if (currentPage == 'home') homepageView();
+        else if (currentPage == 'login') loginView();
+        else if (currentPage == 'register') registerView();
+        else if (currentPage == 'characterSelection') characterSelectionView();
     }
 
 </script>

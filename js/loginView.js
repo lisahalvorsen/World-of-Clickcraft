@@ -1,6 +1,10 @@
 function loginView() {
+<<<<<<< Updated upstream
     let username;
     let password;
+=======
+    model.app.currentPage = 'login';
+>>>>>>> Stashed changes
 
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="loginPage">

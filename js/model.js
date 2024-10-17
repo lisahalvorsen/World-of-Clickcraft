@@ -1,15 +1,15 @@
 const model = {
     // Del 1
     app: {
-        currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
-        userId: null,
+        currentPage: 'characterSelection', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
+        userId: 1,
     },
 
     // Del 2
     inputs: {
         loginPage: {
-            email: '',
-            password: '',
+            email: 'ola@gmail.com',
+            password: 'ola',
         },
         registerPage: {
             username: '',
@@ -26,7 +26,12 @@ const model = {
 
     // Del 3 Data
     users: [
+<<<<<<< Updated upstream
         { userId: 0, username: 'username', password: 'password', email: 'example@Email.com' },
+=======
+        { userId: 1, username: 'Ola', password: 'ola', email: 'ola@gmail.com' },
+        { userId: 2, username: 'Per', password: 'per', email: 'per@gmail.com' },
+>>>>>>> Stashed changes
     ],
 
     characters: [

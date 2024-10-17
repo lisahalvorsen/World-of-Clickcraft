@@ -1,10 +1,10 @@
 function goToLoginPage() {
-    model.app.currentPage = 'loginPage';
+    model.app.currentPage = 'login';
     updateView();
 }
 
 function goToRegisterPage() {
-    model.app.currentPage = 'registerPage';
+    model.app.currentPage = 'register';
     updateView();
 }
 

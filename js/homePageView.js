@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 function homePageView() {
+=======
+function homepageView() {
+    model.app.currentPage = 'home';
+
+>>>>>>> Stashed changes
     document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="homePage">
             <img src="../img/WoF.png" alt="World of Clickcraft logo" class="wof-logo">
