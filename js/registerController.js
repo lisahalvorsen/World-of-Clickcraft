@@ -30,9 +30,9 @@ function registerNewUser(password, email, username){
 	if (validUsername && validPassword && validEmail) {
 		model.users.push({
 			userId: newUserId,
+			username: username,
 			password: password,
 			email: email,
-			username: username,
 		});
 
 		const intervalId = setInterval(function() {
