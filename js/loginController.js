@@ -13,9 +13,9 @@ function logInUser(username, password){
 
 				if(model.characters.userId === userId){//or is true?
 					loginReturnMessage.innerHTML = 'going to choose character'
-					// goToChooseCharacter()
+					// goToChooseCharacterPage()
 				} else {
-					// goToCreateCharacter();
+					// goToCreateCharacterPage();
 					loginReturnMessage.innerHTML = 'Going to create character'
 				}
 			return;
