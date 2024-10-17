@@ -7,3 +7,8 @@ function goToRegisterPage() {
     model.app.currentPage = 'registerPage';
     updateView();
 }
+
+function goToHomePage() {
+    model.app.currentPage = 'homePage';
+    updateView();
+}

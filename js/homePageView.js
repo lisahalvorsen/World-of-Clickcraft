@@ -1,6 +1,4 @@
 function homePageView() {
-    model.app.currentPage = 'homePage';
-
     document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="homePage">
             <img src="../img/WoF.png" alt="World of Clickcraft logo" class="wof-logo">
