@@ -1,10 +1,8 @@
 function characterSelectionView() {
-    model.app.currentPage = 'characterSelection';
-    let user = model.users.find(user => user.userId === model.app.userId); // sjekker om en brukerId er den samme som en bruker
+    let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
 
     document.getElementById('app').innerHTML = /*HTML*/ `    
-        <h1>${user.username ? `Hello, ${user.username}!` : `Good day!`}</h1>
-        
+        <h1>Hello, ${user.username}</h1>
         <div>
             <img>
             <button>Play with this character</button>

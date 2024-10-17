@@ -9,6 +9,6 @@ function goToRegisterPage() {
 }
 
 function goToHomePage() {
-    model.app.currentPage = 'homePage';
+    model.app.currentPage = 'home';
     updateView();
 }

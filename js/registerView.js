@@ -1,12 +1,9 @@
 function registerView() {
-<<<<<<< Updated upstream
     let username;
     let password;
     let email;
     let userId;
-=======
     model.app.currentPage = "register";
->>>>>>> Stashed changes
 
     document.getElementById("app").innerHTML = /*HTML*/ `
     <div class="registerPage">
