@@ -3,8 +3,8 @@ const model = {
     app: {
         currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
         userId: null,
-        loggedInUser: '',
-        currentCharacter: '',
+        loggedInCharacterId: 0,
+        loggedInUser: 0,
     },
 
     // Del 2
@@ -40,8 +40,8 @@ const model = {
     ],
 
     stats: [
-        { userId: 0, characterId: 0, hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { userId: 1, characterId: 1, hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
+        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
+        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
     ],
 
     inventories: [
@@ -82,6 +82,8 @@ const model = {
     ],
 
     caveQuest: [
-        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, },
+        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, abondenQuest: false, },
+        { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10 },
+
     ],
 };
