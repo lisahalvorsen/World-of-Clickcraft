@@ -1,10 +1,4 @@
 function registerView() {
-    let username;
-    let password;
-    let email;
-    let userId;
-    model.app.currentPage = "register";
-
     document.getElementById("app").innerHTML = /*HTML*/ `
     <div class="registerPage">
         <h1> Register new user </h1>
