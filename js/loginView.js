@@ -1,8 +1,4 @@
 function loginView() {
-    let username;
-    let password;
-
-    model.app.currentPage = 'login';
 
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="loginPage">
