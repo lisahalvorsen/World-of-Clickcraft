@@ -1,7 +1,7 @@
 const model = {
     // Del 1
     app: {
-        currentPage: 'createNewCharacterPage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
+        currentPage: 'home', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
         userId: null,
         loggedInUser: '',
     },

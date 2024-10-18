@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="../css/loginPage.css" />
     <link rel="stylesheet" href="../css/registerPage.css" />
     <link rel="stylesheet" href="../css/createNewCharacterPage.css" />
+    <link rel="stylesheet" href="../css/mapPage.css" />
 </head>
 
 <body>
     <div id="app"></div>
 
     <script src="../js/model.js"></script>
-    <script src="../js/homePageController.js"></script>
-    <script src="../js/homePageView.js"></script>
+    <script src="../js/homepageController.js"></script>
+    <script src="../js/homepageView.js"></script>
     <script src="../js/loginController.js"></script>
     <script src="../js/loginView.js"></script>
     <script src="../js/registerController.js"></script>
@@ -30,7 +31,6 @@
 
     function updateView() {
         currentPage = model.app.currentPage;
-
         if (currentPage == 'homePage') homePageView();
         else if (currentPage == 'loginPage') loginView();
         else if (currentPage == 'registerPage') registerView();
