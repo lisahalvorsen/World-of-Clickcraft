@@ -2,6 +2,7 @@ const model = {
     // Del 1
     app: {
         currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
+        userId: null,
         loggedInCharacterId: 0,
         loggedInUser: 0,
     },
@@ -29,11 +30,13 @@ const model = {
     users: [
         { userId: 0, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
         { userId: 1, username: 'Lars', password: 'lars', email: 'lars.larsen@gmail.com' },
+        { userId: 2, username: 'Petter', password: 'petter', email: 'petter.pettersen@gmail.com' },
     ],
 
     characters: [
-        { userId: 0, characterId: 0, classId: 1, areaId: 1 },
-        { userId: 1, characterId: 1, classId: 2, areaId: 1 },
+        { userId: 0, characterId: 0, classId: 1, areaId: 1, name: 'Bob', gender: 'M' },
+        { userId: 1, characterId: 1, classId: 2, areaId: 1, name: 'Jack', gender: 'M' },
+        { userId: 1, characterId: 2, classId: 3, areaId: 1, name: 'Sarah', gender: 'F' },
     ],
 
     stats: [
@@ -51,7 +54,7 @@ const model = {
 
     classes: [
         { id: 1, class: 'Warrior', description: 'blah blah blah', picture: '🧑‍🚒', hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { id: 2, class: 'Wizard', description: 'blah blah blah', picture:'🧙‍♂️', hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
+        { id: 2, class: 'Wizard', description: 'blah blah blah', picture: '🧙‍♂️', hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
         { id: 3, class: 'Hunter', description: 'blah blah blah', picture: '🥷', hp: 80, level: 0, atk: 10, def: 20, spd: 30 },
     ],
 
@@ -79,8 +82,8 @@ const model = {
     ],
 
     caveQuest: [
-        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, abondenQuest: false,},
-        { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10  },
+        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, abondenQuest: false, },
+        { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10 },
 
     ],
 };

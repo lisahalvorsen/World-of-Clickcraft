@@ -23,7 +23,8 @@ function goToCreateNewCharacterPage() {
     updateView();
 }
 
-function goToMapPage(){
+function goToMapPage() {
     model.app.currentPage = 'mapPage';
+    model.app.currentCharacter;
     updateView();
 }
