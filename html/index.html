@@ -16,14 +16,17 @@
     <div id="app"></div>
 
     <script src="../js/model.js"></script>
-    <script src="../js/homepageController.js"></script>
-    <script src="../js/homepageView.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/homePageView.js"></script>
     <script src="../js/loginController.js"></script>
     <script src="../js/loginView.js"></script>
     <script src="../js/registerController.js"></script>
     <script src="../js/registerView.js"></script>
     <script src="../js/createNewCharacterView.js"></script>
     <script src="../js/createNewCharacterController.js"></script>
+    <script src="../js/characterSelectionController.js"></script>
+    <script src="../js/characterSelectionView.js"></script>
+
 </body>
 
 <script>
@@ -35,6 +38,8 @@
         else if (currentPage == 'loginPage') loginView();
         else if (currentPage == 'registerPage') registerView();
         else if (currentPage == 'createNewCharacterPage') createNewCharacterView();
+        else if (currentPage == 'characterSelectionPage') characterSelectionView();
+
     }
 
 </script>

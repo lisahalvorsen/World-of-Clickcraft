@@ -1,5 +1,4 @@
-function homepageView() {
-    model.app.currentPage = 'home';
+function homePageView() {
 
     document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="homePage">
