@@ -1,5 +1,5 @@
 function characterSelectionView() {
-    // let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
+    let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
 
     document.getElementById('app').innerHTML = /*HTML*/ `    
         <h1>Hello, ${user.username}</h1>

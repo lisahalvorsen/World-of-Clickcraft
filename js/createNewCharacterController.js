@@ -3,6 +3,7 @@ function createCharacter(chosenClassId, name, gender) {
     createNewCharacterStats(chosenClassId)
     createNewInventory()
     createNewCharacterEquippedItems(chosenClassId)
+    goToMapPage()
 }
 
 function createUserNewCharacterInfo(chosenClassId) {

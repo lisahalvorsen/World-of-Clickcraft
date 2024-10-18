@@ -12,12 +12,9 @@ function logInUser(username, password) {
 				userId = model.users[i].userId;
 				model.app.loggedInUser = userId;
 
-				if (model.characters.userId === userId) {//or is true?
-					loginReturnMessage.innerHTML = 'going to choose character'
-					// goToChooseCharacterPage()
+				if (model.characters.userId !== userId) {
+					goToCreateNewCharacterPage();
 				} else {
-					// goToCreateCharacterPage();
-					loginReturnMessage.innerHTML = 'Going to create character'
 					goToCharacterSelectionPage();
 				}
 				return;

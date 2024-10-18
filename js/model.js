@@ -27,7 +27,7 @@ const model = {
 
     // Del 3 Data
     users: [
-        { userId: 0, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
+        { userId: 3, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
         { userId: 1, username: 'Lars', password: 'lars', email: 'lars.larsen@gmail.com' },
     ],
 

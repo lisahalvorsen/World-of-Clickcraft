@@ -17,3 +17,13 @@ function goToCharacterSelectionPage() {
     model.app.currentPage = 'characterSelectionPage';
     updateView();
 }
+
+function goToCreateNewCharacterPage() {
+    model.app.currentPage = 'createNewCharacterPage';
+    updateView();
+}
+
+function goToMapPage(){
+    model.app.currentPage = 'mapPage';
+    updateView();
+}

@@ -1,5 +1,4 @@
 function mapPageView() {
-    model.app.currentPage = 'mapPage';
     document.getElementById("app").innerHTML = /*HTML*/ `
     <!-- mapPage Main div -->
     <div class='mapPage'>
