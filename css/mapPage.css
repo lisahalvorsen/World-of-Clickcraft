@@ -1,0 +1,260 @@
+.mapPage {
+    height: 100vh;
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.mapPage__top {
+    height: 75%;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mapPage__top__map {
+
+    height: 100%;
+    width: 80%;
+}
+
+.mapPage__top__map__heading {
+    background-color: rgb(240, 231, 231);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapPage__top__map__heading h1 {
+    font-size: 70px;
+}
+
+.mapPage__top__map__row {
+
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mapPage__top__map__col {
+    margin-top: 5%;
+    height: 100%;
+    width: 20%;
+}
+
+.townIsland,
+.caveIsland,
+.desertIsland,
+.forrestIsland,
+.mountainIsland,
+.bossIsland {
+    width: 200px;
+    height: 200px;
+}
+
+.caveIsland img,
+.desertIsland img,
+.forrestIsland img,
+.mountainIsland img {
+    width: 120%;
+    height: 120%;
+}
+
+.townIsland_image {
+    margin-left: -45px;
+    width: 120%;
+    height: 120%;
+}
+
+.town_image {
+    width: 40%;
+    margin-top: -170px;
+    margin-bottom: 400px;
+    margin-left: 50px;
+}
+
+.caveIsland .cave_image {
+    width: 50%;
+    height: 50%;
+    margin-top: -170px;
+    margin-bottom: 400px;
+    margin-left: 100px;
+}
+
+.desertIsland .desert_image {
+    width: 50%;
+    height: 50%;
+    margin-top: -190px;
+    margin-bottom: 400px;
+    margin-left: 50px;
+}
+
+.forrestIsland .forest_image {
+    width: 60%;
+    height: 50%;
+    margin-top: -190px;
+    margin-bottom: 400px;
+    margin-left: 50px;
+}
+
+.mountainIsland .mountain_image {
+    width: 70%;
+    height: 50%;
+    margin-top: -190px;
+    margin-bottom: 400px;
+    margin-left: 50px;
+}
+
+.bossIsland .boss_image {
+    width: 40%;
+    height: 40%;
+    margin-top: -190px;
+    margin-bottom: 100px;
+    margin-left: 90px;
+}
+
+.bossIsland img {
+    width: 120%;
+    height: 120%;
+    z-index: 5000;
+    position: relative;
+}
+
+.bridge {
+    width: 100px;
+    height: 200px;
+    z-index: 500;
+    position: relative;
+}
+
+.townBridge {
+    margin-top: -90px;
+    margin-left: 35px;
+    width: 120px;
+    height: 150px;
+}
+
+.caveBridge {
+    margin-left: 40px;
+    width: 120px;
+    height: 200px;
+    transform: rotate(80deg);
+}
+
+.dessertBridge {
+    margin-left: 40px;
+    width: 120px;
+    height: 200px;
+    transform: rotate(80deg);
+}
+
+.forrestBridge {
+    margin-top: 20px;
+    width: 120px;
+    height: 150px;
+    transform: rotate(-5deg);
+}
+
+.bossBridge {
+    margin-left: 40px;
+    width: 120px;
+    height: 200px;
+    transform: rotate(80deg);
+}
+
+.bridge img {
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    position: absolute;
+}
+
+.fish {
+    margin-top: 40px;
+    margin-left: 60px;
+    width: 40%;
+    height: 40%;
+}
+
+
+.mapPage__top__inventory {
+    background-color: rgb(205, 197, 197);
+    height: 100%;
+    width: 20%;
+    text-align: center;
+}
+
+.mapPage__top__inventory img {
+    width: 20%;
+    height: 20%;
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.mapPage__bottom {
+    height: 25%;
+    width: 100%;
+    background-color: rgb(213, 177, 151);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2;
+}
+
+.mapPage__bottom__img {
+    height: 100%;
+    width: 15%;
+    margin: 2px;
+}
+
+.wizard {
+    height: 100%;
+    width: 100%;
+}
+
+.mapPage__bottom__score {
+    background-color: rgb(205, 197, 197);
+    height: 100%;
+    width: 25%;
+    margin: 2px;
+    text-align: center;
+}
+
+.mapPage__bottom__score h2 {
+    margin-top: 10px;
+}
+
+.mapPage__bottom__msg {
+    background-color: rgb(205, 197, 197);
+    height: 100%;
+    width: 35%;
+    margin: 2px;
+    text-align: center;
+}
+
+.mapPage__bottom__msg h1 {
+    margin-top: 70px;
+}
+
+.mapPage__bottom__mission {
+    background-color: rgb(205, 197, 197);
+    height: 100%;
+    width: 25%;
+    margin: 2px;
+    text-align: center;
+}
+
+.mapPage__bottom__mission h1 {
+    margin-top: 70px;
+}

@@ -3,10 +3,10 @@ function loginView() {
 
 
     document.getElementById('app').innerHTML = /*HTML*/ `
-    <div class="loginPage">
+    <form class="loginPage" onsubmit='userLogin()'>
     <h1>Login</h1>
             <label for= "Username" > Username: </label >
-            <input type="text" id="first" placeholder="Enter Username" required />
+            <input type="text" id="username" placeholder="Enter Username" required />
 
             <label for="password"> Password: </label>
             <input type="password" id="password" placeholder="Enter Password" required />
@@ -14,6 +14,6 @@ function loginView() {
             <div class="wrap">
                 <button type="submit">Submit</button>
             </div>
-    </div>        
+    </form>        
     `;
 }
