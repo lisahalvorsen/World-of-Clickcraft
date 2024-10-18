@@ -1,19 +1,23 @@
 function loginView() {
-    model.app.currentPage = 'loginPage';
+    let username;
+    let password;
 
+    model.app.currentPage = 'login';
 
     document.getElementById('app').innerHTML = /*HTML*/ `
-    <form class="loginPage" onsubmit='userLogin()'>
-    <h1>Login</h1>
-            <label for= "Username" > Username: </label >
-            <input type="text" id="username" placeholder="Enter Username" required />
+    <div class="loginPage">
+    <h1>Login</h1> <br>
+            <label for= "Username">Username: </label >
+            <input type="text" id="loginUsername" oninput="username=this.value" required /><br>
 
-            <label for="password"> Password: </label>
-            <input type="password" id="password" placeholder="Enter Password" required />
+            <label for="password">Password: </label>
+            <input type="password" id="loginPassword" oninput="password=this.value" required /><br>
 
-            <div class="wrap">
-                <button type="submit">Submit</button>
-            </div>
-    </form>        
+            <button onclick="logInUser(username, password)" type="submit">Submit</button><br><br>
+            <button onclick="goToRegisterPage()">Forgot password?</button>
+            <button onclick="goToRegisterPage()">Create new user</button>
+
+            <p id="loginUserInfo"> </p>
+    </div>        
     `;
 }

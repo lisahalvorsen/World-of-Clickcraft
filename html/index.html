@@ -5,8 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World of Clickcraft</title>
-
-    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/homePage.css" />
     <link rel="stylesheet" href="../css/loginPage.css" />
     <link rel="stylesheet" href="../css/registerPage.css" />
@@ -17,14 +15,12 @@
     <div id="app"></div>
 
     <script src="../js/model.js"></script>
-    <script src="../js/homePageController.js"></script>
-    <script src="../js/homePageView.js"></script>
+    <script src="../js/homepageController.js"></script>
+    <script src="../js/homepageView.js"></script>
     <script src="../js/loginController.js"></script>
     <script src="../js/loginView.js"></script>
     <script src="../js/registerController.js"></script>
     <script src="../js/registerView.js"></script>
-    <script src="../js/mapPageController.js"></script>
-    <script src="../js/mapPageView.js"></script>
 </body>
 
 <script>
@@ -32,8 +28,7 @@
 
     function updateView() {
         currentPage = model.app.currentPage;
-        if (currentPage == 'mapPage') mapPageView();
-        else if (currentPage == 'homePage') homePageView();
+        if (currentPage == 'homePage') homePageView();
         else if (currentPage == 'loginPage') loginView();
         else if (currentPage == 'registerPage') registerView();
     }

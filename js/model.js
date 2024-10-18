@@ -1,8 +1,9 @@
 const model = {
     // Del 1
     app: {
-        currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
+        currentPage: 'home', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
         userId: null,
+        loggedInUser: '',
     },
 
     // Del 2
@@ -26,15 +27,18 @@ const model = {
 
     // Del 3 Data
     users: [
-        { userId: null, username: null, password: null, email: null },
+        { userId: 0, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
+        { userId: 1, username: 'Lars', password: 'lars', email: 'lars.larsen@gmail.com' },
     ],
 
     characters: [
-        { userId: null, characterId: null, classId: null, areaId: 1 },
+        { userId: 0, characterId: 0, classId: 1, areaId: 1 },
+        { userId: 1, characterId: 1, classId: 2, areaId: 1 },
     ],
 
     stats: [
-        { userId: null, characterId: null, hp: null, level: null, atk: null, def: null, spd: null },
+        { userId: 0, characterId: 0, hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
+        { userId: 1, characterId: 1, hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
     ],
 
     inventories: [
