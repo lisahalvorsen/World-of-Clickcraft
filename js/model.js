@@ -2,8 +2,8 @@ const model = {
     // Del 1
     app: {
         currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight'
-        loggedInCharacterId: null,
-        loggedInUser: '',
+        loggedInCharacterId: 0,
+        loggedInUser: 0,
     },
 
     // Del 2
@@ -27,7 +27,7 @@ const model = {
 
     // Del 3 Data
     users: [
-        { userId: 3, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
+        { userId: 0, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
         { userId: 1, username: 'Lars', password: 'lars', email: 'lars.larsen@gmail.com' },
     ],
 
