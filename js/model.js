@@ -77,4 +77,8 @@ const model = {
         { id: 1, name: 'Old sandals', description: '+5 spd', spd: 5 },
         { id: 2, name: 'New sandals', description: '+15 spd', spd: 15 },
     ],
+
+    caveQuest: [
+        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, },
+    ],
 };
