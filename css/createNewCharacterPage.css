@@ -1,0 +1,36 @@
+.createNewCharacterDiv {
+    background-color: antiquewhite;
+    width: 80%;
+    margin: auto;
+}
+
+.inputDiv {
+    padding-left: 8%;
+}
+
+.characterPictureDiv {
+    font-size: 100px;
+}
+
+.characterDiv{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 300px 300px;
+}
+
+.classChangeButtons {
+    padding-left: 21%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.createButtonDiv{
+    text-align: end;
+    padding-right: 15%;
+    padding-bottom: 5%;
+}
+
+h1 {
+    padding-top: 5%;
+    text-align: center;
+}
