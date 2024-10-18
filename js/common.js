@@ -25,6 +25,5 @@ function goToCreateNewCharacterPage() {
 
 function goToMapPage() {
     model.app.currentPage = 'mapPage';
-    model.app.currentCharacter;
     updateView();
 }

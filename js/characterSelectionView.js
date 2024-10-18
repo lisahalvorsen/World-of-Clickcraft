@@ -4,31 +4,27 @@ function characterSelectionView() {
     document.getElementById('app').innerHTML = /*HTML*/ `    
         <div>
             <h1>Hello, ${user.username}!</h1>
+            <h2>My characters</h2>
             ${drawCharactersHtml()}
+            <button onclick="goToCreateNewCharacterPage()">Create new character</button>
             <button onclick="homePageView()">Log out</button>
         </div>
     `;
 }
 
-function drawCharactersHtml() {
+function drawCharactersHtml() { // gjøre denne penere
+    let loggedInUserCharacters = [];
     let html = '';
-    let userCharacters = model.characters.find(character => character.userId === model.app.userId);
-    console.log(userCharacters);
 
-    if (model.users.userId === model.characters.userId) {
-        // console.log(model.users.userId);
-        // console.log(model.characters.userId);
+    let userCharacter = model.characters.find(character => character.userId === model.app.loggedInUser);
+    loggedInUserCharacters.push(userCharacter);
 
-        for (const character of model.characters) {
+    if (loggedInUserCharacters) {
+        for (const character of loggedInUserCharacters) {
             html += /*HTML*/ `<div>${character.name}</div>`;
             html += /*HTML*/ `<div>${character.gender}</div>`;
             html += /*HTML*/ `<button onclick="goToMapPage()">Play with this character</button>`;
-            html += /*HTML*/ `<button onclick="goToCreateNewCharacterPage()">Create new character</button>`;
         }
         return html;
-        // } else {
-        //     html += `<div>There are no characters to play with</div>`;
-        //     html += `<button onclick="goToCreateNewCharacterPage()">Create new character</button>`;
-        // }
     }
 }
