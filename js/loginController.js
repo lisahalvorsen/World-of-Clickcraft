@@ -12,7 +12,8 @@ function logInUser(username, password) {
 				userId = model.users[i].userId;
 				model.app.loggedInUser = userId;
 
-				if (model.characters.userId !== userId) {
+				const userHasCharacter = model.characters.some(character => character.userId === userId);
+				if (!userHasCharacter) {
 					goToCreateNewCharacterPage();
 				} else {
 					goToCharacterSelectionPage();
