@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/createNewCharacterPage.css" />
     <link rel="stylesheet" href="../css/mapPage.css" />
     <link rel="stylesheet" href="../css/characterSelectionPage.css" />
+    <link rel="stylesheet" href="../css/gameTemplate.css" />
 </head>
 
 <body>
@@ -31,6 +32,8 @@
     <script src="../js/mapPageController.js"></script>
     <script src="../js/mapPageView.js"></script>
     <script src="../js/caveQuest.js"></script>
+    <script src="../js/tempInGameTempleteView.js"></script>
+    <script src="../js/tempInGameTemplateController.js"></script>
 
 
 </body>
@@ -46,6 +49,7 @@
         else if (currentPage == 'createNewCharacterPage') createNewCharacterView();
         else if (currentPage == 'characterSelectionPage') characterSelectionView();
         else if (currentPage == 'mapPage') mapPageView();
+        else if (currentPage == 'inGamePage') gameTemplateView();
 
     }
 
