@@ -7,26 +7,39 @@ function characterSelectionView() {
             <h2>My characters</h2>
             <div class="myCharacters">${drawCharactersHtml()}</div>
             <div>
-                <button onclick="goToCreateNewCharacterPage()">Create new character</button>
-                <button onclick="homePageView()">Log out</button>
+                <button onclick="goToCreateNewCharacterPage()" class="characterSelectionBtn">Create new character</button>
+                <button onclick="homePageView()" class="characterSelectionBtn">Log out</button>
             </div>
         </div>
     `;
 }
 
-function drawCharactersHtml() { // gjøre denne penere
+function drawCharactersHtml() {
     let html = '';
 
     let userCharacter = model.characters.filter(character => character.userId === model.app.loggedInUser);
 
     for (const character of userCharacter) {
         html += /*HTML*/ `
-            <div>
+            <div class="characterInfo">
                 <img class="characterPicture" src="${character.picture}" />
-                <div>${character.name} ${character.gender}</div>
-                <button onclick="goToMapPage()" class="playBtn">Play with this character</button>
-            </div>
-        `;
+                <div class="characterName">${character.name} ${character.gender}</div>
+                ${drawCharacterLevelHtml()}
+                <button onclick="goToMapPage()" class="characterSelectionBtn">Play with this character</button>
+            </div>`;
+    }
+    return html;
+}
+
+function drawCharacterLevelHtml() {
+    let html = '';
+
+    let userCharacter = model.stats.filter(stat => stat.userId === model.app.loggedInUser);
+    console.log(userCharacter);
+
+    for (const character of userCharacter) {
+        html = /*HTML*/ ` 
+        <div>Level ${character.level}</div>`;
     }
     return html;
 }
