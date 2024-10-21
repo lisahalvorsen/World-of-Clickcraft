@@ -11,6 +11,11 @@
     font-size: 100px;
 }
 
+.characterImage {
+    width: 150px;
+    height: 250px;
+}
+
 .characterDiv{
     text-align: center;
     display: grid;

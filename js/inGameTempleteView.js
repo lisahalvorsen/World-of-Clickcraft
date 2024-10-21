@@ -10,6 +10,7 @@ let spd = 0;
 let weapon = '';
 let armor = '';
 let boots = '';
+let picture = '';
 
 function gameTemplateView() {
 
@@ -49,16 +50,17 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
+        <img class='footerCharacterImage' src="${picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
         </br>
         </br>
-        ATK:
+        ATK: ${atk}
         </br>
-        DEF:
+        DEF: ${def}
         </br>
-        SPD:
+        SPD: ${spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
@@ -89,28 +91,28 @@ function gameTemplateView() {
     inGameStats()
 }
 
-
 function inGameStats() {
-    let userId = model.app.userId
-    let userStats = model.stats.filter(userStat => {userStat.userId === userId })
-    let userEquipments = model.equippedItems.filter(userEquipment =>{userEquipment.userId === userId})
+    let UserId = model.app.loggedInUser
+    let characterId = model.app.loggedInCharacterId
+    let userStats = model.stats.filter(userStat => userStat.userId === UserId && userStat.characterId === characterId)
+    let userEquipments = model.equippedItems.filter(userEquipment => userEquipment.userId === UserId)
     let weaponId = userEquipments[0].weaponId
     let armorId = userEquipments[0].armorId
     let bootsId = userEquipments[0].bootsId
-    let userWeapon = model.weapons.filter(weapon => {weapon.id === weaponId})
-    let userArmor = model.armor.filter(armor => {armor.id === armorId})
-    let userBoots = model.boots.filter(boots =>{boots.id === bootsId})
+    let userWeapon = model.weapons.filter(weapon => weapon.id === weaponId)
+    let userArmor = model.armors.filter(armor => armor.id === armorId)
+    let userBoots = model.boots.filter(boots =>boots.id === bootsId)
 
     gold = userStats[0].money
     hp = userStats[0].hp
     level = userStats[0].level
     xp = userStats[0].xp
+    atk = userStats[0].atk
+    def = userStats[0].def
+    spd = userStats[0].spd
+    picture = userStats[0].picture
     weapon = userWeapon[0].name
     armor = userArmor[0].name
     boots = userBoots[0].name
-    gameTemplateView()
 }
 
-// headerChangeChar - onclick til change character
-
-//sample area 
