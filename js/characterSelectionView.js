@@ -25,7 +25,7 @@ function drawCharactersHtml() {
                 <img class="characterPicture" src="${character.picture}" />
                 <div class="characterName">${character.name} ${character.gender}</div>
                 ${drawCharacterLevelHtml()}
-                <button onclick="goToMapPage()" class="characterSelectionBtn">Play with this character</button>
+                <button onclick="gameTemplateView()" class="characterSelectionBtn">Play with this character</button>
             </div>`;
     }
     return html;
@@ -35,7 +35,6 @@ function drawCharacterLevelHtml() {
     let html = '';
 
     let userCharacter = model.stats.filter(stat => stat.userId === model.app.loggedInUser);
-    console.log(userCharacter);
 
     for (const character of userCharacter) {
         html = /*HTML*/ ` 
