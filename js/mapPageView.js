@@ -18,7 +18,7 @@ function mapPageView() {
 
                     <div class='mapPage__top__map__col'><img src="../images/water.png"></div>
                     <div class='mapPage__top__map__col'>
-                        <div class='mountainIsland'>
+                        <div class='mountainIsland' onclick='goToMountainIsland()'>
                             <img src="../images/island.png">
                             <img class='mountain_image' src="../images/mountain.png">
                         </div>
@@ -29,7 +29,7 @@ function mapPageView() {
                         </div>
                     </div>
                     <div class='mapPage__top__map__col'>
-                    <div class='bossIsland'>
+                    <div class='bossIsland' onclick='goToBossIsland()'>
                         <img src="../images/island.png">
                         <img class='boss_image' src="../images/boss.png">
                     </div>
@@ -37,7 +37,7 @@ function mapPageView() {
                     <div class='mapPage__top__map__col'><img class='fish'src="../images/fish.png"></div>
                     <div class='mapPage__top__map__col'><img src="../images/water.png"></div>
                     <div class='mapPage__top__map__col'>
-                        <div class='townIsland'>
+                        <div class='townIsland' onclick='goToTownIsland()'>
                             <img class='townIsland_image' src="../images/island.png">
                             <img class='town_image' src="../images/town.png">
                         </div>
@@ -73,7 +73,7 @@ function mapPageView() {
                     <div class='mapPage__top__map__col'><img src="../images/water.png"></div>
                     
                     <div class='mapPage__top__map__col'>
-                        <div class='forrestIsland'>
+                        <div class='forestIsland' onclick='goToforestIsland()'>
                             <img src="../images/island.png">
                             <img class='forest_image' src="../images/forest.png">
                         </div>
@@ -84,7 +84,7 @@ function mapPageView() {
                         </div>
                     </div>
                     <div class='mapPage__top__map__col'>
-                        <div class='desertIsland'>
+                        <div class='desertIsland' onclick='goToDesertIsland()'>
                             <img src="../images/island.png">
                             <img class='desert_image' src="../images/desert.png">
                         </div>
@@ -97,7 +97,7 @@ function mapPageView() {
                     </div>
 
                     <div class='mapPage__top__map__col'>
-                        <div class='caveIsland'>
+                        <div class='caveIsland' onclick='goToCaveIsland()'>
                             <img src="../images/island.png">
                             <img class='cave_image' src="../images/cave.png">
                         </div>
@@ -148,3 +148,5 @@ function mapPageView() {
     </div> <!-- end of mapPage Main div -->
     `
 }
+
+
