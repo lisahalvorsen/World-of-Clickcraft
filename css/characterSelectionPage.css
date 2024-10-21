@@ -1,0 +1,11 @@
+#myCharacters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#myCharacters>h1 {
+    margin-top: 10vh;
+}

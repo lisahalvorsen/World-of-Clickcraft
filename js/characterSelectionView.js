@@ -2,12 +2,14 @@ function characterSelectionView() {
     let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
 
     document.getElementById('app').innerHTML = /*HTML*/ `    
-        <div>
+        <div id="myCharacters">
             <h1>Hello, ${user.username}!</h1>
             <h2>My characters</h2>
             ${drawCharactersHtml()}
-            <button onclick="goToCreateNewCharacterPage()">Create new character</button>
-            <button onclick="homePageView()">Log out</button>
+            <div>
+                <button onclick="goToCreateNewCharacterPage()">Create new character</button>
+                <button onclick="homePageView()">Log out</button>
+            </div>
         </div>
     `;
 }
@@ -21,6 +23,7 @@ function drawCharactersHtml() { // gjøre denne penere
 
     if (loggedInUserCharacters) {
         for (const character of loggedInUserCharacters) {
+            html += /*HTML*/ `<div>${character.picture}</div>`;
             html += /*HTML*/ `<div>${character.name}</div>`;
             html += /*HTML*/ `<div>${character.gender}</div>`;
             html += /*HTML*/ `<button onclick="goToMapPage()">Play with this character</button>`;
