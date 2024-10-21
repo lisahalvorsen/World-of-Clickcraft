@@ -22,7 +22,7 @@ function drawCharactersHtml() { // gjøre denne penere
     for (const character of userCharacter) {
         html += /*HTML*/ `
             <div>
-                <div class="characterPicture">${character.picture}</div>
+                <img class="characterPicture" src="${character.picture}" />
                 <div>${character.name} ${character.gender}</div>
                 <button onclick="goToMapPage()" class="playBtn">Play with this character</button>
             </div>
