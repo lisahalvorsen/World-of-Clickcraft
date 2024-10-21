@@ -1,16 +1,26 @@
-#myCharacters {
+.characterContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
-#myCharacters>h1 {
-    margin-top: 10vh;
-    margin-bottom: 20px;
+.characterContainer>h1 {
+    margin-top: 5vh;
+    margin-bottom: 50px;
 }
 
 .characterPicture {
     font-size: 100px;
+}
+
+.myCharacters {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.playBtn {
+    margin-top: 10px;
 }

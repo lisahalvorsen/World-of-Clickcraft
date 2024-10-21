@@ -2,10 +2,10 @@ function characterSelectionView() {
     let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
 
     document.getElementById('app').innerHTML = /*HTML*/ `    
-        <div id="myCharacters">
+        <div class="characterContainer">
             <h1>Hello, ${user.username}!</h1>
             <h2>My characters</h2>
-            ${drawCharactersHtml()}
+            <div class="myCharacters">${drawCharactersHtml()}</div>
             <div>
                 <button onclick="goToCreateNewCharacterPage()">Create new character</button>
                 <button onclick="homePageView()">Log out</button>
@@ -15,19 +15,18 @@ function characterSelectionView() {
 }
 
 function drawCharactersHtml() { // gjøre denne penere
-    let loggedInUserCharacters = [];
     let html = '';
 
-    let userCharacter = model.characters.find(character => character.userId === model.app.loggedInUser);
-    loggedInUserCharacters.push(userCharacter);
+    let userCharacter = model.characters.filter(character => character.userId === model.app.loggedInUser);
 
-    if (loggedInUserCharacters) {
-        for (const character of loggedInUserCharacters) {
-            html += /*HTML*/ `<div class="characterPicture">${character.picture}</div>`;
-            html += /*HTML*/ `<div>${character.name}</div>`;
-            html += /*HTML*/ `<div>${character.gender} ♂</div>`;
-            html += /*HTML*/ `<button onclick="goToMapPage()">Play with this character</button>`;
-        }
-        return html;
+    for (const character of userCharacter) {
+        html += /*HTML*/ `
+            <div>
+                <div class="characterPicture">${character.picture}</div>
+                <div>${character.name} ${character.gender}</div>
+                <button onclick="goToMapPage()" class="playBtn">Play with this character</button>
+            </div>
+        `;
     }
+    return html;
 }

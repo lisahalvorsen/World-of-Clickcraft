@@ -2,7 +2,7 @@ function gameTemplateView() {
 
     model.app.currentPage = 'inGamePage';
 
-    document.getElementById('app').innerHTML= /*HTML*/`
+    document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
         <div class='headerHP'>
@@ -59,9 +59,9 @@ function gameTemplateView() {
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
         </br>
-        <button>Attack</button>
+        <button class="inGameBtn">Attack</button>
         </br>
-        <button>Back</button>
+        <button class="inGameBtn">Back</button>
         </div>
         <div class='footerInventoryDiv'>
         <h3>INVENTORY</h3>
