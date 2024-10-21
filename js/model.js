@@ -40,12 +40,12 @@ const model = {
     ],
 
     stats: [
-        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
+        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp:0, money: 1000},
+        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp:0, money: 1000},
     ],
 
     inventories: [
-        { userId: null, characterId: null, hasKey: false, money: 1000, pet: null },
+        { userId: null, characterId: null, hasKey: false, pet: null },
     ],
 
     equippedItems: [
@@ -53,9 +53,9 @@ const model = {
     ],
 
     classes: [
-        { id: 1, class: 'Warrior', description: 'blah blah blah', picture: '🧑‍🚒', hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { id: 2, class: 'Wizard', description: 'blah blah blah', picture: '🧙‍♂️', hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
-        { id: 3, class: 'Hunter', description: 'blah blah blah', picture: '🥷', hp: 80, level: 0, atk: 10, def: 20, spd: 30 },
+        { id: 1, class: 'Warrior', description: 'blah blah blah', picture: '🧑‍🚒', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money:1000},
+        { id: 2, class: 'Wizard', description: 'blah blah blah', picture: '🧙‍♂️', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money:1000},
+        { id: 3, class: 'Hunter', description: 'blah blah blah', picture: '🥷', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money:1000},
     ],
 
     weapons: [

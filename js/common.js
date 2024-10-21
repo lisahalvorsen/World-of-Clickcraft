@@ -23,7 +23,7 @@ function goToCreateNewCharacterPage() {
     updateView();
 }
 
-function goToMapPage() {
-    model.app.currentPage = 'mapPage';
+function goToGamePage() {
+    model.app.currentPage = 'inGamePage';
     updateView();
 }
