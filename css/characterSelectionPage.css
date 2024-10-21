@@ -1,0 +1,47 @@
+.characterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.characterContainer>h1 {
+    margin-top: 5vh;
+    margin-bottom: 50px;
+}
+
+.characterPicture {
+    height: 400px;
+}
+
+.myCharacters {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.characterSelectionBtn {
+    margin-top: 10px;
+    cursor: pointer;
+    width: 160px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+.characterSelectionBtn:hover {
+    border: 1px solid red;
+}
+
+.characterInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.characterName {
+    font-size: 30px;
+    font-weight: bold;
+}

@@ -34,9 +34,9 @@ const model = {
     ],
 
     characters: [
-        { userId: 0, characterId: 0, classId: 1, areaId: 1, name: 'Bob', gender: 'M' },
-        { userId: 1, characterId: 1, classId: 2, areaId: 1, name: 'Jack', gender: 'M' },
-        { userId: 1, characterId: 2, classId: 3, areaId: 1, name: 'Sarah', gender: 'F' },
+        { userId: 0, characterId: 0, classId: 1, areaId: 1, name: 'Bob', gender: '♂', picture: '../images/warriorMale.jpg' },
+        { userId: 1, characterId: 1, classId: 2, areaId: 1, name: 'Jack', gender: '♂', picture: '../images/wizardMale.jpg' },
+        { userId: 1, characterId: 2, classId: 3, areaId: 1, name: 'Sarah', gender: '♀', picture: '../images/hunterFemale.jpg' },
     ],
 
     stats: [
