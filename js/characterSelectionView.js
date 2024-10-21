@@ -8,7 +8,7 @@ function characterSelectionView() {
             <div class="myCharacters">${drawCharactersHtml()}</div>
             <div>
                 <button onclick="goToCreateNewCharacterPage()" class="characterSelectionBtn">Create new character</button>
-                <button onclick="homePageView()" class="characterSelectionBtn">Log out</button>
+                <button onclick="goToHomePage()" class="characterSelectionBtn">Log out</button>
             </div>
         </div>
     `;
@@ -25,7 +25,7 @@ function drawCharactersHtml() {
                 <img class="characterPicture" src="${character.picture}" />
                 <div class="characterName">${character.name} ${character.gender}</div>
                 ${drawCharacterLevelHtml()}
-                <button onclick="goToMapPage()" class="characterSelectionBtn">Play with this character</button>
+                <button onclick="goToGamePage()" class="characterSelectionBtn">Play with this character</button>
             </div>`;
     }
     return html;
@@ -35,7 +35,6 @@ function drawCharacterLevelHtml() {
     let html = '';
 
     let userCharacter = model.stats.filter(stat => stat.userId === model.app.loggedInUser);
-    console.log(userCharacter);
 
     for (const character of userCharacter) {
         html = /*HTML*/ ` 

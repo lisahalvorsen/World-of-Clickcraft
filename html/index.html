@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/mapPage.css" />
     <link rel="stylesheet" href="../css/characterSelectionPage.css" />
     <link rel="stylesheet" href="../css/gameTemplate.css" />
+    <link rel="stylesheet" href="../css/shopPage.css" />
 </head>
 
 <body>
@@ -32,9 +33,11 @@
     <script src="../js/mapPageController.js"></script>
     <script src="../js/mapPageView.js"></script>
     <script src="../js/caveQuest.js"></script>
+    <script src="../js/tempInGameTemplateController.js"></script>
+    <script src="../js/tempInGameTempleteView.js"></script>
     <script src="../js/inGameTempleteView.js"></script>
-    <script src="../js/inGameTemplateController.js"></script>
-
+    <script src="../js/shopController.js"></script>
+    <script src="../js/shopView.js"></script>
 
 </body>
 
@@ -50,7 +53,7 @@
         else if (currentPage == 'characterSelectionPage') characterSelectionView();
         else if (currentPage == 'mapPage') mapPageView();
         else if (currentPage == 'inGamePage') gameTemplateView();
-
+        else if (currentPage == 'shopPage') shopView();
     }
 
 
