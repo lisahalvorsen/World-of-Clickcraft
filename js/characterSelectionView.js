@@ -23,9 +23,9 @@ function drawCharactersHtml() { // gjøre denne penere
 
     if (loggedInUserCharacters) {
         for (const character of loggedInUserCharacters) {
-            html += /*HTML*/ `<div>${character.picture}</div>`;
+            html += /*HTML*/ `<div class="characterPicture">${character.picture}</div>`;
             html += /*HTML*/ `<div>${character.name}</div>`;
-            html += /*HTML*/ `<div>${character.gender}</div>`;
+            html += /*HTML*/ `<div>${character.gender} ♂</div>`;
             html += /*HTML*/ `<button onclick="goToMapPage()">Play with this character</button>`;
         }
         return html;

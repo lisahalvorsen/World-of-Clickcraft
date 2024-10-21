@@ -3,9 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 #myCharacters>h1 {
     margin-top: 10vh;
+    margin-bottom: 20px;
+}
+
+.characterPicture {
+    font-size: 100px;
 }
