@@ -34,7 +34,8 @@
 }
 
 .mapPage__top__map__heading h1 {
-    font-size: 60px;
+    margin-top: -50px;
+    font-size: 55px;
 }
 
 .mapPage__top__map__row {
