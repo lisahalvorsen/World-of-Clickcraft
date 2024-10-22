@@ -1,5 +1,5 @@
 function caveQuestView() {
-    document.getElementById("sceneDiv").innerHTML = /*HTML*/ `
+    document.getElementById("consoleSceneDiv").innerHTML = /*HTML*/ `
     <div class="caveQuestPage">
 		<div> boss </div>
 		<div> wall </div>
