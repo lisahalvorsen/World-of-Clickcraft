@@ -34,18 +34,18 @@ const model = {
     ],
 
     characters: [
-        { userId: 0, characterId: 0, classId: 1, areaId: 1, name: 'Bob', gender: 'M' },
-        { userId: 1, characterId: 1, classId: 2, areaId: 1, name: 'Jack', gender: 'M' },
-        { userId: 1, characterId: 2, classId: 3, areaId: 1, name: 'Sarah', gender: 'F' },
+        { userId: 0, characterId: 0, classId: 1, areaId: 1, name: 'Bob', gender: '♂', picture: '../images/warriorMale.jpg' },
+        { userId: 1, characterId: 1, classId: 2, areaId: 1, name: 'Jack', gender: '♂', picture: '../images/wizardMale.jpg' },
+        { userId: 1, characterId: 2, classId: 6, areaId: 1, name: 'Sarah', gender: '♀', picture: '../images/hunterFemale.jpg' },
     ],
 
     stats: [
-        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
+        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp:0, money: 1000},
+        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp:0, money: 1000},
     ],
 
     inventories: [
-        { userId: null, characterId: null, hasKey: false, money: 1000, pet: null },
+        { userId: null, characterId: null, hasKey: false, pet: null },
     ],
 
     equippedItems: [
@@ -53,9 +53,12 @@ const model = {
     ],
 
     classes: [
-        { id: 1, class: 'Warrior', description: 'blah blah blah', picture: '🧑‍🚒', hp: 100, level: 0, atk: 20, def: 30, spd: 10 },
-        { id: 2, class: 'Wizard', description: 'blah blah blah', picture: '🧙‍♂️', hp: 60, level: 0, atk: 30, def: 10, spd: 20 },
-        { id: 3, class: 'Hunter', description: 'blah blah blah', picture: '🥷', hp: 80, level: 0, atk: 10, def: 20, spd: 30 },
+        { id: 1, class: 'Warrior', gender:'♂', description: 'blah blah blah', picture: '../images/warriorMale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money:1000},
+        { id: 2, class: 'Wizard',  gender:'♂', description: 'blah blah blah', picture: '../images/wizardMale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money:1000},
+        { id: 3, class: 'Hunter',  gender:'♂', description: 'blah blah blah', picture: '../images/hunterMale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money:1000},
+        { id: 4, class: 'Warrior', gender: '♀', description: 'blah blah blah', picture: '../images/warriorFemale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money:1000},
+        { id: 5, class: 'Wizard', gender: '♀', description: 'blah blah blah', picture: '../images/wizardFemale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money:1000},
+        { id: 6, class: 'Hunter', gender: '♀', description: 'blah blah blah', picture: '../images/hunterFemale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money:1000},
     ],
 
     weapons: [

@@ -2,29 +2,43 @@ function characterSelectionView() {
     let user = model.users.find(user => user.userId === model.app.loggedInUser); // sjekke om den som logger inn har samme id som loggedInUser
 
     document.getElementById('app').innerHTML = /*HTML*/ `    
-        <div>
+        <div class="characterContainer">
             <h1>Hello, ${user.username}!</h1>
             <h2>My characters</h2>
-            ${drawCharactersHtml()}
-            <button onclick="goToCreateNewCharacterPage()">Create new character</button>
-            <button onclick="homePageView()">Log out</button>
+            <div class="myCharacters">${drawCharactersHtml()}</div>
+            <div>
+                <button onclick="goToCreateNewCharacterPage()" class="characterSelectionBtn">Create new character</button>
+                <button onclick="goToHomePage()" class="characterSelectionBtn">Log out</button>
+            </div>
         </div>
     `;
 }
 
-function drawCharactersHtml() { // gjøre denne penere
-    let loggedInUserCharacters = [];
+function drawCharactersHtml() {
     let html = '';
 
-    let userCharacter = model.characters.find(character => character.userId === model.app.loggedInUser);
-    loggedInUserCharacters.push(userCharacter);
+    let userCharacter = model.characters.filter(character => character.userId === model.app.loggedInUser);
 
-    if (loggedInUserCharacters) {
-        for (const character of loggedInUserCharacters) {
-            html += /*HTML*/ `<div>${character.name}</div>`;
-            html += /*HTML*/ `<div>${character.gender}</div>`;
-            html += /*HTML*/ `<button onclick="goToMapPage()">Play with this character</button>`;
-        }
-        return html;
+    for (const character of userCharacter) {
+        html += /*HTML*/ `
+            <div class="characterInfo">
+                <img class="characterPicture" src="${character.picture}" />
+                <div class="characterName">${character.name} ${character.gender}</div>
+                ${drawCharacterLevelHtml()}
+                <button onclick="goToGamePage()" class="characterSelectionBtn">Play with this character</button>
+            </div>`;
     }
+    return html;
+}
+
+function drawCharacterLevelHtml() {
+    let html = '';
+
+    let userCharacter = model.stats.filter(stat => stat.userId === model.app.loggedInUser);
+
+    for (const character of userCharacter) {
+        html = /*HTML*/ ` 
+        <div>Level ${character.level}</div>`;
+    }
+    return html;
 }
