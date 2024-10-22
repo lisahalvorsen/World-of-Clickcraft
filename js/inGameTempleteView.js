@@ -34,12 +34,12 @@ function gameTemplateView() {
         <div class='headerGameName'>
         <h1>${scene}</h1>
         </div>
-        <div class='headerChangeChar' onclick='goToCharacterSelectionPage()'>
+        <div class='headerChangeChar' onclick='goToCharacterSelectionPage()' >
         🔁Change Character 
         </div>
     </header>
     <div class='sceneDiv'>
-        ${isInMap?mapPageView():''}
+        ${isInMap ? mapPageView() : ''}
     </div>
 
     <div class='messagesDiv'>
@@ -101,7 +101,7 @@ function inGameStats() {
     let bootsId = userEquipments[0].bootsId
     let userWeapon = model.weapons.filter(weapon => weapon.id === weaponId)
     let userArmor = model.armors.filter(armor => armor.id === armorId)
-    let userBoots = model.boots.filter(boots =>boots.id === bootsId)
+    let userBoots = model.boots.filter(boots => boots.id === bootsId)
 
     gold = userStats[0].money
     hp = userStats[0].hp
