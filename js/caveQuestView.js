@@ -1,13 +1,27 @@
-// goToGamePage();
-// caveQuestView();
+
+
 
 function caveQuestView() {
-    document.getElementById("consoleSceneDiv").innerHTML = /*HTML*/ `
+	const stoneWallElement = '🪨';
+	const doorElement = '🚪';
+	let stoneWallPresent = false;
+
+    document.querySelector("sceneDiv").innerHTML = /*HTML*/ `
     <div class="caveQuestPage">
-		<div> boss </div>
-		<div> wall </div>
-		<div> monster </div>
-		<div> </div>
+		<div> 
+			<h2>Demi Boss</h2> 
+			<img src="../images/boss.png" alt="Boss">
+			<br><br><br><br><br>
+		</div>
+		<div> 
+			<h2>Obsticale</h2> 
+			${stoneWallPresent ? stoneWallElement : doorElement}
+			<br><br><br><br><br>
+		</div>
+		<div> 
+			<h2>Monster</h2> 
+			<div onclick='attackCaveMonster()'>👹</div>
+		</div>
     </div>
     `;
 }
