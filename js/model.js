@@ -40,8 +40,8 @@ const model = {
     ],
 
     stats: [
-        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp:0, money: 1000},
-        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp:0, money: 1000},
+        { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
+        { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
     ],
 
     inventories: [
@@ -53,12 +53,12 @@ const model = {
     ],
 
     classes: [
-        { id: 1, class: 'Warrior', gender:'♂', description: 'blah blah blah', picture: '../images/warriorMale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money:1000},
-        { id: 2, class: 'Wizard',  gender:'♂', description: 'blah blah blah', picture: '../images/wizardMale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money:1000},
-        { id: 3, class: 'Hunter',  gender:'♂', description: 'blah blah blah', picture: '../images/hunterMale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money:1000},
-        { id: 4, class: 'Warrior', gender: '♀', description: 'blah blah blah', picture: '../images/warriorFemale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money:1000},
-        { id: 5, class: 'Wizard', gender: '♀', description: 'blah blah blah', picture: '../images/wizardFemale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money:1000},
-        { id: 6, class: 'Hunter', gender: '♀', description: 'blah blah blah', picture: '../images/hunterFemale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money:1000},
+        { id: 1, class: 'Warrior', gender: '♂', description: 'blah blah blah', picture: '../images/warriorMale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
+        { id: 2, class: 'Wizard', gender: '♂', description: 'blah blah blah', picture: '../images/wizardMale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
+        { id: 3, class: 'Hunter', gender: '♂', description: 'blah blah blah', picture: '../images/hunterMale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money: 1000 },
+        { id: 4, class: 'Warrior', gender: '♀', description: 'blah blah blah', picture: '../images/warriorFemale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
+        { id: 5, class: 'Wizard', gender: '♀', description: 'blah blah blah', picture: '../images/wizardFemale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
+        { id: 6, class: 'Hunter', gender: '♀', description: 'blah blah blah', picture: '../images/hunterFemale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money: 1000 },
     ],
 
     weapons: [
@@ -88,5 +88,12 @@ const model = {
         { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, abondenQuest: false, },
         { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10 },
 
+    ],
+
+    shop: [
+        { id: 1, name: 'Rope', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20 },
+        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200 },
+        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300 },
+        { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350 },
     ],
 };

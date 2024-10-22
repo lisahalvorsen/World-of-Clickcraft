@@ -27,3 +27,8 @@ function goToGamePage() {
     model.app.currentPage = 'inGamePage';
     updateView();
 }
+
+function goToShop() {
+    model.app.currentPage = 'shopPage';
+    updateView();
+}
