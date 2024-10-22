@@ -38,7 +38,7 @@ function gameTemplateView() {
         🔁Change Character 
         </div>
     </header>
-    <div class='sceneDiv' id='consoleSceneDiv'>
+    <div class='sceneDiv'>
         ${isInMap?mapPageView():''}
     </div>
 

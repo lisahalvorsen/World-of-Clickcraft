@@ -1,3 +1,6 @@
+// goToGamePage();
+// caveQuestView();
+
 function caveQuestView() {
     document.getElementById("consoleSceneDiv").innerHTML = /*HTML*/ `
     <div class="caveQuestPage">
