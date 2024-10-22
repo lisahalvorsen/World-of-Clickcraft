@@ -10,6 +10,7 @@ function mapPageView() {
             <div class='mapPage__top__map'>
 
                 <div class='mapPage__top__map__heading'>
+                    <button onclick= 'logOutButton()'>Log out 👋 </button>
                     <h1>Map</h1>
                 </div>
                  <!-- mapPage__top__images -->
