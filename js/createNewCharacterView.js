@@ -1,6 +1,5 @@
 let characterDetailsIndex = 0;
 let characterName = '';
-let gender = '';
 let chosenClassId = 0;
 
 function createNewCharacterView() {
@@ -13,12 +12,6 @@ function createNewCharacterView() {
                 <div class='inputDiv'>
                     <label for='name'>Name:</label>
                     <input type='text' id='name' name='fname' oninput='characterName=this.value'>
-                    </br>
-                    Gender:
-                    <input type='checkbox' id='genderM' name='genderM' value='M' oninput='gender=this.value'>
-                    <label for='genderM'>M</label>
-                    <input type='checkbox' id='genderF' name='genderF' value='F' oninput='gender=this.value'>
-                    <label for='genderF'>F</label>
                 </div>
             </br>
             </br>
@@ -35,11 +28,13 @@ function characterDetailsHtml() {
     characterDetailsHtml += 
     `<div class='characterDiv'>
     <div class='characterDetailsDiv1'>
-        <div class='characterPictureDiv'>${characterObject.picture}</div>
+        <div class='characterPictureDiv'><img class='characterImage' src="${characterObject.picture}" alt=""></div>
         </br>
         ${characterObject.description}
     </div>
-    <div class='characterDetailsDiv2'>   
+    <div class='characterDetailsDiv2'>
+        Gender: ${characterObject.gender}
+        </br>
         Level: ${characterObject.level}
         </br>
         HP: ${characterObject.hp}
@@ -52,18 +47,24 @@ function characterDetailsHtml() {
     </div>
     </div>
     <div class='classChangeButtons'>
-        <button onclick='changeToNextCharacter()'><</button>
+        <button onclick='changeToLastCharacter()'><</button>
         ${characterObject.class}
         <button onclick='changeToNextCharacter()'>></button>
     </div>
-    <div class='createButtonDiv' onclick='createCharacter(chosenClassId, characterName, gender)'><button>Create</button></div>
+    <div class='createButtonDiv' onclick='createCharacter(chosenClassId, characterName)'><button>Create</button></div>
     `  
     return characterDetailsHtml
 }
 
 function changeToNextCharacter() {
     characterDetailsIndex++
-    if (characterDetailsIndex === 3) characterDetailsIndex = 0;
+    if (characterDetailsIndex === 6) characterDetailsIndex = 0;
+    createNewCharacterView()
+}
+
+function changeToLastCharacter() {
+    characterDetailsIndex--
+    if (characterDetailsIndex === -1) characterDetailsIndex = 5;
     createNewCharacterView()
 }
 
