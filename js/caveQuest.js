@@ -11,18 +11,18 @@ let caveMonsterPresent = true;
 let caveBossPresent = false;
 let stoneWallPresent = true;
 let stoneCount = 8;
+let keySelected = false;
 
 
-function caveQuest(){
-	// currentMission = model.caveQuest.name;
-	// currentQuestStep = model.caveQuest.currentMission;
-	// caveMonsterPresent = true;
-	if (caveMonsterPresent) {
-	}
-}
+// currentMission = model.caveQuest.name;
+// currentQuestStep = model.caveQuest.currentMission;
+// characterInventory = ...
+
+
+
 
 function attackBossMonster(){
-
+	console.log('Kill that thang!')
 }
 
 function attackCaveMonster(){
@@ -31,23 +31,24 @@ function attackCaveMonster(){
 		let characterDamageTaken = calculateDamage(caveMonsterAtk, characterDef);
 		let monsterRemainingHp = caveMonsterCurrentHp - caveMonsterDamageTaken;
 		let characterRemainingHp = characterCurrentHp - characterDamageTaken;
-		characterCurrentHp = characterRemainingHp;
+		characterCurrentHp = 10000//characterRemainingHp;
 		caveMonsterCurrentHp = monsterRemainingHp;
 
 		if (characterCurrentHp <= 0) {
 			console.log(`Oops! You are dead!`);
 			goToGamePage();
 		} else if (caveMonsterCurrentHp <=0) {
-			//caveMonsterPresent = false;
+			caveMonsterPresent = false;
 
 			// for the correct user V
 			// model.stats.money+= 100;
-			// model.inventory.key = true
+			model.inventories[0].hasKey = true;
+			model.caveQuest[0].progress++;
 			console.log(`Monster successfully slayed, continue`);
+			caveQuestView();
 		} else {
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
-				
 			console.log(`Your current hitpoints are ${characterCurrentHp}`)
 			console.log(`Cave monster has ${caveMonsterCurrentHp} hitpoints remaining`)
 		}
@@ -55,20 +56,36 @@ function attackCaveMonster(){
 }
 
 function getThroughStones(){
-	stoneCount--;
-	if (stoneCount <= 0){
-		stoneWallPresent = false; 
-		doorPresent = true;
+	if (model.caveQuest[0].progress === 1 && stoneWallPresent) {//for the correct user
+		stoneCount--;
+		console.log('You remove one stone...')
+		if (stoneCount == 0){
+			stoneWallPresent = false; 
+			doorPresent = true;
+			console.log('A door appear behind the stones.')
+			caveQuestView();
+		}
+	} else {
+		console.log('You must slay the monster before approaching the door.')
 	}
 }
 
 function getThroughDoor(){
 	//for correct character
-	//if (model.inventories.key == clicked?){
+	if (model.inventories[0].hasKey == true && keySelected == true){
 		doorPresent = false;
 		caveBossPresent = true;	
-	//}
+		console.log('You unlock the door and enter a room where you see a HUGE creature!')
+		caveQuestView();
+	} else {
+	console.log('Perhaps I can use the key the monster dropped..?')}
 }
+
+function selectKey(){
+	keySelected = !keySelected; 
+    console.log(keySelected ? 'Key selected' : 'Key unselected');
+}
+
 
 function calculateDamage(atkLvl, defLvl) {
     let maxDamage = 1000;  
