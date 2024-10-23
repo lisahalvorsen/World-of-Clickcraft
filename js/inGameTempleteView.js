@@ -1,5 +1,5 @@
 let scene = 'Map';
-let isInMap = true;
+let isInMap = true
 let gold = 0;
 let hp = 0;
 let level = 0;
@@ -39,7 +39,7 @@ function gameTemplateView() {
         </div>
     </header>
     <div class='sceneDiv'>
-        hei
+        ${isInMap?mapPageView():''}
     </div>
     <div class='messagesDiv'>
         <div class='messages'>

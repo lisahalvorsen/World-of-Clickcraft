@@ -1,7 +1,5 @@
 function mapPageView() {
-    document.getElementById("app").innerHTML = /*HTML*/ `
-    <!-- mapPage Main div -->
-    <div class='mapPage'>
+    return `<div class='mapPage'>
         <!-- top -->
         <div class='mapPage__top'>
 
@@ -106,7 +104,7 @@ function mapPageView() {
             
                 </div>
 
-            </div><!-- end of mapPage__top__map -->`
+            </div>`
 }
 
 
