@@ -2,7 +2,8 @@ function goToTownIsland() {
     alert('Town Island clicked!');
 }
 function goToCaveIsland() {
-    alert('Cave Island clicked!'); 
+    gameView = caveQuestView();
+    gameTemplateView();
 }
 function goToDesertIsland() {
     alert('Desert Island clicked!');
