@@ -45,7 +45,8 @@ function attackCaveMonster(){
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
 			console.log(`Monster successfully slayed, continue`);
-			caveQuestView();
+			gameView = caveQuestView()
+			gameTemplateView();
 		} else {
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
@@ -63,7 +64,8 @@ function getThroughStones(){
 			stoneWallPresent = false; 
 			doorPresent = true;
 			console.log('A door appear behind the stones.')
-			caveQuestView();
+			gameView = caveQuestView()
+			gameTemplateView();
 		}
 	} else {
 		console.log('You must slay the monster before approaching the door.')
@@ -76,7 +78,8 @@ function getThroughDoor(){
 		doorPresent = false;
 		caveBossPresent = true;	
 		console.log('You unlock the door and enter a room where you see a HUGE creature!')
-		caveQuestView();
+		gameView = caveQuestView()
+		gameTemplateView();
 	} else {
 	console.log('Perhaps I can use the key the monster dropped..?')}
 }
