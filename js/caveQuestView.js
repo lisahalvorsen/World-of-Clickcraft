@@ -5,10 +5,8 @@ const doorElement = '🚪';
 
 function caveQuestView() {
 	// document.querySelector(".sceneDiv").innerHTML = /*HTML*/ `
-	// return /*HTML*/`
-    // document.getElementById("app").innerHTML = /*HTML*/ 
-	// `
-    return `<div class="caveQuestPage">
+    return /*HTML*/`
+	<div class="caveQuestPage">
 		<div id='caveBoss'> 
 			${showingCaveBoss()}
 		</div>
