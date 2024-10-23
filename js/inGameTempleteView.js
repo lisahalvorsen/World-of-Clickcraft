@@ -1,16 +1,10 @@
 let scene = 'Map';
 let gameView = mapPageView()
-let gold = 0;
-let hp = 0;
-let level = 0;
-let xp = 0;
-let atk = 0;
-let def = 0;
-let spd = 0;
+let selectedCharactedStats
 let weapon = '';
 let armor = '';
 let boots = '';
-let picture = '';
+
 
 function gameTemplateView() {
 
@@ -22,16 +16,16 @@ function gameTemplateView() {
     <div class='gameTemplate'>
     <header class=headerBar>
         <div class='headerHP'>
-        ❤️: ${hp}
+        ❤️: ${selectedCharactedStats.currenthp}/${selectedCharactedStats.hp}
         </div>
         <div class='headerGold'>
-        🪙: ${gold}
+        🪙: ${selectedCharactedStats.money}
         </div>
         <div class='headerLevel'>
-        Level: ${level}
+        Level: ${selectedCharactedStats.level}
         </div>
         <div class='headerXP'>
-        XP: ${xp}
+        XP: ${selectedCharactedStats.xp}
         </div>
         <div class='headerGameName'>
         <h1>${scene}</h1>
@@ -51,17 +45,17 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
-        <img class='footerCharacterImage' src="${picture}" alt="">
+        <img class='footerCharacterImage' src="${selectedCharactedStats.picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
         </br>
         </br>
-        ATK: ${atk}
+        ATK: ${selectedCharactedStats.atk}
         </br>
-        DEF: ${def}
+        DEF: ${selectedCharactedStats.def}
         </br>
-        SPD: ${spd}
+        SPD: ${selectedCharactedStats.spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
@@ -94,24 +88,14 @@ function gameTemplateView() {
 function inGameStats() {
     let UserId = model.app.loggedInUser
     let characterId = model.app.loggedInCharacterId
-    let userStats = model.stats.filter(userStat => userStat.userId === UserId && userStat.characterId === characterId)
-    let userEquipments = model.equippedItems.filter(userEquipment => userEquipment.userId === UserId)
-    let weaponId = userEquipments[0].weaponId
-    let armorId = userEquipments[0].armorId
-    let bootsId = userEquipments[0].bootsId
-    let userWeapon = model.weapons.filter(weapon => weapon.id === weaponId)
-    let userArmor = model.armors.filter(armor => armor.id === armorId)
-    let userBoots = model.boots.filter(boots => boots.id === bootsId)
+    let userStats = model.stats.find(userStat => userStat.userId === UserId && userStat.characterId === characterId)
+    selectedCharactedStats = userStats
+    let userEquipments = model.equippedItems.find(userEquipment => userEquipment.userId === UserId)
+    let userWeapon = model.weapons.find(weapon => weapon.id === userEquipments.weaponId)
+    let userArmor = model.armors.find(armor => armor.id === userEquipments.armorId)
+    let userBoots = model.boots.find(boots => boots.id === userEquipments.bootsId)
 
-    gold = userStats[0].money
-    hp = userStats[0].hp
-    level = userStats[0].level
-    xp = userStats[0].xp
-    atk = userStats[0].atk
-    def = userStats[0].def
-    spd = userStats[0].spd
-    picture = userStats[0].picture
-    weapon = userWeapon[0].name
-    armor = userArmor[0].name
-    boots = userBoots[0].name
+    weapon = userWeapon.name
+    armor = userArmor.name
+    boots = userBoots.name
 }
