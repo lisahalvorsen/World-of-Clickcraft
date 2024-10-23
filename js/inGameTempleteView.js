@@ -39,9 +39,8 @@ function gameTemplateView() {
         </div>
     </header>
     <div class='sceneDiv'>
-        ${isInMap ? mapPageView() : ''}
+        hei
     </div>
-
     <div class='messagesDiv'>
         <div class='messages'>
         <h3>MESSAGES</h3>
