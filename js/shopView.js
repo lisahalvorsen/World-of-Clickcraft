@@ -8,16 +8,23 @@ function shopView() {
                 <button onclick="drawShopItemsHtml('Pets')">Pets</button>
                 <button onclick="drawShopItemsHtml('Weapons')">Weapons</button>
             </div>
-            <div></div> <!-- ${drawShopItemsHtml()} -->
+            <div id="items"></div>
+            <button onclick="goToTown()">Exit</button>
         </div>
     `;
 }
 
-function drawShopItemsHtml(category) {
+function drawShopItemsHtml(category = null) {
+    let html = '';
 
-    console.log(category);
-
-    // for (const item of model.shop) {
-    //     console.log(item);
-    // }
+    for (const item of model.shop) {
+        if (!category || item.category === category) {
+            html += /*HTML*/ `                 
+            <div>${item.name}</div>                 
+            <div>$ ${item.price}</div>                  
+            <button onclick="buyItem()">Buy</button>             
+            `;
+        }
+    }
+    document.getElementById('items').innerHTML = html; // endre på denne (?) + legge til bilder + CSS
 }

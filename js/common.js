@@ -32,3 +32,8 @@ function goToShop() {
     model.app.currentPage = 'shopPage';
     updateView();
 }
+
+function goToTown() {
+    model.app.currentPage = 'townPage';
+    updateView();
+}
