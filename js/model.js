@@ -42,6 +42,7 @@ const model = {
     stats: [
         { userId: 0, characterId: 0, currenthp: 100, hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
         { userId: 1, characterId: 1, currenthp: 60, hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
+        { userId: 1, characterId: 2, currenthp: 60, hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money: 1000},
     ],
 
     inventories: [
@@ -49,7 +50,9 @@ const model = {
     ],
 
     equippedItems: [
-        { userId: null, characterId: null, weaponId: null, armorId: null, bootsId: null },
+        { userId: 0, characterId: 0, weaponId: 1, armorId: 1, bootsId: 1 },
+        { userId: 1, characterId: 1, weaponId: 3, armorId: 3, bootsId: 1 },
+        { userId: 1, characterId: 2, weaponId: 5, armorId: 5, bootsId: 1 },
     ],
 
     classes: [

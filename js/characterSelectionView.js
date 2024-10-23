@@ -25,7 +25,7 @@ function drawCharactersHtml() {
                 <img class="characterPicture" src="${character.picture}" />
                 <div class="characterName">${character.name} ${character.gender}</div>
                 ${drawCharacterLevelHtml()}
-                <button onclick="goToGamePage()" class="characterSelectionBtn">Play with this character</button>
+                <button onclick="playWithCharacter(${character.characterId})" class="characterSelectionBtn">Play with this character</button>
             </div>`;
     }
     return html;
