@@ -39,7 +39,7 @@ function registerNewUser(password, email, username) {
 			countdown--;
 			registerReturnMessage.innerHTML = `Registration successful. Redirecting to login page in ${countdown} seconds. <span style="color:blue; text-decoration:underline; cursor:pointer;" onclick="goToLoginPage()">Click here</span> to return to login page now.`;
 
-			if (countdown === 0 && currentPage === 'register') {
+			if (countdown === 0 && currentPage === 'registerPage') {
 				clearInterval(intervalId);
 				goToLoginPage();
 			}
