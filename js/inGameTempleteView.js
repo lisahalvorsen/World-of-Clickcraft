@@ -1,10 +1,5 @@
 let scene = 'Map';
 let gameView = mapPageView()
-let selectedCharactedStats
-let weapon = '';
-let armor = '';
-let boots = '';
-
 
 function gameTemplateView() {
 
@@ -16,16 +11,16 @@ function gameTemplateView() {
     <div class='gameTemplate'>
     <header class=headerBar>
         <div class='headerHP'>
-        ❤️: ${selectedCharactedStats.currenthp}/${selectedCharactedStats.hp}
+        ❤️: ${model.app.currentCharacterInfo.currenthp}/${model.app.currentCharacterInfo.hp}
         </div>
         <div class='headerGold'>
-        🪙: ${selectedCharactedStats.money}
+        🪙: ${model.app.currentCharacterInfo.money}
         </div>
         <div class='headerLevel'>
-        Level: ${selectedCharactedStats.level}
+        Level: ${model.app.currentCharacterInfo.level}
         </div>
         <div class='headerXP'>
-        XP: ${selectedCharactedStats.xp}
+        XP: ${model.app.currentCharacterInfo.xp}
         </div>
         <div class='headerGameName'>
         <h1>${scene}</h1>
@@ -45,27 +40,27 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
-        <img class='footerCharacterImage' src="${selectedCharactedStats.picture}" alt="">
+        <img class='footerCharacterImage' src="${model.app.currentCharacterInfo.picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
         </br>
         </br>
-        ATK: ${selectedCharactedStats.atk}
+        ATK: ${model.app.currentCharacterInfo.atk}
         </br>
-        DEF: ${selectedCharactedStats.def}
+        DEF: ${model.app.currentCharacterInfo.def}
         </br>
-        SPD: ${selectedCharactedStats.spd}
+        SPD: ${model.app.currentCharacterInfo.spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
         </br>
         </br>
-        WEAPON: ${weapon}
+        WEAPON: ${model.app.currentCharacterInfo.weapon}
         </br>
-        ARMOR: ${armor}
+        ARMOR: ${model.app.currentCharacterInfo.armor}
         </br>
-        BOOTS: ${boots}
+        BOOTS: ${model.app.currentCharacterInfo.boots}
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
@@ -89,13 +84,22 @@ function inGameStats() {
     let UserId = model.app.loggedInUser
     let characterId = model.app.loggedInCharacterId
     let userStats = model.stats.find(userStat => userStat.userId === UserId && userStat.characterId === characterId)
-    selectedCharactedStats = userStats
     let userEquipments = model.equippedItems.find(userEquipment => userEquipment.userId === UserId)
     let userWeapon = model.weapons.find(weapon => weapon.id === userEquipments.weaponId)
     let userArmor = model.armors.find(armor => armor.id === userEquipments.armorId)
     let userBoots = model.boots.find(boots => boots.id === userEquipments.bootsId)
 
-    weapon = userWeapon.name
-    armor = userArmor.name
-    boots = userBoots.name
+    model.app.currentCharacterInfo = {
+    currenthp: userStats.currenthp,
+    picture: userStats.picture,
+    hp: userStats.hp,
+    level: userStats.level,
+    atk: userStats.atk,
+    def: userStats.def,
+    spd: userStats.spd,
+    xp: userStats.xp,
+    money: userStats.money,
+    weapon:userWeapon.name,
+    armor:userArmor.name,
+    boots:userBoots.name}
 }
