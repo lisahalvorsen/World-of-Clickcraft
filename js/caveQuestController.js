@@ -100,7 +100,9 @@ function calculateDamage(atkLvl, defLvl) {
     return finalDamage;
 }
 
-// 5 *1000
-//
+// 0,1 *1000 = 10
+// 0,1*10
+
+
 
 
