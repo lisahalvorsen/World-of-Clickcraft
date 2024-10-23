@@ -44,6 +44,7 @@
 
     function updateView() {
         currentPage = model.app.currentPage;
+
         if (currentPage == 'homePage') homePageView();
         else if (currentPage == 'loginPage') loginView();
         else if (currentPage == 'registerPage') registerView();
@@ -51,6 +52,7 @@
         else if (currentPage == 'characterSelectionPage') characterSelectionView();
         else if (currentPage == 'mapPage') mapPageView();
         else if (currentPage == 'inGamePage') gameTemplateView();
+        else if (currentPage == 'caveQuestView') caveQuestView();
         else if (currentPage == 'shopPage') shopView();
     }
 

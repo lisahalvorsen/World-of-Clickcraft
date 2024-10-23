@@ -38,8 +38,8 @@ function gameTemplateView() {
         🔁Change Character 
         </div>
     </header>
-    <div class='sceneDiv'>
-        ${gameView}
+     <div class='sceneDiv'>
+         ${gameView}
     </div>
     <div class='messagesDiv'>
         <div class='messages'>
@@ -53,29 +53,29 @@ function gameTemplateView() {
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
-        </br>
-        </br>
+        <br>
+        <br>
         ATK: ${atk}
-        </br>
+        <br>
         DEF: ${def}
-        </br>
+        <br>
         SPD: ${spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
-        </br>
-        </br>
+        <br>
+        <br>
         WEAPON: ${weapon}
-        </br>
+        <br>
         ARMOR: ${armor}
-        </br>
+        <br>
         BOOTS: ${boots}
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
-        </br>
+        <br>
         <button class="inGameBtn">Attack</button>
-        </br>
+        <br>
         <button class="inGameBtn">Back</button>
         </div>
         <div class='footerInventoryDiv'>
