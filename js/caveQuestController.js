@@ -17,7 +17,8 @@ let keySelected = false;
 // currentMission = model.caveQuest.name;
 // currentQuestStep = model.caveQuest.currentMission;
 // characterInventory = ...
-
+//legge til health potion mulighet mid game.. endre characterCurrentHp
+//koble til inventory
 
 
 
@@ -31,7 +32,7 @@ function attackCaveMonster(){
 		let characterDamageTaken = calculateDamage(caveMonsterAtk, characterDef);
 		let monsterRemainingHp = caveMonsterCurrentHp - caveMonsterDamageTaken;
 		let characterRemainingHp = characterCurrentHp - characterDamageTaken;
-		characterCurrentHp = 10000//characterRemainingHp;
+		characterCurrentHp = characterRemainingHp;
 		caveMonsterCurrentHp = monsterRemainingHp;
 
 		if (characterCurrentHp <= 0) {
