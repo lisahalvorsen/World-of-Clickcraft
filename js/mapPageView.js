@@ -6,10 +6,6 @@ function mapPageView() {
             <!-- mapPage__top__map -->
             
             <div class='mapPage__top__map'>
-
-                <div class='mapPage__top__map__heading'>
-                    <h1>Map</h1>
-                </div>
                  <!-- mapPage__top__images -->
 
                 <div class='mapPage__top__map__row'>

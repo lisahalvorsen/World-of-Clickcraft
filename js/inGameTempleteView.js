@@ -16,6 +16,8 @@ function gameTemplateView() {
 
     model.app.currentPage = 'inGamePage';
 
+    inGameStats()
+
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
@@ -87,7 +89,6 @@ function gameTemplateView() {
     </footer>
     </div>
     `;
-    inGameStats()
 }
 
 function inGameStats() {
@@ -113,10 +114,4 @@ function inGameStats() {
     weapon = userWeapon[0].name
     armor = userArmor[0].name
     boots = userBoots[0].name
-}
-
-function toCave() {
-
-    isInCave = true
-    isInMap = false
 }
