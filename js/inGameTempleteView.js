@@ -1,5 +1,5 @@
 let scene = 'Map';
-let isInMap = true
+let gameView = mapPageView()
 let gold = 0;
 let hp = 0;
 let level = 0;
@@ -39,7 +39,7 @@ function gameTemplateView() {
         </div>
     </header>
     <div class='sceneDiv'>
-        ${isInMap?mapPageView():''}
+        ${gameView}
     </div>
     <div class='messagesDiv'>
         <div class='messages'>
@@ -115,3 +115,8 @@ function inGameStats() {
     boots = userBoots[0].name
 }
 
+function toCave() {
+
+    isInCave = true
+    isInMap = false
+}
