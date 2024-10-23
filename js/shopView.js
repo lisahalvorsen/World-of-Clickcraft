@@ -3,18 +3,21 @@ function shopView() {
         <div>
             <h1>Shop</h1>
             <div>
-                <button>Equipment</button>
-                <button>Clothing</button>
-                <button>Pets</button>
-                <button>Weapons</button>
+                <button onclick="drawShopItemsHtml('Equipment')">Equipment</button>
+                <button onclick="drawShopItemsHtml('Clothing')">Clothing</button>
+                <button onclick="drawShopItemsHtml('Pets')">Pets</button>
+                <button onclick="drawShopItemsHtml('Weapons')">Weapons</button>
             </div>
-            <div>${drawShopItemsHtml()}</div>
+            <div></div> <!-- ${drawShopItemsHtml()} -->
         </div>
     `;
 }
 
-function drawShopItemsHtml() {
-    for (const item of model.shop) {
-        console.log(item);
-    }
+function drawShopItemsHtml(category) {
+
+    console.log(category);
+
+    // for (const item of model.shop) {
+    //     console.log(item);
+    // }
 }
