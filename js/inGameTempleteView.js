@@ -47,29 +47,29 @@ function gameTemplateView() {
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
-        </br>
-        </br>
+        <br>
+        <br>
         ATK: ${model.app.currentCharacterInfo.atk}
-        </br>
+        <br>
         DEF: ${model.app.currentCharacterInfo.def}
-        </br>
+        <br>
         SPD: ${model.app.currentCharacterInfo.spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
-        </br>
-        </br>
+        <br>
+        <br>
         WEAPON: ${model.app.currentCharacterInfo.weapon}
-        </br>
+        <br>
         ARMOR: ${model.app.currentCharacterInfo.armor}
-        </br>
+        <br>
         BOOTS: ${model.app.currentCharacterInfo.boots}
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
         <br>
         <button class="inGameBtn">Attack</button>
-        </br>
+        <br>
         <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
         </div>
         <div class='footerInventoryDiv'>
