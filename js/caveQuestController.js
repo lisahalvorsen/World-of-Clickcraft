@@ -14,6 +14,8 @@ let keySelected = false;
 
 function attackBossMonster(){
 	model.app.currentCharacterInfo.messageLog.push('Kill that thang!')
+	gameView = caveQuestView();
+	gameTemplateView();
 }
 
 function attackCaveMonster(){
@@ -31,9 +33,7 @@ function attackCaveMonster(){
 
 		if (model.app.currentCharacterInfo.currenthp <= 0) {
 			model.app.currentCharacterInfo.messageLog.push(`Oops! You are dead!`);
-			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;		
-			gameView=mapPageView();
-			goToGamePage();
+			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;
 
 		} else if (caveMonsterStats.currentHp <=0) {
 			model.caveQuest[1].caveMonsterPresent = false;
@@ -43,33 +43,33 @@ function attackCaveMonster(){
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
 			model.app.currentCharacterInfo.messageLog.push(`Monster successfully slayed, continue`);
-			gameView = caveQuestView()
-			gameTemplateView();
 
 		} else {
-			model.app.currentCharacterInfo.messageLog.push(`damage taken on cave monster ${caveMonsterDamageTaken}`)
-			model.app.currentCharacterInfo.messageLog.push(`damage recived from cave monster ${characterDamageTaken}`)
-			model.app.currentCharacterInfo.messageLog.push(`Your current hitpoints are ${model.app.currentCharacterInfo.currenthp}`)
-			model.app.currentCharacterInfo.messageLog.push(`Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining`)
+			model.app.currentCharacterInfo.messageLog.push(`Damage taken on cave monster: ${caveMonsterDamageTaken}.`)
+			model.app.currentCharacterInfo.messageLog.push(`Damage recived from cave monster: ${characterDamageTaken}.`)
+			model.app.currentCharacterInfo.messageLog.push(`Your current hitpoints are ${model.app.currentCharacterInfo.currenthp}.`)
+			model.app.currentCharacterInfo.messageLog.push(`Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining.`)
 		}
 	} 
+	gameView = caveQuestView();
+	gameTemplateView();
 }
 
 function getThroughStones(){
 	//for the correct user
 	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
 		model.caveQuest[0].stoneCount--;
-		model.app.currentCharacterInfo.messageLog.push('You remove one stone...')
+		model.app.currentCharacterInfo.messageLog.push('You remove one stone...');
 		if (model.caveQuest[0].stoneCount == 0){
 			model.caveQuest[0].stoneWallPresent = false; 
 			model.caveQuest[0].doorPresent = true;
 			model.app.currentCharacterInfo.messageLog.push('A door appear behind the stones.')
-			gameView = caveQuestView()
-			gameTemplateView();
 		}
 	} else {
 		model.app.currentCharacterInfo.messageLog.push('You must slay the monster before approaching the door.')
 	}
+	gameView = caveQuestView();
+	gameTemplateView();
 }
 
 function getThroughDoor(){
@@ -78,15 +78,18 @@ function getThroughDoor(){
 		model.caveQuest[0].doorPresent = false;
 		model.caveQuest[2].caveBossPresent = true;	
 		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!')
-		gameView = caveQuestView()
-		gameTemplateView();
 	} else {
-		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?')}
+		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?')
+	}
+	gameView = caveQuestView();
+	gameTemplateView();
 }
 
 function selectKey(){
 	keySelected = !keySelected; 
     model.app.currentCharacterInfo.messageLog.push(keySelected ? 'Key selected' : 'Key unselected');
+	gameView = caveQuestView();
+	gameTemplateView();
 }
 
 
