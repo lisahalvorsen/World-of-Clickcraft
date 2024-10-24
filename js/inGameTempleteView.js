@@ -81,9 +81,9 @@ function gameTemplateView() {
             <h3>MISSION</h3>
             <br>
             <div class="currentMisson">
-               ${model.app.currentCharacterInfo.currentQuest??''}
+               Current Quest: ${model.app.currentCharacterInfo.currentQuest??'None'}
                 <br>
-                ${model.app.currentCharacterInfo.currentQuestStep??''}
+                Quest step: ${model.app.currentCharacterInfo.currentQuestStep??'None'}
                </div>
         </div>
     </footer>
