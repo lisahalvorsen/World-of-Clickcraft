@@ -29,8 +29,8 @@ function gameTemplateView() {
         🔁Change Character 
         </div>
     </header>
-    <div class='sceneDiv'>
-        ${gameView}
+     <div class='sceneDiv'>
+         ${gameView}
     </div>
     <div class='messagesDiv'>
         <div class='messages'>
@@ -64,10 +64,15 @@ function gameTemplateView() {
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
-        </br>
+        <br>
         <button class="inGameBtn">Attack</button>
+<<<<<<< HEAD
+        <br>
+        <button class="inGameBtn">Back</button>
+=======
         </br>
         <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
+>>>>>>> 49806dfe81d82dcd3a105f7ce06442f9ec31191b
         </div>
         <div class='footerInventoryDiv'>
         <h3>INVENTORY</h3>
