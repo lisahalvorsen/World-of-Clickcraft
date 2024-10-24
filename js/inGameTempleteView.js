@@ -75,7 +75,11 @@ function gameTemplateView() {
         <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
         </div>
         <div class='footerInventoryDiv'>
-        <h3>INVENTORY</h3>
+            <h3>INVENTORY</h3>
+            <div class="currentInventory">
+                 <br>
+                 ${model.app.currentCharacterInfo.currentInventory??''}
+         </div>
         </div>
         <div class='footerMissionsDiv'>
             <h3>MISSION</h3>
@@ -84,7 +88,7 @@ function gameTemplateView() {
                Current Quest: ${model.app.currentCharacterInfo.currentQuest??''}
                 <br>
                 Quest step: ${model.app.currentCharacterInfo.currentQuestStep??''}
-               </div>
+            </div>
         </div>
     </footer>
     </div>
