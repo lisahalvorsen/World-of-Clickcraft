@@ -28,7 +28,3 @@ function goToBossIsland() {
     gameTemplateView();
 
 }
-function logOutButton(){
-    alert('logging Out Now!');
-     window.location.href = 'You_are_logged_out_now'
-}

@@ -18,9 +18,19 @@
     background-color: bisque;
     border: 2px double black;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px auto 250px;
+    grid-template-columns: 100px 100px 100px 100px 100px auto 250px;
 }
-
+.headerBtn{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.headerBtn button{
+    padding:3px 5px;
+}
+.headerBtn button:hover{
+    background-color: darkgray;
+    color: white;
+}
 .headerHP {
     margin-top: 20px;
     margin-left: 10px;

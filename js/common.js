@@ -37,3 +37,9 @@ function goToTown() {
     model.app.currentPage = 'townPage';
     updateView();
 }
+
+function logOutButton(){
+    alert('logging Out Now!');
+    model.app.currentPage = 'homePage';
+    updateView();
+}
