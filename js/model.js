@@ -5,7 +5,7 @@ const model = {
         userId: null,
         loggedInCharacterId: 0,
         loggedInUser: 0,
-        currentCharacterInfo:null
+        currentCharacterInfo: null
     },
 
     // Del 2
@@ -47,14 +47,16 @@ const model = {
     ],
 
     inventories: [
-        { userId: null, characterId: null, hasKey: false, pet: null },
+        { userId: 0, characterId: 0, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
+        { userId: 1, characterId: 1, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
+        { userId: 1, characterId: 2, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
     ],
 
     messageLog: [
-        { userId: 0, characterId: 0, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
-        { userId: 1, characterId: 1, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
-        { userId: 1, characterId: 2, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
-   
+        { userId: 0, characterId: 0, text: 'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!' },
+        { userId: 1, characterId: 1, text: 'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!' },
+        { userId: 1, characterId: 2, text: 'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!' },
+
     ],
 
     equippedItems: [
@@ -96,7 +98,7 @@ const model = {
     ],
 
     caveQuest: [
-        { id: 1, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, abondenQuest: false, stoneWallPresent: true, doorPresent:false, stoneCount: 5,},
+        { id: 1, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, abondenQuest: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5, },
         { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true, },
         { id: 3, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false, },
 
@@ -108,5 +110,5 @@ const model = {
         { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300 },
         { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350 },
     ],
-  
+
 };
