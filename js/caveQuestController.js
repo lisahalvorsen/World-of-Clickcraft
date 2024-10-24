@@ -5,12 +5,11 @@
 let keySelected = false;
 
 // characterInventory = ...
-//legge til health potion mulighet mid game.. endre characterCurrentHp
+//legge til health potion mulighet mid game.. endrer characterCurrentHp
+
 //koble til inventory
 //fra consol log til chat
 
-// my flytte    inGameStats() fra gameTemplateView() {
-// og heller kalle den ved innlogging..
 
 function attackBossMonster(){
 	console.log('Kill that thang!')
@@ -23,7 +22,6 @@ function attackCaveMonster(){
 	if (model.app.currentCharacterInfo.currenthp > 0 && caveMonsterStats.currentHp > 0){
 		let caveMonsterDamageTaken = calculateDamage(currentCharacter.atk, caveMonsterStats.def);
 		let characterDamageTaken = calculateDamage(caveMonsterStats.atk, currentCharacter.def);
-		
 		let monsterRemainingHp = caveMonsterStats.currentHp - caveMonsterDamageTaken;
 		let characterRemainingHp = model.app.currentCharacterInfo.currenthp - characterDamageTaken;
 		model.app.currentCharacterInfo.currenthp = characterRemainingHp;
@@ -35,6 +33,7 @@ function attackCaveMonster(){
 			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;		
 			gameView=mapPageView();
 			goToGamePage();
+
 		} else if (caveMonsterStats.currentHp <=0) {
 			model.caveQuest[1].caveMonsterPresent = false;
 
@@ -45,6 +44,7 @@ function attackCaveMonster(){
 			console.log(`Monster successfully slayed, continue`);
 			gameView = caveQuestView()
 			gameTemplateView();
+
 		} else {
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
@@ -55,7 +55,8 @@ function attackCaveMonster(){
 }
 
 function getThroughStones(){
-	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {//for the correct user
+	//for the correct user
+	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
 		model.caveQuest[0].stoneCount--;
 		console.log('You remove one stone...')
 		if (model.caveQuest[0].stoneCount == 0){
