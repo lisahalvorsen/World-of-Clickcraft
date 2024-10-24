@@ -14,8 +14,8 @@ function caveQuestView() {
 			${showingCaveBoss()}
 		</div>
 		<br><br><br><br><br>
-		<div id='caveObsticale'> 
-		${showingObsticaleElement()}
+		<div id='caveObstacle'> 
+		${showingObstacleElement()}
 		</div>
 		<br><br><br><br><br>
 		<div id='caveMonster'> 
@@ -43,7 +43,7 @@ function showingCaveMonster() {
 	} else return '';
 }
 
-function showingObsticaleElement() {
+function showingObstacleElement() {
 	if (model.caveQuest[0].stoneWallPresent || model.caveQuest[0].doorPresent) {
 		return /*HTML*/`
 		<h2>Obstacle</h2> 
