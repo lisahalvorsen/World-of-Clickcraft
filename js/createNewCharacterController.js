@@ -2,6 +2,7 @@ function createCharacter(chosenClassId, name) {
     createUserNewCharacterInfo(chosenClassId, name)
     createNewCharacterStats(chosenClassId)
     createNewInventory()
+    createNewMessageLog()
     createNewCharacterEquippedItems(chosenClassId)
     inGameStats()
     goToGamePage()
@@ -35,6 +36,15 @@ function createNewInventory() {
     let characterCount = existingCharacterId.length
     let newInventory = { userId: UserId, characterId: characterCount-1, hasKey: false, pet: null }
     inventoriesArray.push(newInventory)
+}
+
+function createNewMessageLog() {
+    let messageLogArray = model.messageLog
+    let UserId = model.app.loggedInUser
+    let existingCharacterId = model.characters.filter(existingCharacter => existingCharacter.userId === UserId);
+    let characterCount = existingCharacterId.length
+    let newMessageLog = { userId: UserId, characterId: characterCount-1, text: 'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'}
+    messageLogArray.push(newMessageLog)
 }
 
 function createNewCharacterEquippedItems(chosenClassId) {
