@@ -36,7 +36,7 @@ function gameTemplateView() {
         <div class='messages'>
             <h3>MESSAGES</h3>
             <br>
-            <div>
+            <div class="showingMessages">
                ${model.app.currentCharacterInfo.messageLog.map(log => `<div>${log}</div>`).join('')}
             </div>
         </div>
@@ -82,6 +82,7 @@ function gameTemplateView() {
     </footer>
     </div>
     `;
+    scrollToBottomOfMessages();
 }
 
 function inGameStats() {
