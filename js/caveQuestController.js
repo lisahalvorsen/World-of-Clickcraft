@@ -1,16 +1,9 @@
-// let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
-
-
-
 
 let keySelected = false;
-
-// characterInventory = ...
 //legge til health potion mulighet mid game.. endrer characterCurrentHp
-
 //koble til inventory
-//fra consol log til chat.. log ære en del av modell?
 //koble quest til hver enkelt bruker somehow
+//øke xp og loot fra quest/kill
 
 function attackBossMonster(){
 	model.app.currentCharacterInfo.messageLog.push('Kill that thang!')
@@ -37,9 +30,11 @@ function attackCaveMonster(){
 
 		} else if (caveMonsterStats.currentHp <=0) {
 			model.caveQuest[1].caveMonsterPresent = false;
+			model.app.currentCharacterInfo.currentQuestStep = 'Make your way though the obsticale';
 
 			// for the correct user V or drop on floor first
 			// model.stats.money+= 100;
+
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
 			model.app.currentCharacterInfo.messageLog.push(`Monster successfully slayed, continue`);
@@ -78,6 +73,8 @@ function getThroughDoor(){
 		model.caveQuest[0].doorPresent = false;
 		model.caveQuest[2].caveBossPresent = true;	
 		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!')
+		model.app.currentCharacterInfo.currentQuestStep = 'Kill the Cave Boss'
+
 	} else {
 		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?')
 	}

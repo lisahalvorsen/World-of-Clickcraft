@@ -62,6 +62,9 @@ function inGameStats() {
     armor:userArmor.name,
     boots:userBoots.name,
     messageLog:[messageLog.text],
+    currentQuest:'',
+    currentQuestStep:'',
+
     }
 }
 

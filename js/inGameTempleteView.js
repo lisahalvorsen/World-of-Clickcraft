@@ -78,7 +78,13 @@ function gameTemplateView() {
         <h3>INVENTORY</h3>
         </div>
         <div class='footerMissionsDiv'>
-        <h3>MISSION</h3>
+            <h3>MISSION</h3>
+            <br>
+            <div class="currentMisson">
+               Current Quest: ${model.app.currentCharacterInfo.currentQuest??''}
+                <br>
+                Quest step: ${model.app.currentCharacterInfo.currentQuestStep??''}
+               </div>
         </div>
     </footer>
     </div>
