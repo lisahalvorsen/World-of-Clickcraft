@@ -96,7 +96,7 @@ const model = {
     ],
 
     caveQuest: [
-        { id: 1, name: 'Cave Quest', currentMission: 'kill monster', progress: 0, abondenQuest: false, stoneWallPresent: true, doorPresent:false, stoneCount: 5,},
+        { id: 1, name: 'Cave Quest', currentQuestStep: 'kill monster', progress: 0, abondenQuest: false, stoneWallPresent: true, doorPresent:false, stoneCount: 5,},
         { id: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true, },
         { id: 3, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false, },
 

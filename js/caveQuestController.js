@@ -1,16 +1,9 @@
-// let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
-
-
-
 
 let keySelected = false;
-
-// characterInventory = ...
 //legge til health potion mulighet mid game.. endrer characterCurrentHp
-
 //koble til inventory
-//fra consol log til chat.. log ære en del av modell?
 //koble quest til hver enkelt bruker somehow
+//øke xp og loot fra quest/kill
 
 function attackBossMonster(){
 	model.app.currentCharacterInfo.messageLog.push('Kill that thang!')
