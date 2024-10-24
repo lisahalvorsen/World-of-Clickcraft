@@ -4,6 +4,10 @@ const doorElement = '🚪';
 
 
 function caveQuestView() {
+// currentMission = model.caveQuest.name;
+// currentQuestStep = model.caveQuest.currentMission;
+
+
 	return /*HTML*/`
 	<div class="caveQuestPage">
 		<div id='caveBoss'> 

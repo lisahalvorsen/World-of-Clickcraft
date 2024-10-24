@@ -2,12 +2,8 @@
 
 
 
-let stoneCount = 8;
 let keySelected = false;
 
-
-// currentMission = model.caveQuest.name;
-// currentQuestStep = model.caveQuest.currentMission;
 // characterInventory = ...
 //legge til health potion mulighet mid game.. endre characterCurrentHp
 //koble til inventory
@@ -36,12 +32,13 @@ function attackCaveMonster(){
 
 		if (model.app.currentCharacterInfo.currenthp <= 0) {
 			console.log(`Oops! You are dead!`);
-			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;		gameView=mapPageView()
+			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;		
+			gameView=mapPageView();
 			goToGamePage();
 		} else if (caveMonsterStats.currentHp <=0) {
 			model.caveQuest[1].caveMonsterPresent = false;
 
-			// for the correct user V
+			// for the correct user V or drop on floor first
 			// model.stats.money+= 100;
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;

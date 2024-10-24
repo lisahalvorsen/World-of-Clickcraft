@@ -5,7 +5,7 @@ function gameTemplateView() {
 
     model.app.currentPage = 'inGamePage';
 
-    inGameStats()
+    // inGameStats()
 
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
