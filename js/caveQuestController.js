@@ -1,4 +1,7 @@
 // let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
+model.app.currentCharacterInfo = {
+    messageLog:messageLog.text,
+}
 
 
 
@@ -9,7 +12,7 @@ let keySelected = false;
 
 //koble til inventory
 //fra consol log til chat.. log ære en del av modell?
-
+//koble quest til hver enkelt bruker somehow
 
 function attackBossMonster(){
 	console.log('Kill that thang!')

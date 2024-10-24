@@ -35,9 +35,10 @@ function gameTemplateView() {
     <div class='messagesDiv'>
         <div class='messages'>
             <h3>MESSAGES</h3>
-        </div>
-        <div>
-            ${model.messageLog}
+            <br>
+            <div>
+               ${model.app.currentCharacterInfo.messageLog.map(log => `<div>${log}</div>`).join('')}
+            </div>
         </div>
     </div>
 
@@ -91,6 +92,7 @@ function inGameStats() {
     let userWeapon = model.weapons.find(weapon => weapon.id === userEquipments.weaponId)
     let userArmor = model.armors.find(armor => armor.id === userEquipments.armorId)
     let userBoots = model.boots.find(boots => boots.id === userEquipments.bootsId)
+    let messageLog = model.messageLog.find(log => log.userId === userId && log.characterId === characterId);
 
     model.app.currentCharacterInfo = {
     currenthp: userStats.currenthp,
@@ -104,5 +106,7 @@ function inGameStats() {
     money: userStats.money,
     weapon:userWeapon.name,
     armor:userArmor.name,
-    boots:userBoots.name}
+    boots:userBoots.name,
+    messageLog:[messageLog.text],
+    }
 }
