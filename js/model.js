@@ -50,6 +50,13 @@ const model = {
         { userId: null, characterId: null, hasKey: false, pet: null },
     ],
 
+    messageLog: [
+        { userId: 0, characterId: 0, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+        { userId: 1, characterId: 1, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+        { userId: 1, characterId: 2, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+   
+    ],
+
     equippedItems: [
         { userId: 0, characterId: 0, weaponId: 1, armorId: 1, bootsId: 1 },
         { userId: 1, characterId: 1, weaponId: 3, armorId: 3, bootsId: 1 },
@@ -101,4 +108,5 @@ const model = {
         { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300 },
         { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350 },
     ],
+  
 };

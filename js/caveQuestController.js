@@ -8,7 +8,7 @@ let keySelected = false;
 //legge til health potion mulighet mid game.. endrer characterCurrentHp
 
 //koble til inventory
-//fra consol log til chat
+//fra consol log til chat.. log ære en del av modell?
 
 
 function attackBossMonster(){

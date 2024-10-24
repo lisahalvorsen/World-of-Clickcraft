@@ -34,7 +34,10 @@ function gameTemplateView() {
     </div>
     <div class='messagesDiv'>
         <div class='messages'>
-        <h3>MESSAGES</h3>
+            <h3>MESSAGES</h3>
+        </div>
+        <div>
+            ${model.messageLog}
         </div>
     </div>
 
