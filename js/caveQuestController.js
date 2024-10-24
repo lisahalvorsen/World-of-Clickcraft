@@ -14,6 +14,7 @@ let keySelected = false;
 // characterInventory = ...
 //legge til health potion mulighet mid game.. endre characterCurrentHp
 //koble til inventory
+//fra consol log til chat
 
 // my flytte    inGameStats() fra gameTemplateView() {
 // og heller kalle den ved innlogging..
