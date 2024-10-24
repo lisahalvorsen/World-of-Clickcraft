@@ -1,15 +1,7 @@
-let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
-let characterCurrentHp = characterStats ? characterStats.currenthp : null;
-let characterAtk = characterStats.atk;
-let characterDef = characterStats.def;
+// let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
 
-let caveMonsterStats = model.caveQuest[1];
-let caveMonsterCurrentHp = caveMonsterStats.currentHp;
-let caveMonsterAtk = caveMonsterStats.atk;
-let caveMonsterDef = caveMonsterStats.def;
-let caveMonsterPresent = true;
-let caveBossPresent = false;
-let stoneWallPresent = true;
+
+
 let stoneCount = 8;
 let keySelected = false;
 
@@ -19,27 +11,35 @@ let keySelected = false;
 // characterInventory = ...
 //legge til health potion mulighet mid game.. endre characterCurrentHp
 //koble til inventory
+//fra consol log til chat
 
-
+// my flytte    inGameStats() fra gameTemplateView() {
+// og heller kalle den ved innlogging..
 
 function attackBossMonster(){
 	console.log('Kill that thang!')
 }
 
 function attackCaveMonster(){
-	if (characterCurrentHp > 0 && caveMonsterCurrentHp > 0){
-		let caveMonsterDamageTaken = calculateDamage(characterAtk, caveMonsterDef);
-		let characterDamageTaken = calculateDamage(caveMonsterAtk, characterDef);
-		let monsterRemainingHp = caveMonsterCurrentHp - caveMonsterDamageTaken;
-		let characterRemainingHp = characterCurrentHp - characterDamageTaken;
-		characterCurrentHp = characterRemainingHp;
-		caveMonsterCurrentHp = monsterRemainingHp;
+	let caveMonsterStats = model.caveQuest[1];
+	let currentCharacter = model.app.currentCharacterInfo;
 
-		if (characterCurrentHp <= 0) {
+	if (model.app.currentCharacterInfo.currenthp > 0 && caveMonsterStats.currentHp > 0){
+		let caveMonsterDamageTaken = calculateDamage(currentCharacter.atk, caveMonsterStats.def);
+		let characterDamageTaken = calculateDamage(caveMonsterStats.atk, currentCharacter.def);
+		
+		let monsterRemainingHp = caveMonsterStats.currentHp - caveMonsterDamageTaken;
+		let characterRemainingHp = model.app.currentCharacterInfo.currenthp - characterDamageTaken;
+		model.app.currentCharacterInfo.currenthp = characterRemainingHp;
+		caveMonsterStats.currentHp = monsterRemainingHp;
+		gameTemplateView();
+
+		if (model.app.currentCharacterInfo.currenthp <= 0) {
 			console.log(`Oops! You are dead!`);
+			model.app.currentCharacterInfo.currenthp = model.app.currentCharacterInfo.hp;		gameView=mapPageView()
 			goToGamePage();
-		} else if (caveMonsterCurrentHp <=0) {
-			caveMonsterPresent = false;
+		} else if (caveMonsterStats.currentHp <=0) {
+			model.caveQuest[1].caveMonsterPresent = false;
 
 			// for the correct user V
 			// model.stats.money+= 100;
@@ -51,19 +51,19 @@ function attackCaveMonster(){
 		} else {
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
-			console.log(`Your current hitpoints are ${characterCurrentHp}`)
-			console.log(`Cave monster has ${caveMonsterCurrentHp} hitpoints remaining`)
+			console.log(`Your current hitpoints are ${model.app.currentCharacterInfo.currenthp}`)
+			console.log(`Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining`)
 		}
 	} 
 }
 
 function getThroughStones(){
-	if (model.caveQuest[0].progress === 1 && stoneWallPresent) {//for the correct user
-		stoneCount--;
+	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {//for the correct user
+		model.caveQuest[0].stoneCount--;
 		console.log('You remove one stone...')
-		if (stoneCount == 0){
-			stoneWallPresent = false; 
-			doorPresent = true;
+		if (model.caveQuest[0].stoneCount == 0){
+			model.caveQuest[0].stoneWallPresent = false; 
+			model.caveQuest[0].doorPresent = true;
 			console.log('A door appear behind the stones.')
 			gameView = caveQuestView()
 			gameTemplateView();
@@ -76,8 +76,8 @@ function getThroughStones(){
 function getThroughDoor(){
 	//for correct character
 	if (model.inventories[0].hasKey == true && keySelected == true){
-		doorPresent = false;
-		caveBossPresent = true;	
+		model.caveQuest[0].doorPresent = false;
+		model.caveQuest[2].caveBossPresent = true;	
 		console.log('You unlock the door and enter a room where you see a HUGE creature!')
 		gameView = caveQuestView()
 		gameTemplateView();
@@ -92,16 +92,15 @@ function selectKey(){
 
 
 function calculateDamage(atkLvl, defLvl) {
-    let maxDamage = 1000;  
+    let maxDamage = 100;  
     let givenMaxDamage = (atkLvl / 100) * maxDamage;
-    let takenMaxDamage = (defLvl / 100) * givenMaxDamage;
-    let finalDamage = Math.floor(Math.random() * takenMaxDamage);
+	let damageReduction = (defLvl / 200); 
+    let reducedDamage = givenMaxDamage * (1 - damageReduction); 
+    let finalDamage = Math.floor(Math.random() * reducedDamage);
 
     return finalDamage;
 }
 
-// 0,1 *1000 = 10
-// 0,1*10
 
 
 

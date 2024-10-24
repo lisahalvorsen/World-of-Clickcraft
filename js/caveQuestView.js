@@ -4,7 +4,6 @@ const doorElement = '🚪';
 
 
 function caveQuestView() {
-	// document.querySelector(".sceneDiv").innerHTML = /*HTML*/ `
 	return /*HTML*/`
 	<div class="caveQuestPage">
 		<div id='caveBoss'> 
@@ -23,7 +22,7 @@ function caveQuestView() {
 }
 
 function showingCaveBoss(){
-	if (caveBossPresent) {
+	if (model.caveQuest[2].caveBossPresent) {
 		return /*HTML*/`
 		<h2>Cave Boss</h2> 
 		<img src="../images/boss.png" alt="Boss" onclick='attackBossMonster()'>
@@ -32,7 +31,7 @@ function showingCaveBoss(){
 }
 
 function showingCaveMonster(){
-	if (caveMonsterPresent) {
+	if (model.caveQuest[1].caveMonsterPresent) {
 		return /*HTML*/`
 			<h2>Monster</h2> 
 			<div onclick='attackCaveMonster()'>👹</div>
@@ -41,11 +40,11 @@ function showingCaveMonster(){
 }
 
 function showingObsticaleElement(){
-	if (stoneWallPresent || doorPresent) {
+	if (model.caveQuest[0].stoneWallPresent || model.caveQuest[0].doorPresent) {
 		return /*HTML*/`
 		<h2>Obsticale</h2> 
-		<div onclick='${stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
-			${stoneWallPresent ? stoneWallElement : doorElement}
+		<div onclick='${model.caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
+			${model.caveQuest[0].stoneWallPresent ? stoneWallElement : doorElement}
 		</div>
 		<br>
 		<div onclick='selectKey()'>${model.inventories[0].hasKey? '🗝️' :''}</div>
