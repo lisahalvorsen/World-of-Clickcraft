@@ -1,5 +1,5 @@
 function bossQuestView() {
-    document.getElementById('app').innerHTML = /*HTML*/ ` 
+    return /*HTML*/ ` 
     <div>Hello!</div>
 
     <button onclick="goToGamePage()">Go back to map</button>
