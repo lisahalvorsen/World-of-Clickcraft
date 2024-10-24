@@ -1,35 +1,26 @@
 let scene = 'Map';
 let gameView = mapPageView()
-let gold = 0;
-let hp = 0;
-let level = 0;
-let xp = 0;
-let atk = 0;
-let def = 0;
-let spd = 0;
-let weapon = '';
-let armor = '';
-let boots = '';
-let picture = '';
 
 function gameTemplateView() {
 
     model.app.currentPage = 'inGamePage';
 
+    inGameStats()
+
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
         <div class='headerHP'>
-        ❤️: ${hp}
+        ❤️: ${model.app.currentCharacterInfo.currenthp}/${model.app.currentCharacterInfo.hp}
         </div>
         <div class='headerGold'>
-        🪙: ${gold}
+        🪙: ${model.app.currentCharacterInfo.money}
         </div>
         <div class='headerLevel'>
-        Level: ${level}
+        Level: ${model.app.currentCharacterInfo.level}
         </div>
         <div class='headerXP'>
-        XP: ${xp}
+        XP: ${model.app.currentCharacterInfo.xp}
         </div>
         <div class='headerGameName'>
         <h1>${scene}</h1>
@@ -49,34 +40,39 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
-        <img class='footerCharacterImage' src="${picture}" alt="">
+        <img class='footerCharacterImage' src="${model.app.currentCharacterInfo.picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
-        <br>
-        <br>
-        ATK: ${atk}
-        <br>
-        DEF: ${def}
-        <br>
-        SPD: ${spd}
+        </br>
+        </br>
+        ATK: ${model.app.currentCharacterInfo.atk}
+        </br>
+        DEF: ${model.app.currentCharacterInfo.def}
+        </br>
+        SPD: ${model.app.currentCharacterInfo.spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
-        <br>
-        <br>
-        WEAPON: ${weapon}
-        <br>
-        ARMOR: ${armor}
-        <br>
-        BOOTS: ${boots}
+        </br>
+        </br>
+        WEAPON: ${model.app.currentCharacterInfo.weapon}
+        </br>
+        ARMOR: ${model.app.currentCharacterInfo.armor}
+        </br>
+        BOOTS: ${model.app.currentCharacterInfo.boots}
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
         <br>
         <button class="inGameBtn">Attack</button>
+<<<<<<< HEAD
         <br>
         <button class="inGameBtn">Back</button>
+=======
+        </br>
+        <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
+>>>>>>> 49806dfe81d82dcd3a105f7ce06442f9ec31191b
         </div>
         <div class='footerInventoryDiv'>
         <h3>INVENTORY</h3>
@@ -87,36 +83,28 @@ function gameTemplateView() {
     </footer>
     </div>
     `;
-    inGameStats()
 }
 
 function inGameStats() {
     let UserId = model.app.loggedInUser
     let characterId = model.app.loggedInCharacterId
-    let userStats = model.stats.filter(userStat => userStat.userId === UserId && userStat.characterId === characterId)
-    let userEquipments = model.equippedItems.filter(userEquipment => userEquipment.userId === UserId)
-    let weaponId = userEquipments[0].weaponId
-    let armorId = userEquipments[0].armorId
-    let bootsId = userEquipments[0].bootsId
-    let userWeapon = model.weapons.filter(weapon => weapon.id === weaponId)
-    let userArmor = model.armors.filter(armor => armor.id === armorId)
-    let userBoots = model.boots.filter(boots => boots.id === bootsId)
+    let userStats = model.stats.find(userStat => userStat.userId === UserId && userStat.characterId === characterId)
+    let userEquipments = model.equippedItems.find(userEquipment => userEquipment.userId === UserId)
+    let userWeapon = model.weapons.find(weapon => weapon.id === userEquipments.weaponId)
+    let userArmor = model.armors.find(armor => armor.id === userEquipments.armorId)
+    let userBoots = model.boots.find(boots => boots.id === userEquipments.bootsId)
 
-    gold = userStats[0].money
-    hp = userStats[0].hp
-    level = userStats[0].level
-    xp = userStats[0].xp
-    atk = userStats[0].atk
-    def = userStats[0].def
-    spd = userStats[0].spd
-    picture = userStats[0].picture
-    weapon = userWeapon[0].name
-    armor = userArmor[0].name
-    boots = userBoots[0].name
-}
-
-function toCave() {
-
-    isInCave = true
-    isInMap = false
+    model.app.currentCharacterInfo = {
+    currenthp: userStats.currenthp,
+    picture: userStats.picture,
+    hp: userStats.hp,
+    level: userStats.level,
+    atk: userStats.atk,
+    def: userStats.def,
+    spd: userStats.spd,
+    xp: userStats.xp,
+    money: userStats.money,
+    weapon:userWeapon.name,
+    armor:userArmor.name,
+    boots:userBoots.name}
 }

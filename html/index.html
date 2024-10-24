@@ -32,11 +32,14 @@
     <script src="../js/characterSelectionView.js"></script>
     <script src="../js/mapPageController.js"></script>
     <script src="../js/mapPageView.js"></script>
-    <script src="../js/caveQuest.js"></script>
+    <script src="../js/caveQuestController.js"></script>
     <script src="../js/caveQuestView.js"></script>
     <script src="../js/inGameTempleteView.js"></script>
+    <script src="../js/inGameTemplateController.js"></script>
     <script src="../js/shopController.js"></script>
     <script src="../js/shopView.js"></script>
+    <script src="../js/townController.js"></script>
+    <script src="../js/townView.js"></script>
 </body>
 
 <script>
@@ -52,8 +55,9 @@
         else if (currentPage == 'characterSelectionPage') characterSelectionView();
         else if (currentPage == 'mapPage') mapPageView();
         else if (currentPage == 'inGamePage') gameTemplateView();
-        else if (currentPage == 'caveQuestView') caveQuestView();
+        else if (currentPage == 'caveQuestView') gameTemplateView();
         else if (currentPage == 'shopPage') shopView();
+        else if (currentPage == 'townPage') townView();
     }
 
 

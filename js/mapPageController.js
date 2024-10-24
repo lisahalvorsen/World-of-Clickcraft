@@ -1,33 +1,31 @@
 function goToTownIsland() {
-     alert('Town Island clicked!');
-    model.app.currentPage = 'islandQuestView';
-    updateView();
+    //  alert('Town Island clicked!');
+     gameView = townQuestView();
+     gameTemplateView();
 }
 function goToCaveIsland() {
-     alert('Cave Island clicked!'); 
-    model.app.currentPage = 'caveQuestView';
-    updateView();
+    gameView = caveQuestView();
+    gameTemplateView();
 }
 function goToDesertIsland() {
-     alert('Desert Island clicked!');
-   // window.location.href = 'desertPage.html'
-   model.app.currentPage = 'desertQuestView';
-    updateView();
+    //  alert('Desert Island clicked!');
+   gameView = desertQuestView();
+   gameTemplateView();
 }
 function goToforestIsland() {
-     alert('Forest Island clicked!');
-    model.app.currentPage = 'forestQuestView';
-    updateView();
+    //  alert('Forest Island clicked!');
+     gameView = forestQuestView();
+    gameTemplateView();
 }
 function goToMountainIsland() {
-     alert('Mountain Island clicked!');
-    model.app.currentPage = 'mountainQuestView';
-    updateView();
+    //  alert('Mountain Island clicked!');
+     gameView = mountainQuestView();
+    gameTemplateView();
 }
 function goToBossIsland() {
-     alert('Boss Island clicked!');
-    model.app.currentPage = 'bossQuestView';
-    updateView();
+    //  alert('Boss Island clicked!');
+     gameView = bossQuestView();
+    gameTemplateView();
 
 }
 function logOutButton(){

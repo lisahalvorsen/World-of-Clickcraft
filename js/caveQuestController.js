@@ -17,7 +17,8 @@ let keySelected = false;
 // currentMission = model.caveQuest.name;
 // currentQuestStep = model.caveQuest.currentMission;
 // characterInventory = ...
-
+//legge til health potion mulighet mid game.. endre characterCurrentHp
+//koble til inventory
 
 
 
@@ -31,7 +32,7 @@ function attackCaveMonster(){
 		let characterDamageTaken = calculateDamage(caveMonsterAtk, characterDef);
 		let monsterRemainingHp = caveMonsterCurrentHp - caveMonsterDamageTaken;
 		let characterRemainingHp = characterCurrentHp - characterDamageTaken;
-		characterCurrentHp = 10000//characterRemainingHp;
+		characterCurrentHp = characterRemainingHp;
 		caveMonsterCurrentHp = monsterRemainingHp;
 
 		if (characterCurrentHp <= 0) {
@@ -45,7 +46,8 @@ function attackCaveMonster(){
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
 			console.log(`Monster successfully slayed, continue`);
-			caveQuestView();
+			gameView = caveQuestView()
+			gameTemplateView();
 		} else {
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
@@ -63,7 +65,8 @@ function getThroughStones(){
 			stoneWallPresent = false; 
 			doorPresent = true;
 			console.log('A door appear behind the stones.')
-			caveQuestView();
+			gameView = caveQuestView()
+			gameTemplateView();
 		}
 	} else {
 		console.log('You must slay the monster before approaching the door.')
@@ -76,7 +79,8 @@ function getThroughDoor(){
 		doorPresent = false;
 		caveBossPresent = true;	
 		console.log('You unlock the door and enter a room where you see a HUGE creature!')
-		caveQuestView();
+		gameView = caveQuestView()
+		gameTemplateView();
 	} else {
 	console.log('Perhaps I can use the key the monster dropped..?')}
 }
@@ -95,4 +99,10 @@ function calculateDamage(atkLvl, defLvl) {
 
     return finalDamage;
 }
+
+// 0,1 *1000 = 10
+// 0,1*10
+
+
+
 
