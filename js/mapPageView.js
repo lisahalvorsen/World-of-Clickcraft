@@ -1,10 +1,9 @@
 function mapPageView() {
     return /*HTML*/ `<div class='mapPage'>
-       <!-- Add audio element for background music -->
-       <audio id="backgroundMusic" autoplay loop>
-       <source src="../music/background-music.mp3" type="audio/mpeg">
-       Your browser does not support the audio element.
-   </audio>
+       <!-- Added audio element for background music -->
+        <audio id="backgroundMusic" autoplay loop>
+             <source src="../music/background-music.mp3" type="audio/mpeg">
+        </audio>
         <!-- top -->
             <!-- mapPage__top__map --> 
             <div class='mapPage__top__map'>
