@@ -66,13 +66,8 @@ function gameTemplateView() {
         <h3>ACTIONS</h3>
         <br>
         <button class="inGameBtn">Attack</button>
-<<<<<<< HEAD
-        <br>
-        <button class="inGameBtn">Back</button>
-=======
         </br>
         <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
->>>>>>> 49806dfe81d82dcd3a105f7ce06442f9ec31191b
         </div>
         <div class='footerInventoryDiv'>
         <h3>INVENTORY</h3>
