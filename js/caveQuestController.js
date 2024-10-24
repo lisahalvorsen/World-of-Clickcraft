@@ -1,12 +1,7 @@
-let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
-let characterCurrentHp = characterStats ? characterStats.currenthp : null;
-let characterAtk = characterStats.atk;
-let characterDef = characterStats.def;
+// let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
 
-let caveMonsterStats = model.caveQuest[1];
-let caveMonsterCurrentHp = caveMonsterStats.currentHp;
-let caveMonsterAtk = caveMonsterStats.atk;
-let caveMonsterDef = caveMonsterStats.def;
+
+
 let caveMonsterPresent = true;
 let caveBossPresent = false;
 let stoneWallPresent = true;
@@ -20,25 +15,34 @@ let keySelected = false;
 //legge til health potion mulighet mid game.. endre characterCurrentHp
 //koble til inventory
 
-
+// my flytte    inGameStats() fra gameTemplateView() {
+// og heller kalle den ved innlogging..
 
 function attackBossMonster(){
 	console.log('Kill that thang!')
 }
 
 function attackCaveMonster(){
-	if (characterCurrentHp > 0 && caveMonsterCurrentHp > 0){
-		let caveMonsterDamageTaken = calculateDamage(characterAtk, caveMonsterDef);
-		let characterDamageTaken = calculateDamage(caveMonsterAtk, characterDef);
-		let monsterRemainingHp = caveMonsterCurrentHp - caveMonsterDamageTaken;
+	let caveMonsterStats = model.caveQuest[1];
+	let characterCurrentHp = model.app.currentCharacterInfo.currenthp;
+	let currentCharacter = model.app.currentCharacterInfo;
+
+	if (characterCurrentHp > 0 && caveMonsterStats.currentHp > 0){
+		let caveMonsterDamageTaken = calculateDamage(currentCharacter.atk, caveMonsterStats.def);
+		let characterDamageTaken = calculateDamage(caveMonsterStats.atk, currentCharacter.def);
+		let monsterRemainingHp = caveMonsterStats.currentHp - caveMonsterDamageTaken;
 		let characterRemainingHp = characterCurrentHp - characterDamageTaken;
+		model.app.currentCharacterInfo.currenthp = characterRemainingHp;
 		characterCurrentHp = characterRemainingHp;
-		caveMonsterCurrentHp = monsterRemainingHp;
+		caveMonsterStats.currentHp = monsterRemainingHp;
+		gameTemplateView();
 
 		if (characterCurrentHp <= 0) {
 			console.log(`Oops! You are dead!`);
+			//make currentHP into hp
+			gameView=mapPageView()
 			goToGamePage();
-		} else if (caveMonsterCurrentHp <=0) {
+		} else if (caveMonsterStats.currentHp <=0) {
 			caveMonsterPresent = false;
 
 			// for the correct user V
@@ -52,7 +56,7 @@ function attackCaveMonster(){
 			console.log(`damage taken on cave monster ${caveMonsterDamageTaken}`)
 			console.log(`damage recived from cave monster ${characterDamageTaken}`)
 			console.log(`Your current hitpoints are ${characterCurrentHp}`)
-			console.log(`Cave monster has ${caveMonsterCurrentHp} hitpoints remaining`)
+			console.log(`Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining`)
 		}
 	} 
 }
@@ -92,16 +96,15 @@ function selectKey(){
 
 
 function calculateDamage(atkLvl, defLvl) {
-    let maxDamage = 1000;  
+    let maxDamage = 100;  
     let givenMaxDamage = (atkLvl / 100) * maxDamage;
-    let takenMaxDamage = (defLvl / 100) * givenMaxDamage;
-    let finalDamage = Math.floor(Math.random() * takenMaxDamage);
+	let damageReduction = (defLvl / 200); 
+    let reducedDamage = givenMaxDamage * (1 - damageReduction); 
+    let finalDamage = Math.floor(Math.random() * reducedDamage);
 
     return finalDamage;
 }
 
-// 0,1 *1000 = 10
-// 0,1*10
 
 
 
