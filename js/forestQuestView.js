@@ -1,4 +1,4 @@
-function townView() {
+function forestQuestView() {
     document.getElementById('app').innerHTML = /*HTML*/ ` 
     <div>Hello!</div>
 

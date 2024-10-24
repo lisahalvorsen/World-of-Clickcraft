@@ -39,7 +39,15 @@
     <script src="../js/shopController.js"></script>
     <script src="../js/shopView.js"></script>
     <script src="../js/townController.js"></script>
-    <script src="../js/townView.js"></script>
+    <script src="../js/townQuestView.js"></script>
+    <script src="../js/desertQuestView.js"></script>
+    <script src="../js/desertController.js"></script>
+    <script src="../js/forestQuestView.js"></script>
+    <script src="../js/forestController.js"></script>
+    <script src="../js/mountainQuestView.js"></script>
+    <script src="../js/mountainController.js"></script>
+    <script src="../js/bossQuestView.js"></script>
+    <script src="../js/bossController.js"></script>
 </body>
 
 <script>
@@ -57,7 +65,11 @@
         else if (currentPage == 'inGamePage') gameTemplateView();
         else if (currentPage == 'caveQuestView') gameTemplateView();
         else if (currentPage == 'shopPage') shopView();
-        else if (currentPage == 'townPage') townView();
+        else if (currentPage == 'townQuestView') gameTemplateView();
+        else if (currentPage == 'desertPage') desertQuestView();
+        else if (currentPage == 'forestPage') forestQuestView();
+        else if (currentPage == 'mountainPage') mountainQuestView();
+        else if (currentPage == 'bossPage') bossQuestView();
     }
 
 
