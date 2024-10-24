@@ -25,7 +25,7 @@ function createNewCharacterStats(chosenClassId) {
     let chosenClassStats = model.classes.filter(characterClass => characterClass.id === chosenClassId);
     let existingCharacterId = model.characters.filter(existingCharacter => existingCharacter.userId === UserId);
     let characterCount = existingCharacterId.length
-    let newCharaterStats = { userId: UserId, characterId: characterCount-1, currentHp:chosenClassStats[0].hp, picture:chosenClassStats[0].picture, hp: chosenClassStats[0].hp, level: chosenClassStats[0].level, atk: chosenClassStats[0].atk, def: chosenClassStats[0].def, spd: chosenClassStats[0].spd, xp:chosenClassStats[0].xp, money:chosenClassStats[0].money}
+    let newCharaterStats = { userId: UserId, characterId: characterCount-1, currenthp:chosenClassStats[0].hp, picture:chosenClassStats[0].picture, hp: chosenClassStats[0].hp, level: chosenClassStats[0].level, atk: chosenClassStats[0].atk, def: chosenClassStats[0].def, spd: chosenClassStats[0].spd, xp:chosenClassStats[0].xp, money:chosenClassStats[0].money}
     statsArray.push(newCharaterStats)
 }
 
