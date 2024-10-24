@@ -1,4 +1,7 @@
 // let characterStats = model.stats.find(stat => stat.characterId === model.app.loggedInCharacterId);
+model.app.currentCharacterInfo = {
+    messageLog:messageLog.text,
+}
 
 
 

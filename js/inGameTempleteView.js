@@ -37,7 +37,7 @@ function gameTemplateView() {
             <h3>MESSAGES</h3>
             <br>
             <div>
-            ${model.app.currentCharacterInfo.messageLog}
+               ${model.app.currentCharacterInfo.messageLog.map(log => `<div>${log}</div>`).join('')}
             </div>
         </div>
     </div>
@@ -107,6 +107,6 @@ function inGameStats() {
     weapon:userWeapon.name,
     armor:userArmor.name,
     boots:userBoots.name,
-    messageLog:messageLog.text,
+    messageLog:[messageLog.text],
     }
 }
