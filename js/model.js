@@ -51,8 +51,11 @@ const model = {
     ],
 
     messageLog: [
-        { userId: 0, characterId: 0, },
-        ],
+        { userId: 0, characterId: 0, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+        { userId: 1, characterId: 1, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+        { userId: 1, characterId: 2, text:'Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'},
+   
+    ],
 
     equippedItems: [
         { userId: 0, characterId: 0, weaponId: 1, armorId: 1, bootsId: 1 },
