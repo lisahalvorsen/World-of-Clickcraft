@@ -2,9 +2,7 @@ function shopView() {
     document.getElementById('app').innerHTML = /*HTML*/ `  
         <div>
             <h1>Shop</h1>
-            <div class='headerGold'>
-                🪙: ${model.app.currentCharacterInfo.money}
-            </div>
+            <div>🪙: ${getUserMoney()}</div>
             <div>
                 <button onclick="drawShopItemsHtml('Equipment')">Equipment</button>
                 <button onclick="drawShopItemsHtml('Clothing')">Clothing</button>
