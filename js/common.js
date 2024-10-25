@@ -33,11 +33,6 @@ function goToShop() {
     updateView();
 }
 
-function goToTown() {
-    model.app.currentPage = 'townPage';
-    updateView();
-}
-
 function inGameStats() {
     let UserId = model.app.loggedInUser
     let characterId = model.app.loggedInCharacterId
@@ -46,30 +41,62 @@ function inGameStats() {
     let userWeapon = model.weapons.find(weapon => weapon.id === userEquipments.weaponId)
     let userArmor = model.armors.find(armor => armor.id === userEquipments.armorId)
     let userBoots = model.boots.find(boots => boots.id === userEquipments.bootsId)
-    let messageLog = model.messageLog.find(log => log.userId === userId && log.characterId === characterId);
+    let messageLog = model.messageLog.find(log => log.userId === UserId && log.characterId === characterId);
 
     model.app.currentCharacterInfo = {
-    currenthp: userStats.currenthp,
-    picture: userStats.picture,
-    hp: userStats.hp,
-    level: userStats.level,
-    atk: userStats.atk,
-    def: userStats.def,
-    spd: userStats.spd,
-    xp: userStats.xp,
-    money: userStats.money,
-    weapon:userWeapon.name,
-    armor:userArmor.name,
-    boots:userBoots.name,
-    messageLog:[messageLog.text],
-    currentQuest:'',
-    currentQuestStep:'',
+        currenthp: userStats.currenthp,
+        picture: userStats.picture,
+        hp: userStats.hp,
+        level: userStats.level,
+        atk: userStats.atk,
+        def: userStats.def,
+        spd: userStats.spd,
+        xp: userStats.xp,
+        money: userStats.money,
+        weapon: userWeapon.name,
+        armor: userArmor.name,
+        boots: userBoots.name,
+        messageLog: [messageLog.text],
+        currentQuest: '',
+        currentQuestStep: '',
 
     }
 }
 
-function logOutButton(){
+function logOutButton() {
     alert('logging Out Now!');
     model.app.currentPage = 'homePage';
     updateView();
+}
+
+function goToTownIsland() {
+    //  alert('Town Island clicked!');
+    gameView = townQuestView();
+    gameTemplateView();
+}
+function goToCaveIsland() {
+    model.app.currentCharacterInfo.currentQuest = model.caveQuest[0].name;
+    model.app.currentCharacterInfo.currentQuestStep = model.caveQuest[0].currentQuestStep;
+    gameView = caveQuestView();
+    gameTemplateView();
+}
+function goToDesertIsland() {
+    //  alert('Desert Island clicked!');
+    gameView = desertQuestView();
+    gameTemplateView();
+}
+function goToforestIsland() {
+    //  alert('Forest Island clicked!');
+    gameView = forestQuestView();
+    gameTemplateView();
+}
+function goToMountainIsland() {
+    //  alert('Mountain Island clicked!');
+    gameView = mountainQuestView();
+    gameTemplateView();
+}
+function goToBossIsland() {
+    //  alert('Boss Island clicked!');
+    gameView = bossQuestView();
+    gameTemplateView();
 }
