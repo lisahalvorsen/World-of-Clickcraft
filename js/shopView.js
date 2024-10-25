@@ -9,7 +9,7 @@ function shopView() {
                 <button onclick="drawShopItemsHtml('Weapons')">Weapons</button>
             </div>
             <div id="items"></div>
-            <button onclick="goToTown()">Exit</button>
+            <button onclick="goBackToMap()">Exit</button>
         </div>
     `;
 }
