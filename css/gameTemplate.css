@@ -18,15 +18,17 @@
     background-color: bisque;
     border: 2px double black;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 600px auto 250px;
+    grid-template-columns:10% 10% 10% 10% auto 25% 15%;
 }
 .headerBtn{
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 100px; 
 }
 .headerBtn button{
     padding:3px 5px;
     cursor: pointer;
+    float: right;
+    margin-right: 10px;
 }
 .headerBtn button:hover{
     background-color: darkgray;
@@ -63,7 +65,7 @@
     background-color: bisque;
     border: 2px double black;
     display: grid;
-    grid-template-columns: 160px 210px 310px 210px 320px 310px;
+    grid-template-columns: 10% 12% 18% 14% 18% 25%;
 }
 
 .footerAvatarDiv {
@@ -88,7 +90,7 @@
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .footerEqiuppedItemsDiv {
@@ -97,7 +99,7 @@
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .footerActionsDiv {
@@ -106,7 +108,7 @@
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     text-align: center;
 }
 
@@ -116,16 +118,16 @@
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .footerMissionsDiv {
     background-color: lightgray;
-    width: 210px;
+    width: 360px;
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
  .messagesDiv {

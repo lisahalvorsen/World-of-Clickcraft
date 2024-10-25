@@ -28,7 +28,7 @@ function gameTemplateView() {
         </div>
         <div class='headerBtn'><button onclick='logOutButton()'>Log out</button></div>
         <div class='headerChangeChar' onclick='goToCharacterSelectionPage()' >
-        <p>🔁Change Character </p>
+        <p>🔁 Change Character </p>
         </div>
     </header>
      <div class='sceneDiv'>
