@@ -31,7 +31,8 @@ function attackCaveMonster(){
 		} else if (caveMonsterStats.currentHp <=0) {
 			model.caveQuest[1].caveMonsterPresent = false;
 			model.app.currentCharacterInfo.currentQuestStep = 'Make your way though the obstacle';
-
+			model.app.currentCharacterInfo.xp += 100;
+			model.app.currentCharacterInfo.level ++;
 			// for the correct user V or drop on floor first
 			// model.stats.money+= 100;
 
