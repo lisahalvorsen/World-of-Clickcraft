@@ -1,7 +1,7 @@
 
 let keySelected = false;
-// legge til health potion mulighet mid game.. endrer characterCurrentHp
 // koble til inventory
+// legge til health potion mulighet mid game.. endrer characterCurrentHp
 // koble quest til hver enkelt bruker
 // få loot fra quest/kill
 
