@@ -23,7 +23,8 @@ function drawShopItemsHtml(category = null) {
     for (const item of model.shop) {
         if (!category || item.category === category) {
             html += /*HTML*/ `                 
-            <div>${item.name}</div>                 
+            <img class="shopItems" src="${item.picture}" />
+            <div class="itemName">${item.name}</div>                 
             <div>$ ${item.price}</div>                  
             <button onclick="buyItem()">Buy</button>             
             `;
