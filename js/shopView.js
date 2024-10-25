@@ -2,6 +2,9 @@ function shopView() {
     document.getElementById('app').innerHTML = /*HTML*/ `  
         <div>
             <h1>Shop</h1>
+            <div class='headerGold'>
+                🪙: ${model.app.currentCharacterInfo.money}
+            </div>
             <div>
                 <button onclick="drawShopItemsHtml('Equipment')">Equipment</button>
                 <button onclick="drawShopItemsHtml('Clothing')">Clothing</button>
@@ -20,7 +23,8 @@ function drawShopItemsHtml(category = null) {
     for (const item of model.shop) {
         if (!category || item.category === category) {
             html += /*HTML*/ `                 
-            <div>${item.name}</div>                 
+            <img class="shopItems" src="${item.picture}" />
+            <div class="itemName">${item.name}</div>                 
             <div>$ ${item.price}</div>                  
             <button onclick="buyItem()">Buy</button>             
             `;
