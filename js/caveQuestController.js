@@ -1,9 +1,9 @@
 
 let keySelected = false;
-//legge til health potion mulighet mid game.. endrer characterCurrentHp
-//koble til inventory
-//koble quest til hver enkelt bruker somehow
-//øke xp og loot fra quest/kill
+// legge til health potion mulighet mid game.. endrer characterCurrentHp
+// koble til inventory
+// koble quest til hver enkelt bruker
+// få loot fra quest/kill
 
 function attackBossMonster(){
 	model.app.currentCharacterInfo.messageLog.push('Kill that thang!')
@@ -33,9 +33,13 @@ function attackCaveMonster(){
 			model.app.currentCharacterInfo.currentQuestStep = 'Make your way though the obstacle';
 			model.app.currentCharacterInfo.xp += 100;
 			model.app.currentCharacterInfo.level ++;
-			// for the correct user V or drop on floor first
-			// model.stats.money+= 100;
+			model.app.currentCharacterInfo.atk ++;
+			model.app.currentCharacterInfo.def ++;
+			model.app.currentCharacterInfo.spd ++;
+			model.app.currentCharacterInfo.money += 100;
+			// or drop money, key and health potions on floor first
 
+			// take info from currentCharacterInfo instead below
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
 			model.app.currentCharacterInfo.messageLog.push(`Monster successfully slayed, continue`);
@@ -52,17 +56,19 @@ function attackCaveMonster(){
 }
 
 function getThroughStones(){
-	//for the correct user
-	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
+		// take info from currentCharacterInfo instead below
+			if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
 		model.caveQuest[0].stoneCount--;
 		model.app.currentCharacterInfo.messageLog.push('You remove one stone...');
 		if (model.caveQuest[0].stoneCount == 0){
 			model.caveQuest[0].stoneWallPresent = false; 
 			model.caveQuest[0].doorPresent = true;
-			model.app.currentCharacterInfo.messageLog.push('A door appear behind the stones.')
+			model.app.currentCharacterInfo.messageLog.push('A door appear behind the stones.');
+			model.app.currentCharacterInfo.xp += 50;
+
 		}
 	} else {
-		model.app.currentCharacterInfo.messageLog.push('You must slay the monster before approaching the door.')
+		model.app.currentCharacterInfo.messageLog.push('You must slay the monster before approaching the door.');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
@@ -73,11 +79,12 @@ function getThroughDoor(){
 	if (model.inventories[0].hasKey == true && keySelected == true){
 		model.caveQuest[0].doorPresent = false;
 		model.caveQuest[2].caveBossPresent = true;	
-		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!')
-		model.app.currentCharacterInfo.currentQuestStep = 'Kill the Cave Boss'
-
+		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!');
+		model.app.currentCharacterInfo.currentQuestStep = 'Kill the Cave Boss';
+		model.app.currentCharacterInfo.xp += 50;
+		model.app.currentCharacterInfo.level ++;
 	} else {
-		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?')
+		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
