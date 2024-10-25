@@ -23,10 +23,10 @@
 .headerBtn{
     margin-top: 20px;
     margin-left: 100px;
-    float: right;
 }
 .headerBtn button{
     padding:3px 5px;
+    cursor: pointer;
 }
 .headerBtn button:hover{
     background-color: darkgray;
@@ -51,6 +51,7 @@
 
 .headerChangeChar {
     margin-top: 20px;
+    cursor: pointer;
 }
 .sceneDiv {
     grid-area: gameView;
@@ -120,7 +121,7 @@
 
 .footerMissionsDiv {
     background-color: lightgray;
-    width: 290px;
+    width: 210px;
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
