@@ -18,11 +18,12 @@
     background-color: bisque;
     border: 2px double black;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px auto 250px;
+    grid-template-columns: 100px 100px 100px 100px 600px auto 250px;
 }
 .headerBtn{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 100px;
+    float: right;
 }
 .headerBtn button{
     padding:3px 5px;

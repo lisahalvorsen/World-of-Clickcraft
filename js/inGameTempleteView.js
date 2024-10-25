@@ -10,7 +10,7 @@ function gameTemplateView() {
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
-    <div class='headerBtn'><button onclick='logOutButton()'>Log out</button></div>
+    
         <div class='headerHP'>
         ❤️: ${model.app.currentCharacterInfo.currenthp}/${model.app.currentCharacterInfo.hp}
         </div>
@@ -26,6 +26,7 @@ function gameTemplateView() {
         <div class='headerGameName'>
         <h1>${scene}</h1>
         </div>
+        <div class='headerBtn'><button onclick='logOutButton()'>Log out</button></div>
         <div class='headerChangeChar' onclick='goToCharacterSelectionPage()' >
         🔁Change Character 
         </div>
