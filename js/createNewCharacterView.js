@@ -11,7 +11,7 @@ function createNewCharacterView() {
             <h1> Create New Character</h1>
                 <div class='inputDiv'>
                     <label for='name'>Name:</label>
-                    <input type='text' id='name' name='fname' oninput='characterName=this.value'>
+                    <input type='text' id='name' name='fname' value='${characterName}' oninput='characterName=this.value'>
                 </div>
             </br>
             </br>

@@ -6,5 +6,4 @@ function townQuestView() {
         <div class='shopDiv' onclick="goToShop()"></div>
     </div>
     `;
-
 }
