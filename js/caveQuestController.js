@@ -33,8 +33,11 @@ function attackCaveMonster(){
 			model.app.currentCharacterInfo.currentQuestStep = 'Make your way though the obstacle';
 			model.app.currentCharacterInfo.xp += 100;
 			model.app.currentCharacterInfo.level ++;
-			// for the correct user V or drop on floor first
-			// model.stats.money+= 100;
+			model.app.currentCharacterInfo.att ++;
+			model.app.currentCharacterInfo.def ++;
+			model.app.currentCharacterInfo.spd ++;
+			model.app.currentCharacterInfo.money += 100;
+			// or drop on floor first
 
 			model.inventories[0].hasKey = true;
 			model.caveQuest[0].progress++;
@@ -59,10 +62,10 @@ function getThroughStones(){
 		if (model.caveQuest[0].stoneCount == 0){
 			model.caveQuest[0].stoneWallPresent = false; 
 			model.caveQuest[0].doorPresent = true;
-			model.app.currentCharacterInfo.messageLog.push('A door appear behind the stones.')
+			model.app.currentCharacterInfo.messageLog.push('A door appear behind the stones.');
 		}
 	} else {
-		model.app.currentCharacterInfo.messageLog.push('You must slay the monster before approaching the door.')
+		model.app.currentCharacterInfo.messageLog.push('You must slay the monster before approaching the door.');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
@@ -73,11 +76,11 @@ function getThroughDoor(){
 	if (model.inventories[0].hasKey == true && keySelected == true){
 		model.caveQuest[0].doorPresent = false;
 		model.caveQuest[2].caveBossPresent = true;	
-		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!')
-		model.app.currentCharacterInfo.currentQuestStep = 'Kill the Cave Boss'
+		model.app.currentCharacterInfo.messageLog.push('You unlock the door and enter a room where you see a HUGE creature!');
+		model.app.currentCharacterInfo.currentQuestStep = 'Kill the Cave Boss';
 
 	} else {
-		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?')
+		model.app.currentCharacterInfo.messageLog.push('Perhaps I can use the key the monster dropped..?');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
