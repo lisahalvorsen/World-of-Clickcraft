@@ -1,10 +1,10 @@
 function townQuestView() {
+    scene = 'Town'
     return /*HTML*/ ` 
-    <div>Hello!</div>
-
-    <button onclick="goToShop()">Go to shop</button>
-
-    <button onclick="goBackToMap()">Go back to map</button>
+    <div class='townMap'>
+        <div class='elderDiv'></div>
+        <div class='shopDiv' onclick="goToShop()"></div>
+    </div>
     `;
 
 }
