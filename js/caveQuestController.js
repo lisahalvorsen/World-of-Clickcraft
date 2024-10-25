@@ -1,9 +1,9 @@
 
 let keySelected = false;
-//legge til health potion mulighet mid game.. endrer characterCurrentHp
-//koble til inventory
-//koble quest til hver enkelt bruker somehow
-//øke xp og loot fra quest/kill
+// legge til health potion mulighet mid game.. endrer characterCurrentHp
+// koble til inventory
+// koble quest til hver enkelt bruker
+// få loot fra quest/kill
 
 function attackBossMonster(){
 	model.app.currentCharacterInfo.messageLog.push('Kill that thang!')
@@ -56,8 +56,8 @@ function attackCaveMonster(){
 }
 
 function getThroughStones(){
-	//for the correct user
-	if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
+		// take info from currentCharacterInfo instead below
+			if (model.caveQuest[0].progress === 1 && model.caveQuest[0].stoneWallPresent) {
 		model.caveQuest[0].stoneCount--;
 		model.app.currentCharacterInfo.messageLog.push('You remove one stone...');
 		if (model.caveQuest[0].stoneCount == 0){
