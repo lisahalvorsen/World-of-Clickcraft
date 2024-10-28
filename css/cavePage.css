@@ -1,0 +1,27 @@
+
+
+#boss-health-bar-container, #monster-health-bar-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#boss-health-text, #monster-health-text {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#boss-health-bar, #monster-health-bar {
+    width: 200px;
+    height: 20px;
+    background-color: red; 
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#boss-health-fill, #monster-health-fill {
+    height: 100%;
+    width: 100%; 
+    background-color: green;
+    transition: width 0.3s ease; 
+}
