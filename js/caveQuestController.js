@@ -17,6 +17,7 @@ function attackBossMonster(){
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const bossStats = caveQuest[2]; 
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 
     if (characterStats.currenthp > 0 && bossStats.currentHp > 0) {
@@ -42,15 +43,20 @@ function attackBossMonster(){
 		messageLog.text.push("Oops! You are dead!! The boss stands victorious.");
 		characterStats.currenthp = characterStats.hp;
 		bossStats.currentHp = bossStats.hp;
-		gameView = mapPageView()
-		goToGamePage();
+		characterInfo.currentQuestStep = 'Kill the Cave Boss!';
+		caveQuest[0].currentQuestStep = 'Kill the Cave Boss!';
+		goBackToMap();
 		gameTemplateView();
 		return;
 	} else if (bossStats.currentHp <= 0) {
 		bossStats.caveBossPresent= false;
+		characterInfo.currentQuest = 'Find a new quest!'
+		characterInfo.currentQuestStep = '';
+		caveQuest[0].currentQuestStep = '';
+		caveQuest[0].questFinished = true;
 		messageLog.text.push(
 			"With a final blow, you defeat the Cave Boss!",
-			"The boss lets out a thunderous roar as it falls, leaving behind precious loot."
+			"The boss lets out a roar as it falls, leaving behind precious loot."
 		);
 		grantBossRewards(characterStats, messageLog);
 		bossStats.currentHp = bossStats.hp;
@@ -91,6 +97,8 @@ function attackCaveMonster(){
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
+	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+
 	let caveMonsterStats = caveQuest[1];
 
 	if (characterStats.currenthp > 0 && caveQuest[1].currentHp > 0){
@@ -111,6 +119,7 @@ function attackCaveMonster(){
 
 		} else if (caveMonsterStats.currentHp <=0) {
 			caveQuest[1].caveMonsterPresent = false;
+			characterInfo.currentQuestStep = 'Make your way though the obstacle';
 			caveQuest[0].currentQuestStep = 'Make your way though the obstacle';
 			characterStats.xp += 100;
 			characterStats.level ++;
@@ -163,12 +172,13 @@ function getThroughDoor(){
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
+	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 	if (characterInventory.hasKey == true && characterInventory.keySelected == true){
 		caveQuest[0].doorPresent = false;
 		caveQuest[2].caveBossPresent = true;	
-		 addMessage(messageLog, 'You unlock the door and enter a room where you see a HUGE creature!');
-		caveQuest.currentQuestStep = 'Kill the Cave Boss';
+		addMessage(messageLog, 'You unlock the door and enter a room where you see a HUGE creature!');
+		characterInfo.currentQuestStep = 'Kill the Cave Boss';
 		characterStats.xp += 50;
 		characterStats.level ++;
 	} else {

@@ -75,10 +75,10 @@ function goToTownIsland() {
 function goToCaveIsland() {
     const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
-
-    characterInfo.currentQuest = caveQuest[0].name;
-    characterInfo.currentQuestStep = caveQuest[0].currentQuestStep ?? '';
-
+    if (!caveQuest.questFinished){
+        characterInfo.currentQuest = caveQuest[0].name;
+        characterInfo.currentQuestStep = caveQuest[0].currentQuestStep ?? '';
+    }
     gameView = caveQuestView();
     gameTemplateView();
 }
