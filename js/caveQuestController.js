@@ -1,5 +1,5 @@
 
-let keySelected = false;
+	characterInventory.keySelected = false;
 //common
 function findCharacterMessageLog(userId, characterId) {
     return model.messageLog.find(msg => msg.userId === userId && msg.characterId === characterId);
@@ -105,7 +105,7 @@ function getThroughDoor(){
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
 
 	//for correct character
-	if (characterInventory.hasKey == true && keySelected == true){
+	if (characterInventory.hasKey == true && characterInventory.keySelected == true){
 		caveQuest[0].doorPresent = false;
 		caveQuest[2].caveBossPresent = true;	
 		messageLog.text.push('You unlock the door and enter a room where you see a HUGE creature!');
@@ -122,8 +122,8 @@ function getThroughDoor(){
 function selectKey(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 
-	keySelected = !keySelected; 
-	messageLog.text.push(keySelected ? 'Key selected' : 'Key unselected');
+	characterInventory.keySelected = !characterInventory.keySelected; 
+	messageLog.text.push(characterInventory.keySelected ? 'Key selected' : 'Key unselected');
 	gameView = caveQuestView();
 	gameTemplateView();
 }

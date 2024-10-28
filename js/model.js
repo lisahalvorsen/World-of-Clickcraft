@@ -47,9 +47,9 @@ const model = {
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
-        { userId: 1, characterId: 1, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
-        { userId: 1, characterId: 2, hasKey: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, rope: 0, healthPotions: 0 },
     ],
 
     messageLog: [
