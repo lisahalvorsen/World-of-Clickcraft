@@ -4,13 +4,81 @@
 // legge til health potion mulighet mid game.. endrer CurrentHp
 // få loot fra quest/kill på bakken som går videre til inventory
 
+
+
+
 function attackBossMonster(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
-	messageLog.text.push('Kill that thang!');
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
+	const bossStats = caveQuest[2]; 
 
-	gameView = caveQuestView();
-	gameTemplateView();
+    if (characterStats.currenthp > 0 && bossStats.currentHp > 0) {
+        let playerDamageTaken = calculateDamage(bossStats.atk, characterStats.def);
+        let bossDamageTaken = calculateDamage(characterStats.atk, bossStats.def);
+		if (bossStats.currentHp < bossStats.hp * 0.5 && bossStats.currentHp > bossStats.hp * 0.2) {
+            messageLog.text.push("The boss roars furiously, unleashing a devastating attack!");
+            playerDamageTaken *= 1.5; 
+        } else if (bossStats.currentHp <= bossStats.hp * 0.2) {
+            messageLog.text.push("The boss enters its final rage phase, becoming unstoppable!");
+            playerDamageTaken *= 2; 
+            bossDamageTaken *= 0.8; 
+        } 	
+		characterStats.currenthp -= playerDamageTaken;
+		bossStats.currentHp -= bossDamageTaken;
+		messageLog.text.push(
+			`You strike the boss, dealing ${bossDamageTaken} damage!`,
+			`The boss retaliates, dealing ${playerDamageTaken} damage!`
+		);
+	}
+
+	if (characterStats.currenthp <= 0) {
+		messageLog.text.push("Oops! You are dead!! The boss stands victorious.");
+		characterStats.currenthp = characterStats.hp;
+		bossStats.currentHp = bossStats.hp;
+		gameView = mapPageView()
+		goToGamePage();
+		gameTemplateView();
+		return;
+	} else if (bossStats.currentHp <= 0) {
+		bossStats.caveBossPresent= false;
+		messageLog.text.push(
+			"With a final blow, you defeat the Cave Boss!",
+			"The boss lets out a thunderous roar as it falls, leaving behind precious loot."
+		);
+		grantBossRewards(characterStats, messageLog);
+		bossStats.currentHp = bossStats.hp;
+	} 
+    gameView = caveQuestView();
+    gameTemplateView();
 }
+
+function grantBossRewards(character, messageLog) {
+	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+
+	character.level += 2;
+    character.xp += 500;
+    character.money += 500;
+    characterInventory.healthPotions += 3;
+    let rareDropChance = Math.random();
+
+    if (rareDropChance < 0.2) { 
+        messageLog.text.push("Rare drop: The monster dropped an extra 500 money!");
+        characterInventory.money += 500;
+    }
+
+    messageLog.text.push(
+        `Rewards: +500 XP, +500 Gold, +3 Health Potions.`,
+        `Congratulations! You have emerged victorious from the boss battle.`,
+        `Return to the map to find another quest, defeat a boss, or visit the town!`
+    );
+}
+
+
+
+
+
+
 
 function attackCaveMonster(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
@@ -30,6 +98,10 @@ function attackCaveMonster(){
 		if (characterStats.currenthp <= 0) {
             addMessage(messageLog, `Oops! You are dead!`);
 			characterStats.currenthp = characterStats.hp;
+			gameView = mapPageView()
+			goToGamePage();
+			gameTemplateView();
+			return;
 
 		} else if (caveMonsterStats.currentHp <=0) {
 			caveQuest[1].caveMonsterPresent = false;
