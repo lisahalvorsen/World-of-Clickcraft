@@ -71,11 +71,13 @@ function gameTemplateView() {
         BOOTS: ${model.boots[characterEquipped.bootsId-1].name}
         </div>
         <div class='footerActionsDiv'>
-        <h3>ACTIONS</h3>
+        <h3>Return To Map</h3>
         <br>
-        <button class="inGameBtn">Attack</button>
-        <br>
-        <button class="inGameBtn" onclick='goBackToMap()'>Back</button>
+         <!--<button class="inGameBtn">Attack</button>
+         <br>
+         <button class="inGameBtn" onclick='goBackToMap()'>Back</button>-->
+        <img class='returnMap' onclick='goBackToMap()'>
+
         </div>
         <div class='footerInventoryDiv'>
             <h3>INVENTORY</h3>
