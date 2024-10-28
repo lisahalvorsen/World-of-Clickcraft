@@ -75,8 +75,6 @@ function goToTownIsland() {
     gameTemplateView();
 }
 function goToCaveIsland() {
-    model.app.currentCharacterInfo.currentQuest = model.caveQuest[0].name;
-    model.app.currentCharacterInfo.currentQuestStep = model.caveQuest[0].currentQuestStep;
     gameView = caveQuestView();
     gameTemplateView();
 }
