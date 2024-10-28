@@ -1,26 +1,9 @@
 
-	characterInventory.keySelected = false;
-//common
-function findCharacterMessageLog(userId, characterId) {
-    return model.messageLog.find(msg => msg.userId === userId && msg.characterId === characterId);
-}
-function findCharacterInventory(userId, characterId) {
-    return model.inventories.find(invent => invent.userId === userId && invent.characterId === characterId);
-}
-function findCharacterCaveQuest(userId, characterId) {
-    return model.caveQuest.filter(id => id.userId === userId && id.characterId === characterId);
-}
-function findCharacterStats(userId, characterId) {
-    return model.stats.find(userStat => userStat.userId === userId && userStat.characterId === characterId);
-}
 
 
-//legge til caveQuest[0].currentQuestStep i modellen
-
-// koble til inventory
-// legge til health potion mulighet mid game.. endrer characterCurrentHp
-// koble quest til hver enkelt bruker
-// få loot fra quest/kill
+// når man lager ny bruker må man legge til inventory og quests for denne bruker i modellen
+// legge til health potion mulighet mid game.. endrer CurrentHp
+// få loot fra quest/kill på bakken som går videre til inventory
 
 function attackBossMonster(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
@@ -50,7 +33,7 @@ function attackCaveMonster(){
 			characterStats.currenthp = characterStats.hp;
 
 		} else if (caveMonsterStats.currentHp <=0) {
-			model.caveQuest[1].caveMonsterPresent = false;
+			caveQuest[1].caveMonsterPresent = false;
 			caveQuest[0].currentQuestStep = 'Make your way though the obstacle';
 			characterStats.xp += 100;
 			characterStats.level ++;
@@ -61,8 +44,8 @@ function attackCaveMonster(){
 			//characterInventory
 			// or drop money, key and health potions on floor first
 			characterStats.money += 100;
-			model.inventories[0].hasKey = true;
-			model.caveQuest[0].progress++;
+			characterInventory.hasKey = true;
+			caveQuest[0].progress++;
 			messageLog.text.push(`Monster successfully slayed, continue`);
 
 		} else {

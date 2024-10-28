@@ -98,3 +98,18 @@ function goToBossIsland() {
     gameView = bossQuestView();
     gameTemplateView();
 }
+
+
+
+function findCharacterMessageLog(userId, characterId) {
+    return model.messageLog.find(msg => msg.userId === userId && msg.characterId === characterId);
+}
+function findCharacterInventory(userId, characterId) {
+    return model.inventories.find(invent => invent.userId === userId && invent.characterId === characterId);
+}
+function findCharacterCaveQuest(userId, characterId) {
+    return model.caveQuest.filter(id => id.userId === userId && id.characterId === characterId);
+}
+function findCharacterStats(userId, characterId) {
+    return model.stats.find(userStat => userStat.userId === userId && userStat.characterId === characterId);
+}
