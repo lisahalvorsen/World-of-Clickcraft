@@ -1,4 +1,4 @@
-.shopItems {
+.itemPicture {
     height: 150px;
 }
 
@@ -8,4 +8,36 @@
 
 .iIcon {
     height: 12px;
+}
+
+.shopContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    gap: 15px;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+    text-align: center;
+}
+
+.categoryBtn,
+.buyBtn,
+.exitBtn {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid darkgrey;
+}
+
+.categoryBtn:hover,
+.buyBtn:hover,
+.exitBtn:hover {
+    border: 2px solid red;
 }
