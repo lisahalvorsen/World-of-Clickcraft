@@ -20,7 +20,7 @@ function attackCaveMonster(){
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
 	let caveMonsterStats = caveQuest[1];
 
-	if (characterStats.currenthp > 0 && caveMonsterStats.currentHp > 0){
+	if (characterStats.currenthp > 0 && caveQuest[1].currentHp > 0){
 		let caveMonsterDamageTaken = calculateDamage(characterStats.atk, caveMonsterStats.def);
 		let characterDamageTaken = calculateDamage(caveMonsterStats.atk, characterStats.def);
 		let monsterRemainingHp = caveMonsterStats.currentHp - caveMonsterDamageTaken;
