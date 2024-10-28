@@ -2,26 +2,28 @@ let scene = 'Map';
 let gameView = mapPageView()
 
 function gameTemplateView() {
-
-    model.app.currentPage = 'inGamePage';
-
-    // inGameStats()
-
+    const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterEquipped = findCharacterEquipped(model.app.loggedInUser, model.app.loggedInCharacterId);
+  
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
     
         <div class='headerHP'>
-        ❤️: ${model.app.currentCharacterInfo.currenthp}/${model.app.currentCharacterInfo.hp}
+        ❤️: ${characterStats.currenthp}/${characterStats.hp}
         </div>
         <div class='headerGold'>
-        🪙: ${model.app.currentCharacterInfo.money}
+        🪙: ${characterInventory.money}
         </div>
         <div class='headerLevel'>
-        Level: ${model.app.currentCharacterInfo.level}
+        Level: ${characterStats.level}
         </div>
         <div class='headerXP'>
-        XP: ${model.app.currentCharacterInfo.xp}
+        XP: ${characterStats.xp}
         </div>
         <div class='headerGameName'>
         <h1>${scene}</h1>
@@ -39,8 +41,8 @@ function gameTemplateView() {
             <h3>MESSAGES</h3>
             <br>
             <div class="showingMessages">
-               ${model.app.currentCharacterInfo.messageLog.map(log => `<div>${log}</div><br>`).join('')}
-            </div>
+            ${messageLog.text.map(log => `<div>${log}</div><br>`).join('')}
+        </div>
         </div>
     </div>
 
@@ -52,21 +54,21 @@ function gameTemplateView() {
         <h3>STATS</h3>
         <br>
         <br>
-        ATK: ${model.app.currentCharacterInfo.atk}
+        ATK: ${characterStats.atk}
         <br>
-        DEF: ${model.app.currentCharacterInfo.def}
+        DEF: ${characterStats.def}
         <br>
-        SPD: ${model.app.currentCharacterInfo.spd}
+        SPD: ${characterStats.spd}
         </div>
         <div class='footerEqiuppedItemsDiv'>
         <h3>EQUIPPED ITEMS</h3>
         <br>
         <br>
-        WEAPON: ${model.app.currentCharacterInfo.weapon}
+        WEAPON: ${model.weapons[characterEquipped.weaponId-1].name}
         <br>
-        ARMOR: ${model.app.currentCharacterInfo.armor}
+        ARMOR: ${model.armors[characterEquipped.armorId-1].name}
         <br>
-        BOOTS: ${model.app.currentCharacterInfo.boots}
+        BOOTS: ${model.boots[characterEquipped.bootsId-1].name}
         </div>
         <div class='footerActionsDiv'>
         <h3>ACTIONS</h3>
@@ -79,16 +81,16 @@ function gameTemplateView() {
             <h3>INVENTORY</h3>
             <div class="currentInventory">
                  <br>
-                 ${model.app.currentCharacterInfo.currentInventory??''}
+                 ${characterInventory??''}
          </div>
         </div>
         <div class='footerMissionsDiv'>
             <h3>MISSION</h3>
             <br>
             <div class="currentMisson">
-               Current Quest: ${model.app.currentCharacterInfo.currentQuest??''}
+               Current Quest: ${characterInfo.currentQuest ?? ''}
                 <br>
-                Quest step: ${model.app.currentCharacterInfo.currentQuestStep??''}
+                Quest step: ${characterInfo.currentQuestStep ?? ''}
             </div>
         </div>
     </footer>

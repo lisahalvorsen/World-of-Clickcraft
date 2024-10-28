@@ -1,6 +1,5 @@
 
 
-
 // når man lager ny bruker må man legge til inventory og quests for denne bruker i modellen
 // legge til health potion mulighet mid game.. endrer CurrentHp
 // få loot fra quest/kill på bakken som går videre til inventory
@@ -29,7 +28,7 @@ function attackCaveMonster(){
 		caveMonsterStats.currentHp = monsterRemainingHp;
 
 		if (characterStats.currenthp <= 0) {
-			messageLog.text.push(`Oops! You are dead!`);
+            addMessage(messageLog, `Oops! You are dead!`);
 			characterStats.currenthp = characterStats.hp;
 
 		} else if (caveMonsterStats.currentHp <=0) {
@@ -46,13 +45,13 @@ function attackCaveMonster(){
 			characterStats.money += 100;
 			characterInventory.hasKey = true;
 			caveQuest[0].progress++;
-			messageLog.text.push(`Monster successfully slayed, continue`);
+            addMessage(messageLog, `Monster successfully slayed, continue`);
 
 		} else {
-			messageLog.text.push(`Damage taken on cave monster: ${caveMonsterDamageTaken}.`)
-			messageLog.text.push(`Damage recived from cave monster: ${characterDamageTaken}.`)
-			messageLog.text.push(`Your current hitpoints are ${characterStats.currenthp}.`)
-			messageLog.text.push(`Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining.`)
+			addMessage(messageLog, `Damage taken on cave monster: ${caveMonsterDamageTaken}.`);
+            addMessage(messageLog, `Damage received from cave monster: ${characterDamageTaken}.`);
+            addMessage(messageLog, `Your current hitpoints are ${characterStats.currenthp}.`);
+            addMessage(messageLog, `Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining.`);
 		}
 	} 
 	gameView = caveQuestView();
@@ -66,16 +65,16 @@ function getThroughStones(){
 
 		if (caveQuest[0].progress === 1 && caveQuest[0].stoneWallPresent) {
 			caveQuest[0].stoneCount--;
-			messageLog.text.push('You remove one stone...');
+			 addMessage(messageLog, 'You remove one stone...');
 		if (caveQuest[0].stoneCount == 0){
 			caveQuest[0].stoneWallPresent = false; 
 			caveQuest[0].doorPresent = true;
-			messageLog.text.push('A door appear behind the stones.');
+			 addMessage(messageLog, 'A door appear behind the stones.');
 			characterStats.xp += 50;
 
 		}
 	} else {
-		messageLog.text.push('You must slay the monster before approaching the door.');
+		 addMessage(messageLog, 'You must slay the monster before approaching the door.');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
@@ -87,16 +86,15 @@ function getThroughDoor(){
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
 
-	//for correct character
 	if (characterInventory.hasKey == true && characterInventory.keySelected == true){
 		caveQuest[0].doorPresent = false;
 		caveQuest[2].caveBossPresent = true;	
-		messageLog.text.push('You unlock the door and enter a room where you see a HUGE creature!');
+		 addMessage(messageLog, 'You unlock the door and enter a room where you see a HUGE creature!');
 		caveQuest.currentQuestStep = 'Kill the Cave Boss';
 		characterStats.xp += 50;
 		characterStats.level ++;
 	} else {
-		messageLog.text.push('Perhaps I can use the key the monster dropped..?');
+		 addMessage(messageLog, 'Perhaps I can use the key the monster dropped..?');
 	}
 	gameView = caveQuestView();
 	gameTemplateView();
@@ -104,9 +102,10 @@ function getThroughDoor(){
 
 function selectKey(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
 
 	characterInventory.keySelected = !characterInventory.keySelected; 
-	messageLog.text.push(characterInventory.keySelected ? 'Key selected' : 'Key unselected');
+	addMessage(messageLog, characterInventory.keySelected ? 'Key selected' : 'Key unselected');
 	gameView = caveQuestView();
 	gameTemplateView();
 }

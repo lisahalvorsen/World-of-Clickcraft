@@ -64,37 +64,37 @@ function inGameStats() {
 }
 
 function logOutButton() {
-    alert('logging Out Now!');
     model.app.currentPage = 'homePage';
     updateView();
 }
 
 function goToTownIsland() {
-    //  alert('Town Island clicked!');
     gameView = townQuestView();
     gameTemplateView();
 }
 function goToCaveIsland() {
+    const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+
+    characterInfo.currentQuest = caveQuest[0].name;
+    characterInfo.currentQuestStep = caveQuest[0].currentQuestStep ?? '';
+
     gameView = caveQuestView();
     gameTemplateView();
 }
 function goToDesertIsland() {
-    //  alert('Desert Island clicked!');
     gameView = desertQuestView();
     gameTemplateView();
 }
 function goToforestIsland() {
-    //  alert('Forest Island clicked!');
     gameView = forestQuestView();
     gameTemplateView();
 }
 function goToMountainIsland() {
-    //  alert('Mountain Island clicked!');
     gameView = mountainQuestView();
     gameTemplateView();
 }
 function goToBossIsland() {
-    //  alert('Boss Island clicked!');
     gameView = bossQuestView();
     gameTemplateView();
 }
@@ -112,4 +112,26 @@ function findCharacterCaveQuest(userId, characterId) {
 }
 function findCharacterStats(userId, characterId) {
     return model.stats.find(userStat => userStat.userId === userId && userStat.characterId === characterId);
+}
+function findCharacterCharacterInfo(userId, characterId) {
+    return model.characters.find(character => character.userId === userId && character.characterId === characterId);
+}
+
+
+function findCharacterEquipped(userId, characterId) {
+    return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
+}
+// function findCharacterBoots(userId, characterId) {
+//     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
+// }
+// function findCharacterArmour(userId, characterId) {
+//     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
+// }
+
+
+function addMessage(messageLog, newMessage) {
+    messageLog.text.push(newMessage);
+    if (messageLog.text.length > 50) {
+        messageLog.text.shift();
+    }
 }
