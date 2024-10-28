@@ -18,11 +18,11 @@ function attackBossMonster(){
         let bossDamageTaken = calculateDamage(characterStats.atk, bossStats.def);
 		if (bossStats.currentHp < bossStats.hp * 0.5 && bossStats.currentHp > bossStats.hp * 0.2) {
             messageLog.text.push("The boss roars furiously, unleashing a devastating attack!");
-            playerDamageTaken *= 1.5; 
+            playerDamageTaken = Math.floor(playerDamageTaken * 1.5); 
         } else if (bossStats.currentHp <= bossStats.hp * 0.2) {
             messageLog.text.push("The boss enters its final rage phase, becoming unstoppable!");
-            playerDamageTaken *= 2; 
-            bossDamageTaken *= 0.8; 
+            playerDamageTaken = Math.floor(playerDamageTaken * 2); 
+            bossDamageTaken = Math.floor(bossDamageTaken * 0.8); 
         } 	
 		characterStats.currenthp -= playerDamageTaken;
 		bossStats.currentHp -= bossDamageTaken;
