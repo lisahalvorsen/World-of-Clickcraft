@@ -8,6 +8,7 @@ function shopView(items = model.shop) {
                 <button onclick="getShopInventory('Clothing')">Clothing</button>
                 <button onclick="getShopInventory('Pets')">Pets</button>
                 <button onclick="getShopInventory('Weapons')">Weapons</button>
+                <button onclick="getShopInventory()">All items</button>
             </div>
             ${drawAllShopItemsHtml(items)}
             <br>
@@ -23,7 +24,7 @@ function drawAllShopItemsHtml(items) {
         html += /*HTML*/ `
             <div>
                 <img class="shopItems" src="${item.picture}" />
-                <div class="itemName">${item.name}</div>
+                <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png"/></div>
                 <div>$ ${item.price}</div>
                 <button onclick="buyItem()">Buy</button>
             </div>
