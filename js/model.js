@@ -98,13 +98,13 @@ const model = {
     caveQuest: [
         { id: 1, userId: 0, characterId: 0, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 2, userId: 0, characterId: 0, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 3, userId: 0, characterId: 0, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
+        { id: 3, userId: 0, characterId: 0, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
         { id: 4, userId: 1, characterId: 1, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 5, userId: 1, characterId: 1, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 6, userId: 1, characterId: 1, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
+        { id: 6, userId: 1, characterId: 1, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
         { id: 7, userId: 1, characterId: 2, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 8, userId: 1, characterId: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 9, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
+        { id: 9, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
     ],
     shop: [
         { id: 1, name: 'Rope', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20, picture: '../images/rope2.png' },
