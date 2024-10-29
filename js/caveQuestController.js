@@ -2,7 +2,6 @@
 
 // når man lager ny bruker må man legge til quests for denne bruker i modellen
 // få loot fra quest/kill på bakken som går videre til inventory
-// lage inventoryController fil og legge til funksjoner der
 
 
 function updateEnemyHealthBar(enemy) {
@@ -85,7 +84,7 @@ function grantBossRewards(character, messageLog) {
     }
 
     messageLog.text.push(
-        `Rewards: +500 XP, +500 Gold, +3 Health Potions.`,
+        `Rewards: +500 XP, +500 Gold, +5 Health Potions.`,
         `Congratulations! You have emerged victorious from the boss battle.`,
         `Return to the map to find another quest, defeat a boss, or visit the town!`
     );
@@ -98,8 +97,7 @@ function attackCaveMonster(){
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
-
-	let caveMonsterStats = caveQuest[1];
+	const caveMonsterStats = caveQuest[1];
 
 	if (characterStats.currenthp > 0 && caveQuest[1].currentHp > 0){
 		let caveMonsterDamageTaken = calculateDamage(characterStats.atk, caveMonsterStats.def);
@@ -127,7 +125,6 @@ function attackCaveMonster(){
 			characterStats.def ++;
 			characterStats.spd ++;
 
-			//characterInventory
 			// or drop money, key and health potions on floor first
 			characterStats.money += 100;
 			characterInventory.hasKey = true;
