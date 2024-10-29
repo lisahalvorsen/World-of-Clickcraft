@@ -107,10 +107,10 @@ const model = {
         { id: 9, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
     ],
     shop: [
-        { id: 1, name: 'Rope', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20, picture: '../images/rope2.png' },
-        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, picture: '../images/boots2.png' },
-        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, picture: '../images/owl.png' },
-        { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350, picture: '../images/bowAndArrow.png' },
+        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20, picture: '⛏️' },
+        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, picture: '🥾' },
+        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, picture: '🦉' },
+        { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350, picture: '🏹' },
     ],
 
 };

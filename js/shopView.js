@@ -23,7 +23,7 @@ function drawAllShopItemsHtml(items) {
     for (const item of items) {
         html += /*HTML*/ `
             <div class="items">
-                <img class="itemPicture" src="${item.picture}" />
+                <div class="itemPicture">${item.picture}</div>
                 <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png"/></div>
                 <div class="itemPrice">$ ${item.price}</div>
                 <button onclick="buyItem('${item.name}', 1, ${item.price})" class="buyBtn">Buy</button>
