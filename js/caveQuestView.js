@@ -3,6 +3,7 @@ const stoneWallElement = '🪨';
 const doorElement = '🚪';
 const healthPotionElement = '🧪'
 
+
 function caveQuestView() {
 
 	return /*HTML*/`
@@ -25,6 +26,7 @@ function caveQuestView() {
 function showingCaveBoss() {
 	const width = updateEnemyHealthBar(2)
     const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     if (caveQuest[2].caveBossPresent) {
         return /*HTML*/`
             <h2>Cave Boss</h2> 
@@ -34,7 +36,11 @@ function showingCaveBoss() {
                     <div id="boss-health-fill" style="width: ${width??100}%;"></div> 
                 </div>
             </div>
-            <img src="../images/boss.png" alt="Boss" onclick='attackBossMonster()'>
+			<div class='characterInGame'>
+				<img src="${characterInfo.picture}" alt="" width='100' height='100' >
+				<img src="../images/boss.png" alt="" width='100' height='100' onclick='attackBossMonster()'>
+			</div>
+            
         `;
     } else {
         return '';
@@ -44,6 +50,7 @@ function showingCaveBoss() {
 function showingCaveMonster() {
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const width = updateEnemyHealthBar(1)
+	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 	if (caveQuest[1].caveMonsterPresent) {
 		return /*HTML*/`
@@ -55,9 +62,12 @@ function showingCaveMonster() {
 					<div id="monster-health-fill" style="width: ${width??100}%;"></div> 
 			</div>
 		</div>
-
+		<div class='characterInGame'>
+			<img src="${characterInfo.picture}" alt="character">
+			<img src="../images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
+		</div>
 			<!--<div onclick='attackCaveMonster()'>👹</div>-->
-			<div class='devilQuest' onclick='attackCaveMonster()'></div>
+			<!--<div class='devilQuest' onclick='attackCaveMonster()'></div>-->
 		`;
 	} else return '';
 }
