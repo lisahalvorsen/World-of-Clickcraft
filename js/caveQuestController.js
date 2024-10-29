@@ -2,17 +2,12 @@
 
 // få loot fra quest/kill på bakken som går videre til inventory
 
-
-
-
-
 function attackBossMonster(){
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const bossStats = caveQuest[2]; 
 	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
-
 
     if (characterStats.currenthp > 0 && bossStats.currentHp > 0) {
         let playerDamageTaken = calculateDamage(bossStats.atk, characterStats.def);
