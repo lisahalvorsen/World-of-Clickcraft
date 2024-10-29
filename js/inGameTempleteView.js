@@ -48,7 +48,7 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
-        <img class='footerCharacterImage' src="${model.app.currentCharacterInfo.picture}" alt="">
+        <img class='footerCharacterImage' src="${characterInfo.picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
