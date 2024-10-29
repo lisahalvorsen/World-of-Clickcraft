@@ -1,5 +1,4 @@
 
-
 #boss-health-bar-container, #monster-health-bar-container {
     display: flex;
     align-items: center;
@@ -24,4 +23,11 @@
     width: 100%; 
     background-color: green;
     transition: width 0.3s ease; 
+}
+.devilQuest{
+    height: 100px;
+    width: 100px;
+    background-image: url('../images/devilQuest.png');
+    background-size: cover;
+    cursor: pointer;
 }
