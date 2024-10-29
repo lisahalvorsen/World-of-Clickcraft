@@ -8,6 +8,7 @@
 #boss-health-text, #monster-health-text {
     font-weight: bold;
     margin-right: 10px;
+    color: white;
 }
 
 #boss-health-bar, #monster-health-bar {
@@ -30,4 +31,18 @@
     background-image: url('../images/devilQuest.png');
     background-size: cover;
     cursor: pointer;
+}
+.caveQuestPage{
+    width: 1050px;  
+    height: 450px;
+    background-image: url('../images/caveQuestgame\ copy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 500;
+}
+.monsterFont{
+    color: white;
+}
+.obstacleFont{
+    color: white;
 }
