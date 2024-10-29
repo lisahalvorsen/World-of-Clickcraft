@@ -2,30 +2,7 @@
 
 // når man lager ny bruker må man legge til quests for denne bruker i modellen
 // få loot fra quest/kill på bakken som går videre til inventory
-
-
-function useHealthPotion(){
-	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
-	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
-	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const healthPotion = characterInventory.items.find(item => item.name === 'healthpotion');
-
-	if (healthPotion.count <=0){
-		messageLog.text.push('Oh no! You dont have any more health potions!')
-	} else {
-		if (characterStats.currenthp +50 >= characterStats.hp){
-			characterStats.currenthp = characterStats.hp;
-			healthPotion.count --;
-			messageLog.text.push('You drink a health potion! You have full health')
-		} else {
-			characterStats.currenthp += 50;
-			healthPotion.count --;
-			messageLog.text.push('You drink a health potion! Your health have increased by 50!')
-		} 
-	}
-    gameTemplateView();
-}
-
+// lage inventoryController fil og legge til funksjoner der
 
 
 function updateEnemyHealthBar(enemy) {
@@ -58,8 +35,8 @@ function attackBossMonster(){
 		characterStats.currenthp -= playerDamageTaken;
 		bossStats.currentHp -= bossDamageTaken;
 		messageLog.text.push(
-			`You strike the boss, dealing ${bossDamageTaken} damage!`,
-			`The boss retaliates, dealing ${playerDamageTaken} damage!`
+			`You strike the boss, dealing ${bossDamageTaken} damage! The
+			boss retaliates, dealing ${playerDamageTaken} damage!`
 		);
 	}
 
@@ -79,8 +56,8 @@ function attackBossMonster(){
 		caveQuest[0].currentQuestStep = '';
 		caveQuest[0].questFinished = true;
 		messageLog.text.push(
-			"With a final blow, you defeat the Cave Boss!",
-			"The boss lets out a roar as it falls, leaving behind precious loot."
+			`With a final blow, you defeat the Cave Boss!
+			The boss lets out a roar as it falls, leaving behind precious loot.`
 		);
 		grantBossRewards(characterStats, messageLog);
 		bossStats.currentHp = bossStats.hp;
@@ -91,15 +68,19 @@ function attackBossMonster(){
 
 function grantBossRewards(character, messageLog) {
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+	const healthPotion = characterInventory.items.find(item => item.name === 'healthpotion');
 
-	character.level += 2;
+	character.atk += 9;
+	character.def += 9;
+	character.spd += 9;
+	character.level += 5;
     character.xp += 500;
-    character.money += 500;
-    characterInventory.healthPotions += 3;
+    characterInventory.money += 500;
+    healthPotion.count += 5;
     let rareDropChance = Math.random();
 
     if (rareDropChance < 0.2) { 
-        messageLog.text.push("Rare drop: The monster dropped an extra 500 money!");
+        messageLog.text.push("Rare drop: The monster dropped an additional 500 money!");
         characterInventory.money += 500;
     }
 
@@ -109,11 +90,6 @@ function grantBossRewards(character, messageLog) {
         `Return to the map to find another quest, defeat a boss, or visit the town!`
     );
 }
-
-
-
-
-
 
 
 function attackCaveMonster(){
@@ -159,10 +135,10 @@ function attackCaveMonster(){
             addMessage(messageLog, `Monster successfully slayed, continue`);
 
 		} else {
-			addMessage(messageLog, `Damage taken on cave monster: ${caveMonsterDamageTaken}.`);
-            addMessage(messageLog, `Damage received from cave monster: ${characterDamageTaken}.`);
-            addMessage(messageLog, `Your current hitpoints are ${characterStats.currenthp}.`);
-            addMessage(messageLog, `Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining.`);
+			messageLog.text.push(
+				`You strike the cave monster, dealing ${caveMonsterDamageTaken} damage! The 
+				cave monster retaliates, dealing ${characterDamageTaken} damage!`
+			);
 		}
 	} 
 	gameView = caveQuestView();
