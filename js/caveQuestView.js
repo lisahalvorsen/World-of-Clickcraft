@@ -29,7 +29,7 @@ function showingCaveBoss() {
 	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     if (caveQuest[2].caveBossPresent) {
         return /*HTML*/`
-            <h2>Cave Boss</h2> 
+            <h2 class='caveBossFont'>Cave Boss</h2> 
             <div id="boss-health-bar-container">
                 <span id="boss-health-text">Cave Boss HP</span>
                 <div id="boss-health-bar">

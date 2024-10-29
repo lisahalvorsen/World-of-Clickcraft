@@ -1,8 +1,8 @@
 function desertQuestView() {
     return /*HTML*/ ` 
-    <div class='action'>action here!
+    <!--<div class='action'>action here!
     <button onclick="goBackToMap()">Go back to map</button>
-    </div>
+    </div>-->
     <div class='desertQuest'></div>
     `;
 

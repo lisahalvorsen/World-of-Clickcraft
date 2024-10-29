@@ -2,7 +2,7 @@
 .bossQuest {
     width: 1050px;  
     height: 450px;
-    background-image: url('../images/desertQuest.jpg');
+    background-image: url('../images/bossIslandQuest.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 500;

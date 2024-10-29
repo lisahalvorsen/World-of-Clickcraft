@@ -13,8 +13,7 @@ function createNewCharacterView() {
                     <label for='name'>Name:</label>
                     <input type='text' id='name' name='fname' value='${characterName}' oninput='characterName=this.value'>
                 </div>
-            </br>
-            </br>
+           
             ${characterDetailsHtml()}
             </div>
     `;

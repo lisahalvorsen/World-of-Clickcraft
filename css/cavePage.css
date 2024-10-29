@@ -40,14 +40,18 @@
     align-items: center;
     justify-content: center;
 }
-.characterInGame img{
-    width: 110px;
-    height: 108px;
+.characterInGame img:nth-child(1){
+    width: 130px;
+    height: 120px;
+}
+.characterInGame img:nth-child(2){
+    width: 120px;
+    height: 110px;
 }
 .characterInGame img:nth-child(2):hover{
     cursor: url('./../images/sword.png'), auto; 
 }
-.monsterFont, .obstacleFont{
+.monsterFont, .obstacleFont, .caveBossFont{
     color: white;
 }
 
