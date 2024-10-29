@@ -47,9 +47,9 @@ const model = {
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
-        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
-        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
     ],
 
     messageLog: [

@@ -23,7 +23,10 @@ function buyItem(itemName, count, price) {
 
         userInventory.items = userInventory.items || [];
         userInventory.items.push(purchasedItem);
+        console.log(model.inventories);
     }
 
     shopView();
 }
+
+// if item exists, add count med +1 eller legg til items
