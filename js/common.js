@@ -15,16 +15,9 @@ function findCharacterCharacterInfo(userId, characterId) {
     return model.characters.find(character => character.userId === userId && character.characterId === characterId);
 }
 
-
 function findCharacterEquipped(userId, characterId) {
     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
 }
-// function findCharacterBoots(userId, characterId) {
-//     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
-// }
-// function findCharacterArmour(userId, characterId) {
-//     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
-// }
 
 
 function addMessage(messageLog, newMessage) {
@@ -33,3 +26,12 @@ function addMessage(messageLog, newMessage) {
         messageLog.text.shift();
     }
 }
+
+function updateEnemyHealthBar(enemy) {
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const bossStats = caveQuest[enemy]; 
+    const healthPercentage = (bossStats.currentHp / bossStats.hp) * 100;
+    return healthPercentage;
+}
+
+
