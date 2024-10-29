@@ -30,7 +30,7 @@
 .categoryBtn,
 .buyBtn,
 .exitBtn {
-    width: 80px;
+    width: 100px;
     height: 40px;
     cursor: pointer;
     border-radius: 10px;
