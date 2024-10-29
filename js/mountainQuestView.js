@@ -1,8 +1,9 @@
 function mountainQuestView() {
     return /*HTML*/ ` 
-    <div>Hello!</div>
-
+    <div class='action'>action here!
     <button onclick="goBackToMap()">Go back to map</button>
+    </div>
+    <div class='mountainQuest'></div>
     `;
 
 }

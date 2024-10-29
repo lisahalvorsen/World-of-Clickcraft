@@ -24,13 +24,6 @@
     background-color: green;
     transition: width 0.3s ease; 
 }
-.devilQuest{
-    height: 100px;
-    width: 100px;
-    background-image: url('../images/devilQuest.png');
-    background-size: cover;
-    cursor: pointer;
-}
 .caveQuestPage{
     width: 1050px;  
     height: 450px;
@@ -39,3 +32,19 @@
     background-repeat: no-repeat;
     z-index: 500;
 }
+.characterInGame{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.characterInGame img{
+    width: 110px;
+    height: 108px;
+}
+.characterInGame img:nth-child(2):hover{
+    cursor: url('./../images/sword.png'), auto; 
+}
+
+
