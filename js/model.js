@@ -95,6 +95,7 @@ const model = {
         { id: 1, name: 'Old sandals', description: '+5 spd', spd: 5 },
         { id: 2, name: 'New sandals', description: '+15 spd', spd: 15 },
     ],
+
     caveQuest: [
         { id: 1, userId: 0, characterId: 0, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 2, userId: 0, characterId: 0, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
@@ -106,6 +107,7 @@ const model = {
         { id: 2, userId: 1, characterId: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
         { id: 3, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
     ],
+
     shop: [
         { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 150, symbol: '⛏️' },
         { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, symbol: '🥾' },
@@ -113,5 +115,4 @@ const model = {
         { id: 4, name: 'Bow and arrow', category: 'Equipment', description: 'Bow and arrow made of solid materials', price: 350, symbol: '🏹' },
         { id: 5, name: 'Health potion', category: 'Consumables', description: 'A health potion that restores your HP', price: 50, symbol: '🧪' },
     ],
-
 };

@@ -9,9 +9,7 @@ function shopView(items = model.shop) {
                 <button onclick="getShopInventory()" class="categoryBtn">All items</button>
             </div>
                 <div class="itemContainer">${drawAllShopItemsHtml(items)}</div>
-                <br>
-                <button onclick="goBackToMap()" class="exitBtn">Exit shop</button>
-            </div>
+        </div>
     `;
 }
 
