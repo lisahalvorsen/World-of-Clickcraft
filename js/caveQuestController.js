@@ -35,8 +35,8 @@ function attackBossMonster(){
 		characterStats.currenthp -= playerDamageTaken;
 		bossStats.currentHp -= bossDamageTaken;
 		messageLog.text.push(
-			`You strike the boss, dealing ${bossDamageTaken} damage!`,
-			`The boss retaliates, dealing ${playerDamageTaken} damage!`
+			`You strike the boss, dealing ${bossDamageTaken} damage! The
+			boss retaliates, dealing ${playerDamageTaken} damage!`
 		);
 	}
 
@@ -56,8 +56,8 @@ function attackBossMonster(){
 		caveQuest[0].currentQuestStep = '';
 		caveQuest[0].questFinished = true;
 		messageLog.text.push(
-			"With a final blow, you defeat the Cave Boss!",
-			"The boss lets out a roar as it falls, leaving behind precious loot."
+			`With a final blow, you defeat the Cave Boss!
+			The boss lets out a roar as it falls, leaving behind precious loot.`
 		);
 		grantBossRewards(characterStats, messageLog);
 		bossStats.currentHp = bossStats.hp;
@@ -135,10 +135,10 @@ function attackCaveMonster(){
             addMessage(messageLog, `Monster successfully slayed, continue`);
 
 		} else {
-			addMessage(messageLog, `Damage taken on cave monster: ${caveMonsterDamageTaken}.`);
-            addMessage(messageLog, `Damage received from cave monster: ${characterDamageTaken}.`);
-            addMessage(messageLog, `Your current hitpoints are ${characterStats.currenthp}.`);
-            addMessage(messageLog, `Cave monster has ${caveMonsterStats.currentHp} hitpoints remaining.`);
+			messageLog.text.push(
+				`You strike the cave monster, dealing ${caveMonsterDamageTaken} damage! The 
+				cave monster retaliates, dealing ${characterDamageTaken} damage!`
+			);
 		}
 	} 
 	gameView = caveQuestView();
