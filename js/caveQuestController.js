@@ -1,15 +1,9 @@
 
 
-// når man lager ny bruker må man legge til quests for denne bruker i modellen
 // få loot fra quest/kill på bakken som går videre til inventory
 
 
-function updateEnemyHealthBar(enemy) {
-	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const bossStats = caveQuest[enemy]; 
-    const healthPercentage = (bossStats.currentHp / bossStats.hp) * 100;
-    return healthPercentage;
-}
+
 
 
 function attackBossMonster(){
