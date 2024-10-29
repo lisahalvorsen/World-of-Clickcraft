@@ -8,7 +8,6 @@
 #boss-health-text, #monster-health-text {
     font-weight: bold;
     margin-right: 10px;
-    color: white;
 }
 
 #boss-health-bar, #monster-health-bar {
@@ -39,10 +38,4 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 500;
-}
-.monsterFont{
-    color: white;
-}
-.obstacleFont{
-    color: white;
 }
