@@ -37,8 +37,8 @@ function showingCaveBoss() {
                 </div>
             </div>
 			<div class='characterInGame'>
-				<img src="${characterInfo.picture}" alt="" width='100' height='100' >
-				<img src="../images/boss.png" alt="" width='100' height='100' onclick='attackBossMonster()'>
+				<img src="${characterInfo.picture}" alt="character" >
+				<img src="../images/boss.png" alt="boss" onclick='attackBossMonster()'>
 			</div>
             
         `;
