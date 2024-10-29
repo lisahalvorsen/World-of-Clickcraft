@@ -3,12 +3,12 @@ let gameView = mapPageView()
 
 function gameTemplateView() {
     const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
-	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+    const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterEquipped = findCharacterEquipped(model.app.loggedInUser, model.app.loggedInCharacterId);
-  
+
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
@@ -48,7 +48,7 @@ function gameTemplateView() {
 
     <footer class=footerBar>
         <div class='footerAvatarDiv'>
-        <img class='footerCharacterImage' src="${model.app.currentCharacterInfo.picture}" alt="">
+        <img class='footerCharacterImage' src="${characterInfo.picture}" alt="">
         </div>
         <div class='footerStatsDiv'>
         <h3>STATS</h3>
@@ -64,11 +64,11 @@ function gameTemplateView() {
         <h3>EQUIPPED ITEMS</h3>
         <br>
         <br>
-        WEAPON: ${model.weapons[characterEquipped.weaponId-1].name}
+        WEAPON: ${model.weapons[characterEquipped.weaponId - 1].name}
         <br>
-        ARMOR: ${model.armors[characterEquipped.armorId-1].name}
+        ARMOR: ${model.armors[characterEquipped.armorId - 1].name}
         <br>
-        BOOTS: ${model.boots[characterEquipped.bootsId-1].name}
+        BOOTS: ${model.boots[characterEquipped.bootsId - 1].name}
         </div>
         <div class='footerActionsDiv'>
         <h3>Return To Map</h3>
@@ -83,7 +83,7 @@ function gameTemplateView() {
             <h3>INVENTORY</h3>
             <div class="currentInventory">
                  <br>
-                 ${characterInventory.items.map(item => `<div>${item.symbol}</div><br>`).join('')}         
+                 ${characterInventory.items.map(item => `<div onclick="${item.name === 'healthpotion' ? 'useHealthPotion()' : ''}">${item.symbol} x ${item.count}</div><br>`).join('')}              
             </div>
         </div>
         <div class='footerMissionsDiv'>

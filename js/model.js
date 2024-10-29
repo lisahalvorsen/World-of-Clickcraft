@@ -41,15 +41,15 @@ const model = {
     ],
 
     stats: [
-        { userId: 0, characterId: 0, currenthp: 1000, picture: '../images/warriorMale.jpg', hp: 1000, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
+        { userId: 0, characterId: 0, currenthp: 100, picture: '../images/warriorMale.jpg', hp: 100, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
         { userId: 1, characterId: 1, currenthp: 60, picture: '../images/wizardMale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
         { userId: 1, characterId: 2, currenthp: 60, picture: '../images/hunterFemale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money: 1000 },
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
-        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
-        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'healthpotion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
     ],
 
     messageLog: [
@@ -98,19 +98,19 @@ const model = {
     caveQuest: [
         { id: 1, userId: 0, characterId: 0, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 2, userId: 0, characterId: 0, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 3, userId: 0, characterId: 0, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
+        { id: 3, userId: 0, characterId: 0, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
         { id: 4, userId: 1, characterId: 1, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 5, userId: 1, characterId: 1, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 6, userId: 1, characterId: 1, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
+        { id: 6, userId: 1, characterId: 1, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
         { id: 7, userId: 1, characterId: 2, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 8, userId: 1, characterId: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 9, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 200, hp: 200, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
+        { id: 9, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
     ],
     shop: [
-        { id: 1, name: 'Rope', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20, picture: '../images/rope2.png' },
-        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, picture: '../images/boots2.png' },
-        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, picture: '../images/owl.png' },
-        { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350, picture: '../images/bowAndArrow.png' },
+        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 20, picture: '⛏️' },
+        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, picture: '🥾' },
+        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, picture: '🦉' },
+        { id: 4, name: 'Bow and arrow', category: 'Weapons', description: 'Bow and arrow made of solid materials', price: 350, picture: '🏹' },
     ],
 
 };

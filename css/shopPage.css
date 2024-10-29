@@ -1,5 +1,5 @@
 .itemPicture {
-    height: 150px;
+    font-size: 80px;
 }
 
 .itemName {
@@ -8,6 +8,7 @@
 
 .iIcon {
     height: 12px;
+    cursor: pointer;
 }
 
 .shopContainer {
