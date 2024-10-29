@@ -1,5 +1,5 @@
 
-const stoneWallElement = '🪨';
+const stoneWallElement = '🪨🪨🪨🪨🪨';
 const doorElement = '🚪';
 const healthPotionElement = '🧪'
 
@@ -54,7 +54,7 @@ function showingCaveMonster() {
 
 	if (caveQuest[1].caveMonsterPresent) {
 		return /*HTML*/`
-			<h2>Monster</h2> 
+			<h2 class='monsterFont'>Monster</h2> 
 
 			<div id="monster-health-bar-container">
 				<span id="monster-health-text">Cave Monster HP</span>
@@ -77,7 +77,7 @@ function showingObstacleElement() {
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	if (caveQuest[0].stoneWallPresent || caveQuest[0].doorPresent) {
 		return /*HTML*/`
-		<h2>Obstacle</h2> 
+		<h2 class='obstacleFont'>Obstacle</h2> 
 		<div onclick='${caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
 			${caveQuest[0].stoneWallPresent ? stoneWallElement : doorElement}
 		</div>

@@ -8,6 +8,7 @@
 #boss-health-text, #monster-health-text {
     font-weight: bold;
     margin-right: 10px;
+    color: white;
 }
 
 #boss-health-bar, #monster-health-bar {
@@ -27,7 +28,7 @@
 .caveQuestPage{
     width: 1050px;  
     height: 450px;
-    background-image: url('../images/caveQuestgame.jpg');
+    background-image: url('../images/cavealt2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 500;
@@ -46,5 +47,7 @@
 .characterInGame img:nth-child(2):hover{
     cursor: url('./../images/sword.png'), auto; 
 }
-
+.monsterFont, .obstacleFont{
+    color: white;
+}
 
