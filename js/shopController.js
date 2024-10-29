@@ -9,20 +9,11 @@ function getShopInventory(category = null) {
     shopView(filteredItems);
 }
 
-function buyItem(price) {
+function buyItem(price, item, symbol) {
     canAfford(price);
+    inventoryContainsItem(item, symbol);
 
-    // if (userMoney >= price) {
-    //     userInventory.money -= price;
 
-    //     const purchasedItem = {
-    //         name: itemName,
-    //         count: 1,
-    //     };
-
-    //     userInventory.items = userInventory.items || [];
-    //     userInventory.items.push(purchasedItem);
-    //     console.log(model.inventories);
     shopView();
 }
 
@@ -35,23 +26,22 @@ function canAfford(price) {
     }
 }
 
+function inventoryContainsItem(itemName, symbol) {
+    const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const existingItem = userInventory.items.find(item => item.name === itemName);
+    const itemSymbol = model.shop.find(item => item.symbol === symbol);
 
-
-
-
-function checkIfItemIsInInventory(itemName) {
-    const item = characterInventory.items.find(item => item.name === itemName);
-
-    if (item) {
-        item.count++;
+    if (existingItem) {
+        existingItem.count++;
+        console.log(`Item exists`);
     } else {
-        const purchasedItem = {
+        const newItem = {
             name: itemName,
             count: 1,
+            symbol: itemSymbol.symbol,
         };
+
+        userInventory.items.push(newItem);
+        console.log(`New item is added in the inventory`);
     }
-
 }
-
-
-// if item exists, add count med +1 eller legg til items
