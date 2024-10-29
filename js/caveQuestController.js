@@ -2,30 +2,7 @@
 
 // når man lager ny bruker må man legge til quests for denne bruker i modellen
 // få loot fra quest/kill på bakken som går videre til inventory
-
-
-function useHealthPotion(){
-	const characterStats = findCharacterStats (model.app.loggedInUser, model.app.loggedInCharacterId);
-	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
-	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const healthPotion = characterInventory.items.find(item => item.name === 'healthpotion');
-
-	if (healthPotion.count <=0){
-		messageLog.text.push('Oh no! You dont have any more health potions!')
-	} else {
-		if (characterStats.currenthp +50 >= characterStats.hp){
-			characterStats.currenthp = characterStats.hp;
-			healthPotion.count --;
-			messageLog.text.push('You drink a health potion! You have full health')
-		} else {
-			characterStats.currenthp += 50;
-			healthPotion.count --;
-			messageLog.text.push('You drink a health potion! Your health have increased by 50!')
-		} 
-	}
-    gameTemplateView();
-}
-
+// lage inventoryController fil og legge til funksjoner der
 
 
 function updateEnemyHealthBar(enemy) {
@@ -91,15 +68,19 @@ function attackBossMonster(){
 
 function grantBossRewards(character, messageLog) {
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+	const healthPotion = characterInventory.items.find(item => item.name === 'healthpotion');
 
-	character.level += 2;
+	character.atk += 9;
+	character.def += 9;
+	character.spd += 9;
+	character.level += 5;
     character.xp += 500;
-    character.money += 500;
-    characterInventory.healthPotions += 3;
+    characterInventory.money += 500;
+    healthPotion.count += 5;
     let rareDropChance = Math.random();
 
     if (rareDropChance < 0.2) { 
-        messageLog.text.push("Rare drop: The monster dropped an extra 500 money!");
+        messageLog.text.push("Rare drop: The monster dropped an additional 500 money!");
         characterInventory.money += 500;
     }
 
@@ -109,11 +90,6 @@ function grantBossRewards(character, messageLog) {
         `Return to the map to find another quest, defeat a boss, or visit the town!`
     );
 }
-
-
-
-
-
 
 
 function attackCaveMonster(){
