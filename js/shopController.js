@@ -1,20 +1,20 @@
-function getUserMoney() {
-    const userInventory = model.inventories.find(inventory => inventory.userId === model.app.loggedInUser);
-    return userInventory.money;
-    // return model.inventories.find(inventory => inventory.userId === model.app.loggedInUser).money;
-}
+// function getUserMoney() {
+//     const userInventory = model.inventories.find(inventory => inventory.userId === model.app.loggedInUser);
+//     return userInventory.money;
+//     // return model.inventories.find(inventory => inventory.userId === model.app.loggedInUser).money;
+// }
 
 function getShopInventory(category = null) {
     const filteredItems = category ? model.shop.filter(item => item.category === category) : model.shop;
     shopView(filteredItems);
+    gameTemplateView();
 }
 
 function buyItem(price, item, symbol) {
     canAfford(price);
     inventoryContainsItem(item, symbol);
-
-
     shopView();
+    gameTemplateView();
 }
 
 function canAfford(price) {
@@ -45,3 +45,6 @@ function inventoryContainsItem(itemName, symbol) {
         console.log(`New item is added in the inventory`);
     }
 }
+
+// oppdatere gametemplateview 
+// endre alle health potions

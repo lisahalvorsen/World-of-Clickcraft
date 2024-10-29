@@ -1,8 +1,6 @@
 function shopView(items = model.shop) {
-    document.getElementById('app').innerHTML = /*HTML*/ `  
+    return /*HTML*/ `  
         <div class="shopContainer">
-            <h1>Shop</h1>
-            <div>🪙: ${getUserMoney()}</div>
             <div>
                 <button onclick="getShopInventory('Clothing')" class="categoryBtn">Clothing</button>
                 <button onclick="getShopInventory('Consumables')" class="categoryBtn">Consumables</button>
