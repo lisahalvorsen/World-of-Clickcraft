@@ -83,8 +83,8 @@ function gameTemplateView() {
             <h3>INVENTORY</h3>
             <div class="currentInventory">
                  <br>
-                 ${characterInventory??''}
-         </div>
+                 ${characterInventory.items.map(item => `<div>${item.symbol}</div><br>`).join('')}         
+            </div>
         </div>
         <div class='footerMissionsDiv'>
             <h3>MISSION</h3>
