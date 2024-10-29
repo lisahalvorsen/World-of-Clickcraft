@@ -56,7 +56,8 @@ function showingCaveMonster() {
 			</div>
 		</div>
 
-			<div onclick='attackCaveMonster()'>👹</div>
+			<!--<div onclick='attackCaveMonster()'>👹</div>-->
+			<div class='devilQuest' onclick='attackCaveMonster()'></div>
 		`;
 	} else return '';
 }

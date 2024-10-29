@@ -18,22 +18,26 @@
     background-color: bisque;
     border: 2px double black;
     display: grid;
-    grid-template-columns:10% 10% 10% 10% auto 25% 15%;
+    grid-template-columns: 10% 10% 10% 10% auto 25% 15%;
 }
-.headerBtn{
+
+.headerBtn {
     margin-top: 20px;
-    margin-left: 100px; 
+    margin-left: 100px;
 }
-.headerBtn button{
-    padding:3px 5px;
+
+.headerBtn button {
+    padding: 3px 5px;
     cursor: pointer;
     float: right;
     margin-right: 10px;
 }
-.headerBtn button:hover{
+
+.headerBtn button:hover {
     background-color: darkgray;
     color: white;
 }
+
 .headerHP {
     margin-top: 20px;
     margin-left: 10px;
@@ -55,11 +59,13 @@
     margin-top: 20px;
     cursor: pointer;
 }
+
 .sceneDiv {
     grid-area: gameView;
     padding: 15px;
     height: 600px;
 }
+
 .footerBar {
     grid-area: footer;
     background-color: bisque;
@@ -130,9 +136,9 @@
     margin-left: 40px;
 }
 
- .messagesDiv {
-    grid-area: messagesView;  
-} 
+.messagesDiv {
+    grid-area: messagesView;
+}
 
 .messages {
     width: 100%;
@@ -159,10 +165,11 @@ h3 {
     width: 100px;
     height: 40px;
 }
-.returnMap{
-        width: 195px;
-        height: 100px;
-        background-image: url('../images/mapImage.png');
-        cursor: pointer;
-        background-size: cover;       
+
+.returnMap {
+    width: 195px;
+    height: 100px;
+    background-image: url('../images/mapImage.png');
+    cursor: pointer;
+    background-size: cover;
 }
