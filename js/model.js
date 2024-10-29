@@ -41,15 +41,15 @@ const model = {
     ],
 
     stats: [
-        { userId: 0, characterId: 0, currenthp: 1000, picture: '../images/warriorMale.jpg', hp: 1000, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
+        { userId: 0, characterId: 0, currenthp: 100, picture: '../images/warriorMale.jpg', hp: 1000, level: 0, atk: 20, def: 30, spd: 10, xp: 0, money: 1000 },
         { userId: 1, characterId: 1, currenthp: 60, picture: '../images/wizardMale.jpg', hp: 60, level: 0, atk: 30, def: 10, spd: 20, xp: 0, money: 1000 },
         { userId: 1, characterId: 2, currenthp: 60, picture: '../images/hunterFemale.jpg', hp: 80, level: 0, atk: 10, def: 20, spd: 30, xp: 0, money: 1000 },
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
-        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
-        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'rope', count:1, symbol: 'rope'},{name: 'healthpotion', count:5, symbol: '🧪'},] },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{name: 'healthpotion', count:10, symbol: '🧪'}, {name: 'rope', count:1, symbol: 'rope'},] },
     ],
 
     messageLog: [
