@@ -2,7 +2,7 @@ function shopView(items = model.shop) {
     model.app.inGameScene = 'Shop'
 
     return /*HTML*/ `  
-        <div class="shopContainer">
+        <div id="shopContainer">
             <div>
                 <button onclick="getShopInventory('Clothing')" class="categoryBtn">Clothing</button>
                 <button onclick="getShopInventory('Consumables')" class="categoryBtn">Consumables</button>

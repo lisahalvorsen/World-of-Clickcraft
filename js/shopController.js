@@ -1,7 +1,6 @@
 function getShopInventory(category = null) {
     const filteredItems = category ? model.shop.filter(item => item.category === category) : model.shop;
-    console.log(filteredItems);
-    shopView(items = filteredItems);
+    renderHtml(shopView(filteredItems));
 }
 
 function buyItem(price, itemName, symbol) {
@@ -11,7 +10,6 @@ function buyItem(price, itemName, symbol) {
     const itemSymbol = model.shop.find(item => item.symbol === symbol);
 
     if (userMoney >= price && existingItem) {
-        userInventory.money -= price;
         existingItem.count++;
     } else if (userMoney >= price && !existingItem) {
         const newItem = {
@@ -21,11 +19,17 @@ function buyItem(price, itemName, symbol) {
         };
 
         userInventory.items.push(newItem);
+    } else if (userMoney < price) {
+        return;
     }
+
+    userInventory.money -= price;
 
     shopView();
     gameTemplateView();
 }
 
-// oppdatere kategori view
-// endre alle health potions
+function renderHtml(html) {
+    const container = document.getElementById('shopContainer');
+    container.innerHTML = html;
+}

@@ -11,13 +11,15 @@
     cursor: pointer;
 }
 
-.shopContainer {
+#shopContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
-    gap: 15px;
+}
+
+.items {
+    width: 140px;
 }
 
 .itemContainer {
