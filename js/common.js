@@ -11,7 +11,7 @@ function findCharacterCaveQuest(userId, characterId) {
 function findCharacterStats(userId, characterId) {
     return model.stats.find(userStat => userStat.userId === userId && userStat.characterId === characterId);
 }
-function findCharacterCharacterInfo(userId, characterId) {
+function findCharacterInfo(userId, characterId) {
     return model.characters.find(character => character.userId === userId && character.characterId === characterId);
 }
 

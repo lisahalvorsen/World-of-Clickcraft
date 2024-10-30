@@ -5,7 +5,7 @@ function gameTemplateView() {
     const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
-    const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterEquipped = findCharacterEquipped(model.app.loggedInUser, model.app.loggedInCharacterId);
     const width = updateCharacterHealthBar(characterStats.currenthp, characterStats.hp);
 

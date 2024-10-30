@@ -71,7 +71,6 @@ function grantBossRewards(character, messageLog) {
 		addMessage(messageLog,"Rare drop: The monster dropped an additional 500 money!");
 		characterInventory.money += 500;
 	}
-
 	addMessage(messageLog,
 		`Rewards: Increased stats and xp, +500 Gold, +5 Health Potions.`,
 		`Congratulations! You have emerged victorious from the boss battle.`,
@@ -85,7 +84,7 @@ function grantBossRewards(character, messageLog) {
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId)
-	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveMonsterStats = caveQuest[1];
 
 	if (characterStats.currenthp > 0 && caveQuest[1].currentHp > 0) {
@@ -163,7 +162,7 @@ function getThroughDoor() {
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId)
 	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId)
-	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 	if (characterInventory.hasKey == true && characterInventory.keySelected == true) {
 		caveQuest[0].doorPresent = false;
