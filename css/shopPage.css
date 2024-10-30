@@ -6,6 +6,14 @@
     font-weight: bold;
 }
 
+/* .itemPrice {
+    margin-bottom: 10px;
+} */
+
+.itemQuantity {
+    margin-bottom: 10px;
+}
+
 .iIcon {
     height: 12px;
     cursor: pointer;

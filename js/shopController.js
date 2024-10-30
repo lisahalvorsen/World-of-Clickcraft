@@ -45,3 +45,17 @@ function getMoreInfo(itemName) {
         gameTemplateView();
     }
 }
+
+// in progress 
+
+function increaseStock(stock) {
+    stock++;
+    console.log(stock);
+    renderHtml(shopView());
+}
+
+function decreaseStock(stock) {
+    stock--;
+    console.log(stock);
+    renderHtml(shopView());
+}
