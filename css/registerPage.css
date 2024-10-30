@@ -2,11 +2,13 @@
 /* registerPage */
 .registerPage {
     background-color: antiquewhite;
-    text-align: center;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 5px;
+}
+.registerPage h1 {
+    margin-bottom: 40px;
 }
 .registerPage button {
     width: 100%;
