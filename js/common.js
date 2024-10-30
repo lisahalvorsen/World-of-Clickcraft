@@ -19,6 +19,10 @@ function findCharacterEquipped(userId, characterId) {
     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
 }
 
+function findQuestStatus(userId, characterId) {
+    return model.questStatus.find(quest => quest.userId === userId && quest.characterId === characterId);
+}
+
 function addMessage(messageLog, newMessage) {
     messageLog.text.push(newMessage);
     if (messageLog.text.length > 20) {

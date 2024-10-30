@@ -97,6 +97,10 @@ const model = {
         { id: 2, name: 'New sandals', description: '+15 spd', spd: 15 },
     ],
 
+    questStatus: [
+        {userId:0, characterId:0, caveQuest:false, desertQuest:false, forestQuest:false, mountainQuest:false, bossQuest:false}
+    ],
+
     caveQuest: [
         { id: 1, userId: 0, characterId: 0, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 2, userId: 0, characterId: 0, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
