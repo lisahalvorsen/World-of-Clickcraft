@@ -4,6 +4,7 @@ function attackBossMonster() {
 	const bossStats = caveQuest[2];
 	const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
+	let questStatus = findQuestStatus(model.app.loggedInUser, model.app.loggedInCharacterId)
 
 	if (characterStats.currenthp > 0 && bossStats.currentHp > 0) {
 		let playerDamageTaken = calculateDamage(bossStats.atk, characterStats.def);
@@ -35,15 +36,17 @@ function attackBossMonster() {
 		return;
 	} else if (bossStats.currentHp <= 0) {
 		bossStats.caveBossPresent = false;
-		characterInfo.currentQuest = 'Find a new quest!'
+		characterInfo.currentQuest = 'Desert quest!'
 		characterInfo.currentQuestStep = '';
 		caveQuest[0].currentQuestStep = '';
 		caveQuest[0].questFinished = true;
+		questStatus.caveQuest = true
 		addMessage(messageLog,
 			`With a final blow, you defeat the Cave Boss!
 			The boss lets out a roar as it falls, leaving behind precious loot.`
 		);
 		grantBossRewards(characterStats, messageLog);
+		questUpdater('Cave', 'Desert')
 		bossStats.currentHp = bossStats.hp;
 	}
 	gameView = caveQuestView();
