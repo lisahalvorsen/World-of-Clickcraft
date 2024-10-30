@@ -5,25 +5,27 @@ function getShopInventory(category = null) {
 
 function buyItem(price, itemName, symbol) {
     const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
-    let userMoney = userInventory.money;
+    const userMoney = userInventory.money;
     const existingItem = userInventory.items.find(item => item.name === itemName);
     const itemSymbol = model.shop.find(item => item.symbol === symbol);
+    const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 
-    if (userMoney >= price && existingItem) {
-        existingItem.count++;
-    } else if (userMoney >= price && !existingItem) {
-        const newItem = {
-            name: itemName,
-            count: 1,
-            symbol: itemSymbol.symbol,
-        };
+    if (userMoney >= price) {
+        userInventory.money -= price;
 
-        userInventory.items.push(newItem);
-    } else if (userMoney < price) {
-        return;
+        if (existingItem) {
+            existingItem.count++;
+        } else {
+            const newItem = {
+                name: itemName,
+                count: 1,
+                symbol: itemSymbol.symbol,
+            };
+            userInventory.items.push(newItem);
+        }
+    } else {
+        addMessage(messageLog, `Oh no, it seems you don't have enough money :(`);
     }
-
-    userInventory.money -= price;
 
     shopView();
     gameTemplateView();
