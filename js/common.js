@@ -18,6 +18,9 @@ function findCharacterInfo(userId, characterId) {
 function findCharacterEquipped(userId, characterId) {
     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
 }
+function findCharacterDesertQuest(userId, characterId) {
+    return model.desertQuest.filter(id => id.userId === userId && id.characterId === characterId);
+}
 
 function findQuestStatus(userId, characterId) {
     return model.questStatus.find(quest => quest.userId === userId && quest.characterId === characterId);
