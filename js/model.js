@@ -5,7 +5,8 @@ const model = {
         userId: null,
         loggedInCharacterId: 0,
         loggedInUser: 0,
-        currentCharacterInfo: null
+        currentCharacterInfo: null,
+        inGameScene: 'Map'
     },
 
     // Del 2
