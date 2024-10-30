@@ -120,11 +120,11 @@
 
 .footerInventoryDiv {
     background-color: lightgray;
-    width: 310px;
+    width: 300px;
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .footerMissionsDiv {
@@ -172,4 +172,12 @@ h3 {
     background-image: url('../images/mapImage.png');
     cursor: pointer;
     background-size: cover;
+}
+
+.currentInventory {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 270px;
+    text-align: center;
 }
