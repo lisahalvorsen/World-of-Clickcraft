@@ -1,6 +1,19 @@
+{/* <div id="character-health-bar-container">
+<span id="character-health-text">Character HP</span>
+<div id="character-health-bar">
+	<div id="character-health-fill" style="width: ${width??100}%;"></div> 
+</div>
+</div> */}
 
 
-// få loot fra quest/kill på bakken som går videre til inventory
+
+
+function updateCharacterHealthBar() {
+    const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const healthPercentage = (characterStats.currentHp / characterStats.hp) * 100;
+    return healthPercentage;
+}
+
 
 function attackBossMonster() {
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
@@ -13,23 +26,23 @@ function attackBossMonster() {
 		let playerDamageTaken = calculateDamage(bossStats.atk, characterStats.def);
 		let bossDamageTaken = calculateDamage(characterStats.atk, bossStats.def);
 		if (bossStats.currentHp < bossStats.hp * 0.5 && bossStats.currentHp > bossStats.hp * 0.2) {
-			messageLog.text.push("The boss roars furiously, unleashing a devastating attack!");
+			addMessage(messageLog,"The boss roars furiously, unleashing a devastating attack!");
 			playerDamageTaken = Math.floor(playerDamageTaken * 1.5);
 		} else if (bossStats.currentHp <= bossStats.hp * 0.2) {
-			messageLog.text.push("The boss enters its final rage phase, becoming unstoppable!");
+			addMessage(messageLog,"The boss enters its final rage phase, becoming unstoppable!");
 			playerDamageTaken = Math.floor(playerDamageTaken * 2);
 			bossDamageTaken = Math.floor(bossDamageTaken * 0.8);
 		}
 		characterStats.currenthp -= playerDamageTaken;
 		bossStats.currentHp -= bossDamageTaken;
-		messageLog.text.push(
+		addMessage(messageLog,
 			`You strike the boss, dealing ${bossDamageTaken} damage! The
 			boss retaliates, dealing ${playerDamageTaken} damage!`
 		);
 	}
 
 	if (characterStats.currenthp <= 0) {
-		messageLog.text.push("Oops! You are dead!! The boss stands victorious.");
+		addMessage(messageLog,"Oops! You are dead!! The boss stands victorious.");
 		characterStats.currenthp = characterStats.hp;
 		bossStats.currentHp = bossStats.hp;
 		characterInfo.currentQuestStep = 'Kill the Cave Boss!';
@@ -43,7 +56,7 @@ function attackBossMonster() {
 		characterInfo.currentQuestStep = '';
 		caveQuest[0].currentQuestStep = '';
 		caveQuest[0].questFinished = true;
-		messageLog.text.push(
+		addMessage(messageLog,
 			`With a final blow, you defeat the Cave Boss!
 			The boss lets out a roar as it falls, leaving behind precious loot.`
 		);
@@ -58,6 +71,8 @@ function grantBossRewards(character, messageLog) {
 	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const healthPotion = characterInventory.items.find(item => item.name === 'Health potion');
 
+	character.hp += 50;
+	character.currentHp += 50;
 	character.atk += 9;
 	character.def += 9;
 	character.spd += 9;
@@ -68,11 +83,11 @@ function grantBossRewards(character, messageLog) {
 	let rareDropChance = Math.random();
 
 	if (rareDropChance < 0.2) {
-		messageLog.text.push("Rare drop: The monster dropped an additional 500 money!");
+		addMessage(messageLog,"Rare drop: The monster dropped an additional 500 money!");
 		characterInventory.money += 500;
 	}
 
-	messageLog.text.push(
+	addMessage(messageLog,
 		`Rewards: +500 XP, +500 Gold, +5 Health Potions.`,
 		`Congratulations! You have emerged victorious from the boss battle.`,
 		`Return to the map to find another quest, defeat a boss, or visit the town!`
@@ -80,7 +95,7 @@ function grantBossRewards(character, messageLog) {
 }
 
 
-function attackCaveMonster() {
+ function attackCaveMonster() {
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId)
@@ -113,8 +128,9 @@ function attackCaveMonster() {
 			characterStats.atk++;
 			characterStats.def++;
 			characterStats.spd++;
+			characterStats.hp += 20;
+			characterStats.currentHp += 20;
 
-			// or drop money, key and health potions on floor first
 			characterStats.money += 100;
 			characterInventory.hasKey = true;
 			caveQuest[0].progress++;

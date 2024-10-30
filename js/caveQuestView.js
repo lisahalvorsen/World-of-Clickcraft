@@ -40,8 +40,8 @@ function showingCaveBoss() {
 			
 			<div class='characterInGame'>
 				<img src="../images/boss.png" alt="boss" onclick='attackBossMonster()'>
-				<img src="${characterInfo.picture}" alt="character" >	
-			</div>
+				<img src="${characterInfo.picture}" alt="character">
+				</div>
             
         `;
     } else {
@@ -67,7 +67,7 @@ function showingCaveMonster() {
 		<div class='characterInGame'>	
 			<img src="../images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
 			<img src="${characterInfo.picture}" alt="character">
-		</div>
+			</div>
 		
 			<!--<div onclick='attackCaveMonster()'>👹</div>-->
 			<!--<div class='devilQuest' onclick='attackCaveMonster()'></div>-->
