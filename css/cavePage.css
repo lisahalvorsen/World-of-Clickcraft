@@ -42,13 +42,17 @@
     margin: auto;
     align-items: center;
     justify-content: center;
+    
 }
 .characterInGame img:nth-child(2){
     width: 120px;
     height: 120px;
+    
 }
 .characterInGame img:nth-child(1):hover{
     cursor: url('./../images/sword.png'), auto; 
+    transform: rotate(2deg);
+    transition: transform 0.10s ease;
 }
 .monsterFont, .obstacleFont, .caveBossFont{
     color: white;
