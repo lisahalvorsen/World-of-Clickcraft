@@ -110,10 +110,15 @@ const model = {
     ],
 
     shop: [
-        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 150, symbol: '⛏️' },
+        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 100, symbol: '⛏️' },
         { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, symbol: '🥾' },
         { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, symbol: '🦉' },
         { id: 4, name: 'Bow and arrow', category: 'Equipment', description: 'Bow and arrow made of solid materials', price: 350, symbol: '🏹' },
         { id: 5, name: 'Health potion', category: 'Consumables', description: 'A health potion that restores your HP', price: 50, symbol: '🧪' },
+        { id: 6, name: 'Dagger', category: 'Equipment', description: 'A small dagger that can come in handy in combat', price: 150, symbol: '🗡️' },
+        { id: 7, name: 'Apple', category: 'Consumables', description: 'A delicious red apple to enjoy', price: 5, symbol: '🍎' },
+        { id: 8, name: 'Mushroom', category: 'Consumables', description: 'An edible mushroom', price: 10, symbol: '🍄‍🟫' },
+        { id: 9, name: 'Monkey', category: 'Pets', description: 'A little helper', price: 250, symbol: '🐒' },
+        { id: 10, name: 'Herb', category: 'Consumables', description: 'Can be used to make health potions', price: 30, symbol: '🌿' },
     ],
 };
