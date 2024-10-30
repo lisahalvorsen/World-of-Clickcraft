@@ -19,7 +19,6 @@ function findCharacterEquipped(userId, characterId) {
     return model.equippedItems.find(character => character.userId === userId && character.characterId === characterId);
 }
 
-
 function addMessage(messageLog, newMessage) {
     messageLog.text.push(newMessage);
     if (messageLog.text.length > 20) {
@@ -28,8 +27,8 @@ function addMessage(messageLog, newMessage) {
 }
 
 function updateEnemyHealthBar(enemy) {
-	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const bossStats = caveQuest[enemy]; 
+    const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const bossStats = caveQuest[enemy];
     const healthPercentage = (bossStats.currentHp / bossStats.hp) * 100;
     return healthPercentage;
 }
@@ -38,4 +37,3 @@ function updateCharacterHealthBar(currentHp, hp) {
     const healthPercentage = (currentHp / hp) * 100;
     return healthPercentage;
 }
-
