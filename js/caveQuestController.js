@@ -53,7 +53,9 @@ function attackBossMonster() {
 function grantBossRewards(character, messageLog) {
 	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const healthPotion = characterInventory.items.find(item => item.name === 'Health potion');
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 
+	caveQuest[0].questFinished=true;
 	character.hp += 50;
 	character.currentHp += 50;
 	character.atk += 9;
