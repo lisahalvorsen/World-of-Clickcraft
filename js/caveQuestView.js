@@ -1,8 +1,3 @@
-
-// const stoneWallElement = '🪨🪨🪨🪨🪨';
-// const doorElement = '🚪';
-
-
 function caveQuestView() {
 	model.app.inGameScene = 'Cave Quest'
 
@@ -41,7 +36,6 @@ function showingCaveBoss() {
 				<img src="../images/boss.png" alt="boss" onclick='attackBossMonster()'>
 				<img src="${characterInfo.picture}" alt="character">
 				</div>
-            
         `;
     } else {
         return '';
@@ -67,9 +61,6 @@ function showingCaveMonster() {
 			<img src="../images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
 			<img src="${characterInfo.picture}" alt="character">
 			</div>
-		
-			<!--<div onclick='attackCaveMonster()'>👹</div>-->
-			<!--<div class='devilQuest' onclick='attackCaveMonster()'></div>-->
 		`;
 	} else return '';
 }

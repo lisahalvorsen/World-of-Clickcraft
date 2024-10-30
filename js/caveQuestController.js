@@ -1,5 +1,3 @@
-
-
 function attackBossMonster() {
 	const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
@@ -73,7 +71,7 @@ function grantBossRewards(character, messageLog) {
 	}
 
 	addMessage(messageLog,
-		`Rewards: +500 XP, +500 Gold, +5 Health Potions.`,
+		`Rewards: Increased stats and xp, +500 Gold, +5 Health Potions.`,
 		`Congratulations! You have emerged victorious from the boss battle.`,
 		`Return to the map to find another quest, defeat a boss, or visit the town!`
 	);
@@ -119,10 +117,12 @@ function grantBossRewards(character, messageLog) {
 			characterStats.money += 100;
 			characterInventory.hasKey = true;
 			caveQuest[0].progress++;
-			addMessage(messageLog, `Monster successfully slayed, continue`);
+			addMessage(messageLog, `Monster successfully slayed, continue`,
+				`Rewards: Increased stats and XP`,
+			);
 
 		} else {
-			messageLog.text.push(
+			addMessage(messageLog,
 				`You strike the cave monster, dealing ${caveMonsterDamageTaken} damage! The 
 				cave monster retaliates, dealing ${characterDamageTaken} damage!`
 			);
@@ -144,6 +144,8 @@ function getThroughStones() {
 			caveQuest[0].stoneWallPresent = false;
 			caveQuest[0].doorPresent = true;
 			addMessage(messageLog, 'A door appear behind the stones.');
+			addMessage(messageLog, `Rewards: Increased XP`);
+
 			characterStats.xp += 50;
 
 		}
@@ -165,6 +167,7 @@ function getThroughDoor() {
 		caveQuest[0].doorPresent = false;
 		caveQuest[2].caveBossPresent = true;
 		addMessage(messageLog, 'You unlock the door and enter a room where you see a HUGE creature!');
+		addMessage(messageLog, `Rewards: Increased stats and XP`);
 		characterInfo.currentQuestStep = 'Kill the Cave Boss';
 		characterStats.xp += 50;
 		characterStats.level++;
