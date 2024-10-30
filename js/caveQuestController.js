@@ -65,7 +65,7 @@ function grantBossRewards(character, messageLog) {
 	character.xp += 500;
 	characterInventory.money += 500;
 	healthPotion.count += 5;
-	let rareDropChance = Math.random();
+	const rareDropChance = Math.random();
 
 	if (rareDropChance < 0.2) {
 		addMessage(messageLog,"Rare drop: The monster dropped an additional 500 money!");
