@@ -37,9 +37,10 @@ function showingCaveBoss() {
                     <div id="boss-health-fill" style="width: ${width??100}%;"></div> 
                 </div>
             </div>
+			
 			<div class='characterInGame'>
-				<img src="${characterInfo.picture}" alt="character" >
 				<img src="../images/boss.png" alt="boss" onclick='attackBossMonster()'>
+				<img src="${characterInfo.picture}" alt="character" >	
 			</div>
             
         `;
@@ -63,10 +64,11 @@ function showingCaveMonster() {
 					<div id="monster-health-fill" style="width: ${width??100}%;"></div> 
 			</div>
 		</div>
-		<div class='characterInGame'>
-			<img src="${characterInfo.picture}" alt="character">
+		<div class='characterInGame'>	
 			<img src="../images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
+			<img src="${characterInfo.picture}" alt="character">
 		</div>
+		
 			<!--<div onclick='attackCaveMonster()'>👹</div>-->
 			<!--<div class='devilQuest' onclick='attackCaveMonster()'></div>-->
 		`;
