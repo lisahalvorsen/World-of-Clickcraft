@@ -3,7 +3,7 @@ function attackBossMonster() {
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const bossStats = caveQuest[2];
 	const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
-	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 	if (characterStats.currenthp > 0 && bossStats.currentHp > 0) {
 		let playerDamageTaken = calculateDamage(bossStats.atk, characterStats.def);
