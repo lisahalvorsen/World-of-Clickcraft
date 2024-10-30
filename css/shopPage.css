@@ -27,6 +27,8 @@
     grid-template-columns: auto auto auto auto;
     gap: 5px;
     text-align: center;
+    max-height: 350px;
+    overflow-y: auto;
 }
 
 .categoryBtn,
