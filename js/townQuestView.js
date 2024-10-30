@@ -1,5 +1,5 @@
 function townQuestView() {
-    scene = 'Town'
+    model.app.inGameScene = 'Town'
     return /*HTML*/ ` 
     <div class='townMap'>
         <div class='elderDiv'></div>

@@ -5,6 +5,7 @@ const healthPotionElement = '🧪'
 
 
 function caveQuestView() {
+	model.app.inGameScene = 'Cave Quest'
 
 	return /*HTML*/`
 	<div class="caveQuestPage">

@@ -4,31 +4,16 @@ function getShopInventory(category = null) {
     shopView(items = filteredItems);
 }
 
-function buyItem(price, item, symbol) {
-    canAfford(price);
-    inventoryContainsItem(item, symbol);
-    shopView();
-    gameTemplateView();
-}
-
-function canAfford(price) {
-    const userInventory = model.inventories.find(inventory => inventory.userId === model.app.loggedInUser);
-    let userMoney = userInventory.money;
-
-    if (userMoney >= price) {
-        userInventory.money -= price;
-    }
-}
-
-function inventoryContainsItem(itemName, symbol) {
+function buyItem(price, itemName, symbol) {
     const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
+    let userMoney = userInventory.money;
     const existingItem = userInventory.items.find(item => item.name === itemName);
     const itemSymbol = model.shop.find(item => item.symbol === symbol);
 
-    if (existingItem) {
+    if (userMoney >= price && existingItem) {
+        userInventory.money -= price;
         existingItem.count++;
-        console.log(`Item exists`);
-    } else {
+    } else if (userMoney >= price && !existingItem) {
         const newItem = {
             name: itemName,
             count: 1,
@@ -36,15 +21,11 @@ function inventoryContainsItem(itemName, symbol) {
         };
 
         userInventory.items.push(newItem);
-        console.log(`New item is added in the inventory`);
     }
+
+    shopView();
+    gameTemplateView();
 }
 
 // oppdatere kategori view
 // endre alle health potions
-
-// function getUserMoney() {
-//     const userInventory = model.inventories.find(inventory => inventory.userId === model.app.loggedInUser);
-//     return userInventory.money;
-//     // return model.inventories.find(inventory => inventory.userId === model.app.loggedInUser).money;
-// }

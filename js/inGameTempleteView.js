@@ -1,4 +1,3 @@
-let scene = 'Map';
 let gameView = mapPageView()
 
 function gameTemplateView() {
@@ -26,7 +25,7 @@ function gameTemplateView() {
         XP: ${characterStats.xp}
         </div>
         <div class='headerGameName'>
-        <h1>${scene}</h1>
+        <h1>${model.app.inGameScene}</h1>
         </div>
         <div class='headerBtn'><button onclick='logOutButton()'>Log out</button></div>
         <div class='headerChangeChar' onclick='goToCharacterSelectionPage()' >
@@ -83,7 +82,7 @@ function gameTemplateView() {
             <h3>INVENTORY</h3>
             <div class="currentInventory">
                  <br>
-                 ${characterInventory.items.map(item => `<div onclick="${item.name === 'healthpotion' ? 'useHealthPotion()' : ''}">${item.symbol} x ${item.count}</div><br>`).join('')}              
+                 ${characterInventory.items.map(item => `<div onclick="${item.name === 'Health potion' ? 'useHealthPotion()' : ''}">${item.symbol} x ${item.count}</div><br>`).join('')}              
             </div>
         </div>
         <div class='footerMissionsDiv'>

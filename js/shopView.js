@@ -1,4 +1,6 @@
 function shopView(items = model.shop) {
+    model.app.inGameScene = 'Shop'
+
     return /*HTML*/ `  
         <div class="shopContainer">
             <div>

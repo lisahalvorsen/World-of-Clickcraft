@@ -1,4 +1,5 @@
 function goBackToMap() {
+    model.app.inGameScene = 'Map'
     gameView=mapPageView()
     gameTemplateView()
 }
