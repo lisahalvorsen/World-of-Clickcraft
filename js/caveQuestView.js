@@ -1,7 +1,6 @@
 
-const stoneWallElement = '🪨🪨🪨🪨🪨';
-const doorElement = '🚪';
-const healthPotionElement = '🧪'
+// const stoneWallElement = '🪨🪨🪨🪨🪨';
+// const doorElement = '🚪';
 
 
 function caveQuestView() {
@@ -78,6 +77,9 @@ function showingCaveMonster() {
 function showingObstacleElement() {
 	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const stoneWallElement = '🪨'.repeat(caveQuest[0].stoneCount);
+	const doorElement = '🚪';
+	
 	if (caveQuest[0].stoneWallPresent || caveQuest[0].doorPresent) {
 		return /*HTML*/`
 		<h2 class='obstacleFont'>Obstacle</h2> 
