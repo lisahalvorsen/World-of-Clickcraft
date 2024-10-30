@@ -35,3 +35,13 @@ function renderHtml(html) {
     const container = document.getElementById('shopContainer');
     container.innerHTML = html;
 }
+
+function getMoreInfo(itemName) {
+    const item = model.shop.find(item => item.name === itemName);
+
+    if (item) {
+        const itemDsecription = item.description;
+        gameView = showItemView(item.name, itemDsecription);
+        gameTemplateView();
+    }
+}

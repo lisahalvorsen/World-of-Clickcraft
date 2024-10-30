@@ -22,11 +22,21 @@ function drawAllShopItemsHtml(items) {
         html += /*HTML*/ `
             <div class="items">
                 <div class="itemPicture">${item.symbol}</div>
-                <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png"/></div>
+                <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png" onclick="getMoreInfo('${item.name}')"/></div>
                 <div class="itemPrice">$ ${item.price}</div>
                 <button onclick="buyItem(${item.price}, '${item.name}', '${item.symbol}')" class="buyBtn">Buy</button>
             </div>
         `;
     }
     return html;
+}
+
+function showItemView(itemName, itemDsecription) {
+    return /*HTML*/ `
+    <div class="itemDescription">
+        <div class="itemName">${itemName}</div>
+        <div>${itemDsecription}</div>
+        <button onclick="goToShop()" class="exitBtn">X</button>
+    </div>    
+    `;
 }
