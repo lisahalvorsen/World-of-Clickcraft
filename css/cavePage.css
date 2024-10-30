@@ -1,32 +1,4 @@
 
-
-#character-health-bar-container {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-#character-health-text {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-#character-health-bar {
-    width: 200px;
-    height: 20px;
-    background-color: red;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-#character-health-fill {
-    height: 100%;
-    background-color: green;
-    transition: width 0.3s ease;
-}
-
-
-
 #boss-health-bar-container, #monster-health-bar-container {
     display: flex;
     align-items: center;

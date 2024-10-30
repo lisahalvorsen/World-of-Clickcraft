@@ -1,18 +1,3 @@
-{/* <div id="character-health-bar-container">
-<span id="character-health-text">Character HP</span>
-<div id="character-health-bar">
-	<div id="character-health-fill" style="width: ${width??100}%;"></div> 
-</div>
-</div> */}
-
-
-
-
-function updateCharacterHealthBar() {
-    const characterStats = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
-    const healthPercentage = (characterStats.currentHp / characterStats.hp) * 100;
-    return healthPercentage;
-}
 
 
 function attackBossMonster() {

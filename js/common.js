@@ -22,7 +22,7 @@ function findCharacterEquipped(userId, characterId) {
 
 function addMessage(messageLog, newMessage) {
     messageLog.text.push(newMessage);
-    if (messageLog.text.length > 50) {
+    if (messageLog.text.length > 20) {
         messageLog.text.shift();
     }
 }
@@ -34,4 +34,8 @@ function updateEnemyHealthBar(enemy) {
     return healthPercentage;
 }
 
+function updateCharacterHealthBar(currentHp, hp) {
+    const healthPercentage = (currentHp / hp) * 100;
+    return healthPercentage;
+}
 

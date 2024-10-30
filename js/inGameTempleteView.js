@@ -7,13 +7,19 @@ function gameTemplateView() {
     const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     const characterEquipped = findCharacterEquipped(model.app.loggedInUser, model.app.loggedInCharacterId);
+    const width = updateCharacterHealthBar(characterStats.currenthp, characterStats.hp);
 
     document.getElementById('app').innerHTML = /*HTML*/`
     <div class='gameTemplate'>
     <header class=headerBar>
     
         <div class='headerHP'>
-        ❤️: ${characterStats.currenthp}/${characterStats.hp}
+            ❤️: ${characterStats.currenthp}/${characterStats.hp}
+            <div id="character-health-bar-container">
+                <div id="character-health-bar">
+                    <div id="character-health-fill" style="width: ${width}%;"></div> 
+                </div>
+            </div>
         </div>
         <div class='headerGold'>
         🪙: ${characterInventory.money}
