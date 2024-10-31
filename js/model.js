@@ -47,9 +47,9 @@ const model = {
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
-        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
-        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },] },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
     ],
 
     messageLog: [
@@ -113,15 +113,15 @@ const model = {
     ],
 
     shop: [
-        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 100, originalPrice: 100, symbol: '⛏️', stock: 1 },
-        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, originalPrice: 200, symbol: '🥾', stock: 1 },
-        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, originalPrice: 300, symbol: '🦉', stock: 1 },
-        { id: 4, name: 'Bow and arrow', category: 'Equipment', description: 'Bow and arrow made of solid materials', price: 350, originalPrice: 350, symbol: '🏹', stock: 1 },
-        { id: 5, name: 'Health potion', category: 'Consumables', description: 'A health potion that restores your HP', price: 50, originalPrice: 50, symbol: '🧪', stock: 1 },
-        { id: 6, name: 'Dagger', category: 'Equipment', description: 'A small dagger that can come in handy in combat', price: 150, originalPrice: 150, symbol: '🗡️', stock: 1 },
-        { id: 7, name: 'Apple', category: 'Consumables', description: 'A delicious red apple to enjoy', price: 5, originalPrice: 5, symbol: '🍎', stock: 1 },
-        { id: 8, name: 'Mushroom', category: 'Consumables', description: 'An edible mushroom', price: 10, originalPrice: 10, symbol: '🍄‍🟫', stock: 1 },
-        { id: 9, name: 'Monkey', category: 'Pets', description: 'A little helper', price: 250, originalPrice: 250, symbol: '🐒', stock: 1 },
-        { id: 10, name: 'Herb', category: 'Consumables', description: 'Can be used to make health potions', price: 30, originalPrice: 30, symbol: '🌿', stock: 1 },
+        { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 100, originalPrice: 100, symbol: '⛏️', quantity: 1 },
+        { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, originalPrice: 200, symbol: '🥾', quantity: 1 },
+        { id: 3, name: 'Owl', category: 'Pets', description: "Owl's can carry and pick up items for you", price: 300, originalPrice: 300, symbol: '🦉', quantity: 1 },
+        { id: 4, name: 'Bow and arrow', category: 'Equipment', description: 'Bow and arrow made of solid materials', price: 350, originalPrice: 350, symbol: '🏹', quantity: 1 },
+        { id: 5, name: 'Health potion', category: 'Consumables', description: 'A health potion that restores your HP', price: 50, originalPrice: 50, symbol: '🧪', quantity: 1 },
+        { id: 6, name: 'Dagger', category: 'Equipment', description: 'A small dagger that can come in handy in combat', price: 150, originalPrice: 150, symbol: '🗡️', quantity: 1 },
+        { id: 7, name: 'Apple', category: 'Consumables', description: 'A delicious red apple to enjoy', price: 5, originalPrice: 5, symbol: '🍎', quantity: 1 },
+        { id: 8, name: 'Mushroom', category: 'Consumables', description: 'An edible mushroom', price: 10, originalPrice: 10, symbol: '🍄‍🟫', quantity: 1 },
+        { id: 9, name: 'Monkey', category: 'Pets', description: 'A little helper', price: 250, originalPrice: 250, symbol: '🐒', quantity: 1 },
+        { id: 10, name: 'Herb', category: 'Consumables', description: 'Can be used to make health potions', price: 30, originalPrice: 30, symbol: '🌿', quantity: 1 },
     ],
 };

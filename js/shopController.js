@@ -3,7 +3,7 @@ function getShopInventory(category = null) {
     renderHtml(shopView(filteredItems));
 }
 
-function buyItem(price, itemName, symbol) {
+function buyItem(price, itemName, itemQuantity, symbol) {
     const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
     const userMoney = userInventory.money;
     const existingItem = userInventory.items.find(item => item.name === itemName);
@@ -14,11 +14,12 @@ function buyItem(price, itemName, symbol) {
         userInventory.money -= price;
 
         if (existingItem) {
-            existingItem.count++;
+            existingItem.quantity++; // fikse quantity. Skal ikke økes med 1, men med riktig quantity !! 
+            console.log(existingItem.quantity);
         } else {
             const newItem = {
                 name: itemName,
-                count: 1,
+                quantity: itemQuantity, // fikse quantity i inventory
                 symbol: itemSymbol.symbol,
             };
             userInventory.items.push(newItem);
@@ -27,7 +28,6 @@ function buyItem(price, itemName, symbol) {
         addMessage(messageLog, `Oh no, it seems you don't have enough money :(`);
     }
 
-    shopView();
     gameTemplateView();
 }
 
@@ -46,24 +46,24 @@ function getMoreInfo(itemName) {
     }
 }
 
-function increaseStock(itemName) {
+function increaseStockAndPrice(itemName) {
     const shopItem = model.shop.find(item => item.name === itemName);
 
     if (shopItem) {
-        shopItem.stock++;
-        shopItem.price = shopItem.originalPrice * shopItem.stock;
+        shopItem.quantity++;
+        shopItem.price = shopItem.originalPrice * shopItem.quantity;
     }
 
     renderHtml(shopView());
 }
 
-function decreaseStock(itemName) {
+function decreaseStockAndPrice(itemName) {
     const shopItem = model.shop.find(item => item.name === itemName);
 
     if (shopItem) {
-        shopItem.stock = Math.max(1, shopItem.stock - 1);
+        shopItem.quantity = Math.max(1, shopItem.quantity - 1);
 
-        if (shopItem.stock <= 1) {
+        if (shopItem.quantity <= 1) {
             shopItem.price = shopItem.originalPrice;
         } else {
             shopItem.price = shopItem.price - shopItem.originalPrice;

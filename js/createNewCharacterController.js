@@ -36,7 +36,7 @@ function createNewInventory() {
     // let existingCharacterId = model.characters.filter(existingCharacter => existingCharacter.userId === UserId);
     // let characterCount = existingCharacterId.length
     let charactedId = model.app.loggedInCharacterId
-    let newInventory = { userId: UserId, characterId: charactedId, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', count: 10, symbol: '🧪' }, { name: 'Apple', count: 1, symbol: '🍎' },], }
+    let newInventory = { userId: UserId, characterId: charactedId, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },], }
     inventoriesArray.push(newInventory);
 }
 
@@ -47,7 +47,7 @@ function createNewMessageLog() {
     // let characterCount = existingCharacterId.length
     let charactedId = model.app.loggedInCharacterId
     let newCharacterInfo = findCharacterInfo(UserId, charactedId)
-    let newMessageLog = { userId: UserId, characterId: charactedId, text: [`Welcome to the World of ClickCraft, ${newCharacterInfo.name}! Head to the Town to receive your first quest, or venture out and explore the vast world of ClickCraft at your own pace. Adventure awaits!`]}
+    let newMessageLog = { userId: UserId, characterId: charactedId, text: [`Welcome to the World of ClickCraft, ${newCharacterInfo.name}! Head to the Town to receive your first quest, or venture out and explore the vast world of ClickCraft at your own pace. Adventure awaits!`] }
     messageLogArray.push(newMessageLog)
 }
 
