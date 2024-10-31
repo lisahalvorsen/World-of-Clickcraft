@@ -73,11 +73,9 @@ function grantBossRewards(characterStats, messageLog) {
 		addMessage(messageLog,"Rare drop: The monster dropped an additional 500 money!");
 		characterInventory.money += 500;
 	}
-	addMessage(messageLog,
-		`Rewards: Increased stats and xp, +500 Gold, +5 Health Potions.`,
-		`Congratulations! You have emerged victorious from the boss battle.`,
-		`Return to the map to find another quest, defeat a boss, or visit the town!`
-	);
+	addMessage(messageLog,`Rewards: Increased stats and xp, +500 Gold, +5 Health Potions.`);
+	addMessage(messageLog,`Congratulations! You have emerged victorious from the boss battle.`);
+	addMessage(messageLog,`Return to the map to find another quest, defeat a boss, or visit the town!`);
 }
 
 
