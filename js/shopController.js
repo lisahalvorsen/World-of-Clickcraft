@@ -1,9 +1,10 @@
 function getShopInventory(category = null) {
+    model.app.selectedCategory = category;
     const filteredItems = category ? model.shop.filter(item => item.category === category) : model.shop;
-    renderHtml(shopView(filteredItems));
+    renderShopHtml(shopView(filteredItems));
 }
 
-function buyItem(price, itemName, itemQuantity, symbol) {
+function buyItem(price, itemName, itemQuantity, symbol, itemCategory) {
     const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
     const existingItem = userInventory.items.find(item => item.name === itemName);
     const itemSymbol = model.shop.find(item => item.symbol === symbol);
@@ -17,6 +18,7 @@ function buyItem(price, itemName, itemQuantity, symbol) {
                 name: itemName,
                 quantity: itemQuantity,
                 symbol: itemSymbol.symbol,
+                category: itemCategory,
             };
             userInventory.items.push(newItem);
         } else if (existingItem) {
@@ -25,10 +27,11 @@ function buyItem(price, itemName, itemQuantity, symbol) {
     } else {
         addMessage(messageLog, `Oh no, it seems you don't have enough money :(`);
     }
+
     gameTemplateView();
 }
 
-function renderHtml(html) {
+function renderShopHtml(html) {
     const container = document.getElementById('shopContainer');
     container.innerHTML = html;
 }
@@ -51,7 +54,8 @@ function increaseStockAndPrice(itemName) {
         shopItem.price = shopItem.originalPrice * shopItem.quantity;
     }
 
-    renderHtml(shopView());
+    const filteredItems = model.app.selectedCategory ? model.shop.filter(item => item.category === model.app.selectedCategory) : model.shop;
+    renderShopHtml(shopView(filteredItems));
 }
 
 function decreaseStockAndPrice(itemName) {
@@ -67,5 +71,6 @@ function decreaseStockAndPrice(itemName) {
         }
     }
 
-    renderHtml(shopView());
+    const filteredItems = model.app.selectedCategory ? model.shop.filter(item => item.category === model.app.selectedCategory) : model.shop;
+    renderShopHtml(shopView(filteredItems));
 }

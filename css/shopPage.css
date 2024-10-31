@@ -51,7 +51,8 @@
 
 .categoryBtn:hover,
 .buyBtn:hover,
-.exitBtn:hover {
+.exitBtn:hover,
+.adjustBtn:hover {
     border: 2px solid red;
 }
 
@@ -66,4 +67,11 @@
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+.adjustBtn {
+    width: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid darkgray;
 }
