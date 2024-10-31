@@ -21,10 +21,3 @@ function generateMission() {
     gameTemplateView()
 }
 
-function questUpdater(areaCompleted, nextArea) {
-    let userId = model.app.loggedInUser
-    let charactedId = model.app.loggedInCharacterId
-    let messageLog = findCharacterMessageLog(userId, charactedId)
-    let message = `Congratulations in completeing the ${areaCompleted} quest. Go to Town and heal up then prepare for the ${nextArea} quest.`
-    messageLog.text.push(message)
-}

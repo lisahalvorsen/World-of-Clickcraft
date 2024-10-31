@@ -45,7 +45,6 @@ function attackBossMonster() {
 			`With a final blow, you defeat the Cave Boss!
 			The boss lets out a roar as it falls, leaving behind precious loot.`);
 		grantBossRewards(characterStats, messageLog);
-		questUpdater('Cave', 'Desert')
 		bossStats.currentHp = bossStats.hp;
 	}
 	gameView = caveQuestView();
