@@ -47,20 +47,27 @@ function getMoreInfo(itemName) {
 }
 
 function increaseStock(itemName) {
-    const itemStock = model.shop.find(item => item.name === itemName);
+    const shopItem = model.shop.find(item => item.name === itemName);
 
-    if (itemStock) {
-        itemStock.stock++;
+    if (shopItem) {
+        shopItem.stock++;
+        shopItem.price = shopItem.originalPrice * shopItem.stock;
     }
 
     renderHtml(shopView());
 }
 
 function decreaseStock(itemName) {
-    const itemStock = model.shop.find(item => item.name === itemName);
+    const shopItem = model.shop.find(item => item.name === itemName);
 
-    if (itemStock) {
-        itemStock.stock = Math.max(0, itemStock.stock - 1);
+    if (shopItem) {
+        shopItem.stock = Math.max(1, shopItem.stock - 1);
+
+        if (shopItem.stock <= 1) {
+            shopItem.price = shopItem.originalPrice;
+        } else {
+            shopItem.price = shopItem.price - shopItem.originalPrice;
+        }
     }
 
     renderHtml(shopView());
