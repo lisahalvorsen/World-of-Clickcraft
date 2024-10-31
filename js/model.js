@@ -112,19 +112,6 @@ const model = {
         { id: 2, userId: 1, characterId: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
         { id: 3, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
     ],
-    desertQuest: [
-        { id: 1, userId: 0, characterId: 0, name: 'Desert Quest', currentQuestStep: 'Defeat Scorpion', progress: 0, questFinished: false, sandstormPresent: true, oasisPresent: false, sandCount: 7 },
-        { id: 2, userId: 0, characterId: 0, name: 'Desert Scorpion', currentHp: 120, hp: 120, level: 2, atk: 15, def: 12, spd: 12, scorpionPresent: true },
-        { id: 3, userId: 0, characterId: 0, name: 'Desert King', currentHp: 150, hp: 150, level: 4, atk: 35, def: 25, spd: 20, desertKingPresent: false },
-        { id: 1, userId: 1, characterId: 1, name: 'Desert Quest', currentQuestStep: 'Defeat Scorpion', progress: 0, questFinished: false, sandstormPresent: true, oasisPresent: false, sandCount: 7 },
-        { id: 2, userId: 1, characterId: 1, name: 'Desert Scorpion', currentHp: 120, hp: 120, level: 2, atk: 15, def: 12, spd: 12, scorpionPresent: true },
-        { id: 3, userId: 1, characterId: 1, name: 'Desert King', currentHp: 150, hp: 150, level: 4, atk: 35, def: 25, spd: 20, desertKingPresent: false },
-        { id: 1, userId: 1, characterId: 2, name: 'Desert Quest', currentQuestStep: 'Defeat Scorpion', progress: 0, questFinished: false, sandstormPresent: true, oasisPresent: false, sandCount: 7 },
-        { id: 2, userId: 1, characterId: 2, name: 'Desert Scorpion', currentHp: 120, hp: 120, level: 2, atk: 15, def: 12, spd: 12, scorpionPresent: true },
-        { id: 3, userId: 1, characterId: 2, name: 'Desert King', currentHp: 150, hp: 150, level: 4, atk: 35, def: 25, spd: 20, desertKingPresent: false }
-    ],
-    
-
     shop: [
         { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 100, symbol: '⛏️', stock: 1 },
         { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, symbol: '🥾', stock: 1 },
