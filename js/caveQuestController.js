@@ -65,7 +65,7 @@ function grantBossRewards(characterStats, messageLog) {
 	characterStats.level += 5;
 	characterStats.xp += 500;
 	characterInventory.money += 500;
-	healthPotion.count += 5;
+	healthPotion.quantity += 5;
 	const rareDropChance = Math.random();
 
 	if (rareDropChance < 0.2) {
