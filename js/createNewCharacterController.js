@@ -5,7 +5,7 @@ function createCharacter(chosenClassId, name) {
     createNewMessageLog()
     createNewCaveQuest()
     createNewCharacterEquippedItems(chosenClassId)
-    goToGamePage()
+    goToHomePage()
 }
 
 function createUserNewCharacterInfo(chosenClassId, name) {

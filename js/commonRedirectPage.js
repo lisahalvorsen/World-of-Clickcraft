@@ -10,7 +10,8 @@ function goToRegisterPage() {
 
 function goToHomePage() {
     model.app.currentPage = 'homePage';
-    updateView();
+    gameView = mapPageView();
+    gameTemplateView();
 }
 
 function goToCharacterSelectionPage() {

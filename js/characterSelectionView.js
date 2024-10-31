@@ -24,21 +24,17 @@ function drawCharactersHtml() {
             <div class="characterInfo">
                 <img class="characterPicture" src="${character.picture}" />
                 <div class="characterName">${character.name} ${character.gender}</div>
-                ${drawCharacterLevelHtml()}
+                ${drawCharacterLevelHtml(character.characterId)}
                 <button onclick="playWithCharacter(${character.characterId})" class="characterSelectionBtn">Play with this character</button>
             </div>`;
     }
     return html;
 }
 
-function drawCharacterLevelHtml() {
+function drawCharacterLevelHtml(characterId) {
     let html = '';
-
-    let userCharacter = model.stats.filter(stat => stat.userId === model.app.loggedInUser);
-
-    for (const character of userCharacter) {
-        html = /*HTML*/ ` 
-        <div>Level ${character.level}</div>`;
-    }
+    const characterStat = model.stats.find(stat => stat.characterId === characterId && stat.userId === model.app.loggedInUser);
+    
+    html = /*HTML*/ `<div>Level ${characterStat.level}</div>`;
     return html;
 }
