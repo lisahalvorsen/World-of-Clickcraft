@@ -36,7 +36,7 @@ function attackBossMonster() {
 		return;
 	} else if (bossStats.currentHp <= 0) {
 		bossStats.caveBossPresent = false;
-		characterInfo.currentQuest = 'Desert quest!'
+		characterInfo.currentQuest = ''
 		characterInfo.currentQuestStep = '';
 		caveQuest[0].currentQuestStep = '';
 		caveQuest[0].questFinished = true;
