@@ -6,11 +6,14 @@ function bossQuestView() {
     let characterInfo = findCharacterInfo(userId, charactedId)
 
     if (questStatus.caveQuest===false||questStatus.desertQuest===false||questStatus.forestQuest===false||questStatus.mountainQuest===false) {
-        messageLog.text.push(`Town Elder: Remember ${characterInfo.name} you can only reach the Demon Lord after you conquer the Army Generals who guard their territories.`)
+        let message = `Town Elder: Remember ${characterInfo.name} you can only reach the Demon Lord after you conquer the Army Generals who guard their domains.`
+        addMessage(messageLog, message)
        return mapPageView()
    
     } else {
         model.app.inGameScene = 'Boss Quest'
+        let message = 'You have entered The Demon Lord Island'
+        addMessage(messageLog, message)
         return /*HTML*/`  
         <div class='bossQuest'></div>
         `;

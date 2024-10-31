@@ -29,6 +29,9 @@ function goToGamePage() {
 }
 
 function goToShop() {
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered The Shop'
+    addMessage(messageLog, message)
     gameView = shopView();
     gameTemplateView();
 }
@@ -39,6 +42,9 @@ function logOutButton() {
 }
 
 function goToTownIsland() {
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered Town'
+    addMessage(messageLog, message)
     gameView = townQuestView();
     gameTemplateView();
 }
@@ -46,6 +52,9 @@ function goToTownIsland() {
 function goToCaveIsland() {
     const characterInfo = findCharacterInfo(model.app.loggedInUser, model.app.loggedInCharacterId);
     const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered The Cave'
+    addMessage(messageLog, message)
     if (!caveQuest[0].questFinished) {
         characterInfo.currentQuest = caveQuest[0].name;
         characterInfo.currentQuestStep = caveQuest[0].currentQuestStep ?? '';
@@ -57,14 +66,23 @@ function goToCaveIsland() {
     gameTemplateView();
 }
 function goToDesertIsland() {
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered The Desert'
+    addMessage(messageLog, message)
     gameView = desertQuestView();
     gameTemplateView();
 }
 function goToforestIsland() {
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered The Forest'
+    addMessage(messageLog, message)
     gameView = forestQuestView();
     gameTemplateView();
 }
 function goToMountainIsland() {
+    let messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId)
+    let message = 'You have entered The Mountain'
+    addMessage(messageLog, message)
     gameView = mountainQuestView();
     gameTemplateView();
 }

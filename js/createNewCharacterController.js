@@ -41,9 +41,11 @@ function createNewInventory() {
 function createNewMessageLog() {
     let messageLogArray = model.messageLog
     let UserId = model.app.loggedInUser
-    let existingCharacterId = model.characters.filter(existingCharacter => existingCharacter.userId === UserId);
-    let characterCount = existingCharacterId.length
-    let newMessageLog = { userId: UserId, characterId: characterCount - 1, text: ['Welcome! Go to Town if you need a quest, else you may explore the World of ClickCraft!'] }
+    // let existingCharacterId = model.characters.filter(existingCharacter => existingCharacter.userId === UserId);
+    // let characterCount = existingCharacterId.length
+    let charactedId = model.app.loggedInCharacterId
+    let newCharacterInfo = findCharacterInfo(UserId, charactedId)
+    let newMessageLog = { userId: UserId, characterId: charactedId, text: [`Welcome to the World of ClickCraft, ${newCharacterInfo.name}! Head to the Town to receive your first quest, or venture out and explore the vast world of ClickCraft at your own pace. Adventure awaits!`]}
     messageLogArray.push(newMessageLog)
 }
 
