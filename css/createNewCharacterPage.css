@@ -7,6 +7,10 @@
     padding-left: 8%;
 }
 
+.warningText {
+    color: red;
+}
+
 .characterPictureDiv {
     font-size: 100px;
 }

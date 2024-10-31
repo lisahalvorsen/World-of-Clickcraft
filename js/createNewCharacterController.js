@@ -6,6 +6,9 @@ function createCharacter(chosenClassId, name) {
     createNewCaveQuest()
     createNewCharacterEquippedItems(chosenClassId)
     goToHomePage()
+    characterName = '';
+    characterDetailsIndex = 0
+    reminderTextHtml = '';
 }
 
 function createUserNewCharacterInfo(chosenClassId, name) {

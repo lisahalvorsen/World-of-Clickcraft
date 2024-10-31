@@ -1,6 +1,7 @@
 let characterDetailsIndex = 0;
 let characterName = '';
 let chosenClassId = 0;
+let reminderTextHtml = '';
 
 function createNewCharacterView() {
 
@@ -12,6 +13,7 @@ function createNewCharacterView() {
                 <div class='inputDiv'>
                     <label for='name'>Name:</label>
                     <input type='text' id='name' name='fname' value='${characterName}' oninput='characterName=this.value'>
+                    ${reminderTextHtml}
                 </div>
            
             ${characterDetailsHtml()}
@@ -52,7 +54,7 @@ function characterDetailsHtml() {
         ${characterObject.class}
         <button onclick='changeToNextCharacter()'>▶️</button>
     </div>
-    <div class='createButtonDiv' onclick='createCharacter(chosenClassId, characterName)'><button>Create</button></div>
+    <div class='createButtonDiv'><button onclick="checkNameInput(${chosenClassId}, characterName)">Create</button></div>
     `  
     return characterDetailsHtml
 }
@@ -69,6 +71,14 @@ function changeToLastCharacter() {
     createNewCharacterView()
 }
 
+function checkNameInput(chosenClassId, characterName) {
+    if (characterName !== '') {
+        createCharacter(chosenClassId, characterName);
+    } else {
+        reminderTextHtml = '<p class="warningText">*You need to have a character name to proceed</p>';
+        createNewCharacterView();
+    }
+}
 
 
 
