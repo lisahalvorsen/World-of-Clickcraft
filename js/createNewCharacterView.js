@@ -29,7 +29,9 @@ function characterDetailsHtml() {
     <div class='characterDetailsDiv1'>
         <div class='characterPictureDiv'><img class='characterImage' src="${characterObject.picture}" alt=""></div>
         </br>
+        <div class='characterDescription'>
         ${characterObject.description}
+        </div>
     </div>
     <div class='characterDetailsDiv2'>
         Gender: ${characterObject.gender}
@@ -46,9 +48,9 @@ function characterDetailsHtml() {
     </div>
     </div>
     <div class='classChangeButtons'>
-        <button onclick='changeToLastCharacter()'><</button>
+        <button onclick='changeToLastCharacter()'>◀️</button>
         ${characterObject.class}
-        <button onclick='changeToNextCharacter()'>></button>
+        <button onclick='changeToNextCharacter()'>▶️</button>
     </div>
     <div class='createButtonDiv' onclick='createCharacter(chosenClassId, characterName)'><button>Create</button></div>
     `  

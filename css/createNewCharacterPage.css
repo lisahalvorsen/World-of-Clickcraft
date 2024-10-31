@@ -22,13 +22,18 @@
     grid-template-columns: 300px 300px;
 }
 
+.characterDescription {
+    font-size: small;
+    text-align: justify;
+}
+
 .classChangeButtons {
     padding-left: 21%;
     padding-top: 3%;
     padding-bottom: 3%;
 }
 
-.createButtonDiv{
+.createButtonDiv {
     text-align: end;
     padding-right: 15%;
     padding-bottom: 5%;
