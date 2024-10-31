@@ -6,6 +6,7 @@ const model = {
         loggedInUser: 0,
         currentCharacterInfo: null,
         inGameScene: 'Map',
+        selectedCategory: null,
     },
 
     // Del 2
@@ -47,9 +48,9 @@ const model = {
     ],
 
     inventories: [
-        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
-        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
-        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', quantity: 10, symbol: '🧪' }, { name: 'Apple', quantity: 1, symbol: '🍎' },] },
+        { userId: 0, characterId: 0, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', category: 'Consumables', quantity: 10, symbol: '🧪' }, { name: 'Apple', category: 'Consumables', quantity: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 1, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', category: 'Consumables', quantity: 10, symbol: '🧪' }, { name: 'Apple', category: 'Consumables', quantity: 1, symbol: '🍎' },] },
+        { userId: 1, characterId: 2, hasKey: false, keySelected: false, pet: null, money: 1000, items: [{ name: 'Health potion', category: 'Consumables', quantity: 10, symbol: '🧪' }, { name: 'Apple', category: 'Consumables', quantity: 1, symbol: '🍎' },] },
     ],
 
     messageLog: [
