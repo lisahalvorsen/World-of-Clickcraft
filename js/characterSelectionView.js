@@ -8,7 +8,7 @@ function characterSelectionView() {
             <div class="myCharacters">${drawCharactersHtml()}</div>
             <div>
                 <button onclick="goToCreateNewCharacterPage()" class="characterSelectionBtn">Create new character</button>
-                <button onclick="goToHomePage()" class="characterSelectionBtn">Log out</button>
+                <button onclick="logOutButton()" class="characterSelectionBtn">Log out</button>
             </div>
         </div>
     `;
@@ -34,7 +34,7 @@ function drawCharactersHtml() {
 function drawCharacterLevelHtml(characterId) {
     let html = '';
     const characterStat = model.stats.find(stat => stat.characterId === characterId && stat.userId === model.app.loggedInUser);
-    
+
     html = /*HTML*/ `<div>Level ${characterStat.level}</div>`;
     return html;
 }

@@ -5,29 +5,26 @@ function getShopInventory(category = null) {
 
 function buyItem(price, itemName, itemQuantity, symbol) {
     const userInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
-    const userMoney = userInventory.money;
     const existingItem = userInventory.items.find(item => item.name === itemName);
     const itemSymbol = model.shop.find(item => item.symbol === symbol);
     const messageLog = findCharacterMessageLog(model.app.loggedInUser, model.app.loggedInCharacterId);
 
-    if (userMoney >= price) {
+    if (userInventory.money >= price) {
         userInventory.money -= price;
 
-        if (existingItem) {
-            existingItem.quantity++; // fikse quantity. Skal ikke økes med 1, men med riktig quantity !! 
-            console.log(existingItem.quantity);
-        } else {
+        if (!existingItem) {
             const newItem = {
                 name: itemName,
-                quantity: itemQuantity, // fikse quantity i inventory
+                quantity: itemQuantity,
                 symbol: itemSymbol.symbol,
             };
             userInventory.items.push(newItem);
+        } else if (existingItem) {
+            existingItem.quantity += itemQuantity;
         }
     } else {
         addMessage(messageLog, `Oh no, it seems you don't have enough money :(`);
     }
-
     gameTemplateView();
 }
 

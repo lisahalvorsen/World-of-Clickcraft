@@ -87,7 +87,7 @@ function gameTemplateView() {
         <div class='footerInventoryDiv'>
             <h3>INVENTORY</h3>
             <div class="currentInventory">
-                 ${characterInventory.items.map(item => `<div onclick="${item.name === 'Health potion' ? 'useHealthPotion()' : ''}">${item.symbol} x ${item.count}</div>`).join('')}              
+                 ${characterInventory.items.map(item => `<div onclick="${item.name === 'Health potion' ? 'useHealthPotion()' : ''}">${item.symbol} x ${item.quantity}</div>`).join('')}              
             </div>
         </div>
         <div class='footerMissionsDiv'>
