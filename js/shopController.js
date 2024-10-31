@@ -46,16 +46,22 @@ function getMoreInfo(itemName) {
     }
 }
 
-// in progress 
+function increaseStock(itemName) {
+    const itemStock = model.shop.find(item => item.name === itemName);
 
-function increaseStock(stock) {
-    stock++;
-    console.log(stock);
+    if (itemStock) {
+        itemStock.stock++;
+    }
+
     renderHtml(shopView());
 }
 
-function decreaseStock(stock) {
-    stock--;
-    console.log(stock);
+function decreaseStock(itemName) {
+    const itemStock = model.shop.find(item => item.name === itemName);
+
+    if (itemStock) {
+        itemStock.stock = Math.max(0, itemStock.stock - 1);
+    }
+
     renderHtml(shopView());
 }

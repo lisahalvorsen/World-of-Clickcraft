@@ -1,11 +1,11 @@
 const model = {
     // Del 1
     app: {
-        currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight',game
+        currentPage: 'homePage',
         loggedInCharacterId: 0,
         loggedInUser: 0,
         currentCharacterInfo: null,
-        inGameScene: 'Map'
+        inGameScene: 'Map',
     },
 
     // Del 2
@@ -27,7 +27,7 @@ const model = {
         },
     },
 
-    // Del 3 Data
+    // Del 3
     users: [
         { userId: 0, username: 'Jens', password: 'jens', email: 'jens.jensen@gmail.com' },
         { userId: 1, username: 'Lars', password: 'lars', email: 'lars.larsen@gmail.com' },
@@ -97,7 +97,7 @@ const model = {
     ],
 
     questStatus: [
-        { userId: 0, characterId: 0, caveQuest: false, desertQuest: false, forestQuest: false, mountainQuest: false, bossQuest: false }
+        { userId: 0, characterId: 0, caveQuest: false, desertQuest: false, forestQuest: false, mountainQuest: false, bossQuest: false },
     ],
 
     caveQuest: [
@@ -109,8 +109,9 @@ const model = {
         { id: 3, userId: 1, characterId: 1, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
         { id: 1, userId: 1, characterId: 2, name: 'Cave Quest', currentQuestStep: 'Kill monster', progress: 0, questFinished: false, stoneWallPresent: true, doorPresent: false, stoneCount: 5 },
         { id: 2, userId: 1, characterId: 2, name: 'Cave monster', currentHp: 100, hp: 100, level: 1, atk: 10, def: 10, spd: 10, caveMonsterPresent: true },
-        { id: 3, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false }
+        { id: 3, userId: 1, characterId: 2, name: 'Cave Boss', currentHp: 100, hp: 100, level: 3, atk: 30, def: 30, spd: 30, caveBossPresent: false },
     ],
+
     shop: [
         { id: 1, name: 'Pick', category: 'Equipment', description: 'A versatile item that can be used for many things', price: 100, symbol: '⛏️', stock: 1 },
         { id: 2, name: 'New boots', category: 'Clothing', description: 'Sturdy boots that are long lasting', price: 200, symbol: '🥾', stock: 1 },

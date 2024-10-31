@@ -24,7 +24,7 @@ function drawAllShopItemsHtml(items) {
                 <div class="itemPicture">${item.symbol}</div>
                 <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png" onclick="getMoreInfo('${item.name}')"/></div>
                 <div class="itemPrice">$ ${item.price}</div>
-                <div class="itemQuantity"><button onclick="decreaseStock(${item.stock})">-</button>${item.stock}<button onclick="increaseStock(${item.stock})">+</button></div>
+                <div class="itemQuantity"><button onclick="decreaseStock('${item.name}')">-</button>${item.stock}<button onclick="increaseStock('${item.name}')">+</button></div>
                 <button onclick="buyItem(${item.price}, '${item.name}', '${item.symbol}')" class="buyBtn">Buy</button>
             </div>
         `;
