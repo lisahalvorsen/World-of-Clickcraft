@@ -47,7 +47,7 @@ function createNewMessageLog() {
     // let characterCount = existingCharacterId.length
     let charactedId = model.app.loggedInCharacterId
     let newCharacterInfo = findCharacterInfo(UserId, charactedId)
-    let newMessageLog = { userId: UserId, characterId: charactedId, text: [`Welcome to the World of ClickCraft, ${newCharacterInfo.name}! Head to the Town to receive your first quest, or venture out and explore the vast world of ClickCraft at your own pace. Adventure awaits!`]}
+    let newMessageLog = { userId: UserId, characterId: charactedId, text: [`Welcome to the World of ClickCraft, ${newCharacterInfo.name}! Head to the Town and talk to the Town Elder to receive your first quest, or venture out and explore the vast world of ClickCraft at your own pace. Adventure awaits!`]}
     messageLogArray.push(newMessageLog)
 }
 
