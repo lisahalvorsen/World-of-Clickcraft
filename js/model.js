@@ -2,7 +2,6 @@ const model = {
     // Del 1
     app: {
         currentPage: 'homePage', //'login', 'register', 'createNew', 'map', 'shop', 'town', 'shop', 'cave', 'fight',game
-        userId: null,
         loggedInCharacterId: 0,
         loggedInUser: 0,
         currentCharacterInfo: null,
