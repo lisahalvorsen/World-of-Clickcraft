@@ -43,8 +43,7 @@ function attackBossMonster() {
 		questStatus.caveQuest = true
 		addMessage(messageLog,
 			`With a final blow, you defeat the Cave Boss!
-			The boss lets out a roar as it falls, leaving behind precious loot.`
-		);
+			The boss lets out a roar as it falls, leaving behind precious loot.`);
 		grantBossRewards(characterStats, messageLog);
 		questUpdater('Cave', 'Desert')
 		bossStats.currentHp = bossStats.hp;
@@ -53,19 +52,19 @@ function attackBossMonster() {
 	gameTemplateView();
 }
 
-function grantBossRewards(character, messageLog) {
+function grantBossRewards(characterStats, messageLog) {
 	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const healthPotion = characterInventory.items.find(item => item.name === 'Health potion');
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 
 	caveQuest[0].questFinished=true;
-	character.hp += 50;
-	character.currentHp += 50;
-	character.atk += 9;
-	character.def += 9;
-	character.spd += 9;
-	character.level += 5;
-	character.xp += 500;
+	characterStats.hp += 50;
+	characterStats.currentHp += 50;
+	characterStats.atk += 9;
+	characterStats.def += 9;
+	characterStats.spd += 9;
+	characterStats.level += 5;
+	characterStats.xp += 500;
 	characterInventory.money += 500;
 	healthPotion.count += 5;
 	const rareDropChance = Math.random();
