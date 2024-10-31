@@ -24,7 +24,6 @@ function showingCaveBoss() {
 	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
     if (caveQuest[2].caveBossPresent) {
         return /*HTML*/`
-            <h2 class='caveBossFont'>Cave Boss</h2> 
             <div id="boss-health-bar-container">
                 <span id="boss-health-text">Cave Boss HP</span>
                 <div id="boss-health-bar">
@@ -49,7 +48,6 @@ function showingCaveMonster() {
 
 	if (caveQuest[1].caveMonsterPresent) {
 		return /*HTML*/`
-			<h2 class='monsterFont'>Monster</h2> 
 
 			<div id="monster-health-bar-container">
 				<span id="monster-health-text">Cave Monster HP</span>
@@ -74,11 +72,11 @@ function showingObstacleElement() {
 	if (caveQuest[0].stoneWallPresent || caveQuest[0].doorPresent) {
 		return /*HTML*/`
 		<h2 class='obstacleFont'>Obstacle</h2> 
-		<div onclick='${caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
+		<div class="questObstacle" onclick='${caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
 			${caveQuest[0].stoneWallPresent ? stoneWallElement : doorElement}
 		</div>
 		<br>
-		<div onclick='selectKey()'>${characterInventory.hasKey ? '🗝️' : ''}</div>
+		<div class="questKey" onclick='selectKey()'>${characterInventory.hasKey ? '🔑' : ''}</div>
 		`;
 	} else return '';
 }
