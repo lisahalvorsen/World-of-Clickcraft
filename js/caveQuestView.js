@@ -71,7 +71,6 @@ function showingObstacleElement() {
 	
 	if (caveQuest[0].stoneWallPresent || caveQuest[0].doorPresent) {
 		return /*HTML*/`
-		<h2 class='obstacleFont'>Obstacle</h2> 
 		<div class="questObstacle" onclick='${caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	
 			${caveQuest[0].stoneWallPresent ? stoneWallElement : doorElement}
 		</div>
