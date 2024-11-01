@@ -22,12 +22,12 @@ function createNewCharacterView() {
 }
 
 function characterDetailsHtml() {
-    let characterDetailsHtml= '';
+    let characterDetailsHtml = '';
     let characterObject = model.classes[characterDetailsIndex]
     chosenClassId = characterObject.id
 
-    characterDetailsHtml += 
-    `<div class='characterDiv'>
+    characterDetailsHtml += /*HTML*/
+        `<div class='characterDiv'>
     <div class='characterDetailsDiv1'>
         <div class='characterPictureDiv'><img class='characterImage' src="${characterObject.picture}" alt=""></div>
         </br>
@@ -54,9 +54,12 @@ function characterDetailsHtml() {
         ${characterObject.class}
         <button onclick='changeToNextCharacter()'>▶️</button>
     </div>
-    <div class='createButtonDiv'><button onclick="checkNameInput(${chosenClassId}, characterName)">Create</button></div>
-    `  
-    return characterDetailsHtml
+    <div class='createButtonDiv'>
+        <button onclick="checkNameInput(${chosenClassId}, characterName)">Create</button>
+        <button onclick="goToCharacterSelectionPage()">Go back</button>
+    </div>
+    `;
+    return characterDetailsHtml;
 }
 
 function changeToNextCharacter() {
