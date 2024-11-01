@@ -125,7 +125,7 @@
     height: 150px;
     border: 2px double black;
     margin-top: 10px;
-    /* margin-left: 20px; */
+    cursor: pointer;
 }
 
 .footerMissionsDiv {
