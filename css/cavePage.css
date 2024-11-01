@@ -64,6 +64,7 @@
 .questObstacle {
     font-size: 45px;
     cursor: pointer;
+    margin-left: 15px;
 }
 .questKey {
     margin-left: 20px;
