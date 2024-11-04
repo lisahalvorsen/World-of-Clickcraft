@@ -20,14 +20,14 @@ function caveQuestView() {
 
 function showingCaveBoss() {
 	const width = updateEnemyHealthBar(2)
-    const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
+	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const characterInfo = findCharacterStats(model.app.loggedInUser, model.app.loggedInCharacterId);
-    if (caveQuest[2].caveBossPresent) {
-        return /*HTML*/`
+	if (caveQuest[2].caveBossPresent) {
+		return /*HTML*/`
             <div id="boss-health-bar-container">
                 <span id="boss-health-text">Cave Boss HP</span>
                 <div id="boss-health-bar">
-                    <div id="boss-health-fill" style="width: ${width??100}%;"></div> 
+                    <div id="boss-health-fill" style="width: ${width ?? 100}%;"></div> 
                 </div>
             </div>
 			
@@ -36,9 +36,9 @@ function showingCaveBoss() {
 				<img src="${characterInfo.picture}" alt="character">
 				</div>
         `;
-    } else {
-        return '';
-    }
+	} else {
+		return '';
+	}
 }
 
 function showingCaveMonster() {
@@ -52,11 +52,11 @@ function showingCaveMonster() {
 			<div id="monster-health-bar-container">
 				<span id="monster-health-text">Cave Monster HP</span>
 				<div id="monster-health-bar">
-					<div id="monster-health-fill" style="width: ${width??100}%;"></div> 
+					<div id="monster-health-fill" style="width: ${width ?? 100}%;"></div> 
 			</div>
 		</div>
 		<div class='characterInGame'>	
-			<img src="../images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
+			<img src="images/devilQuest.png" alt="devil" onclick='attackCaveMonster()'>
 			<img src="${characterInfo.picture}" alt="character">
 			</div>
 		`;
@@ -64,11 +64,11 @@ function showingCaveMonster() {
 }
 
 function showingObstacleElement() {
-	const characterInventory = findCharacterInventory (model.app.loggedInUser, model.app.loggedInCharacterId);
+	const characterInventory = findCharacterInventory(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const caveQuest = findCharacterCaveQuest(model.app.loggedInUser, model.app.loggedInCharacterId);
 	const stoneWallElement = '🪨'.repeat(caveQuest[0].stoneCount);
 	const doorElement = '🚪';
-	
+
 	if (caveQuest[0].stoneWallPresent || caveQuest[0].doorPresent) {
 		return /*HTML*/`
 		<div class="questObstacle" onclick='${caveQuest[0].stoneWallPresent ? 'getThroughStones()' : 'getThroughDoor()'}'>	

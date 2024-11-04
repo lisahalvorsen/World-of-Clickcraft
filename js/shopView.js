@@ -22,7 +22,7 @@ function drawAllShopItemsHtml(items) {
         html += /*HTML*/ `
             <div class="items">
                 <div class="itemPicture">${item.symbol}</div>
-                <div class="itemName">${item.name} <img class="iIcon" src="../images/i-icon.png" onclick="getMoreInfo('${item.name}')"/></div>
+                <div class="itemName">${item.name} <img class="iIcon" src="images/i-icon.png" onclick="getMoreInfo('${item.name}')"/></div>
                 <div class="itemPrice">$ ${item.price}</div>
                 <div class="itemQuantity">
                     <button onclick="decreaseStockAndPrice('${item.name}')" class="adjustBtn">-</button>
