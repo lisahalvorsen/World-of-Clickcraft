@@ -11,6 +11,7 @@ function shopView(items = model.shop) {
                 <button onclick="getShopInventory()" class="categoryBtn">All items</button>
             </div>
                 <div class="itemContainer">${drawAllShopItemsHtml(items)}</div>
+                <button onclick="goToTownIsland()" class="exitBtn">Go back to town</button>
         </div>
     `;
 }
